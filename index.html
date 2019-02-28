@@ -4,36 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Jair Escobar</title>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>JER</li>
-                <li>About me</li>
-                <li>Projects</li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>JER</li>
+                    <li>About me</li>
+                    <li>Projects</li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <section>
-        <p>Descripción de mi persona</p>
-        <article>
-            <div>Project 1 > Platzi video  </div>
-        </article>
-        <article>
-            <div>Project 2 > CEAU  </div>
-        </article>
-        <article>
-            <div>Project 3 > Invie  </div>
-        </article>
-        <article>
-            <div>Project 4 > Next  </div>
-        </article>
-    </section>
+
+    <div class="main">
+        <div class="container">
+            <section class="about">
+                <p>Descripción de mi persona</p>
+            </section>
+            
+            <section class="projects">
+                <article class="project">
+                    <div class="projectLink">
+                        <a href="">PlatziVideo</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="projectLink">
+                        <a target='_blank' href=" https://evitalires.github.io/basic/">CEAU S.A.S</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="projectLink">
+                        <a target="_blank" href="https://evitalires.github.io/web-invie-responsive/">Invie</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <div class="projectLink">
+                        <a href="">Next</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </div>
+
     <footer>
-        <a href="">GitHub</a>
-        <a href="">Twitter</a>
+        <div class="container">
+            <section class="links">
+                <div class="link">Twitter</div>
+                <div class="link">Facebook</div>
+                <div class="link">Medium</div>
+                <div class="link">Github</div>
+            </section>
+        </div>
     </footer>
 </body>
 </html>
