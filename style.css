@@ -16,6 +16,7 @@ body {
 }
 header {
     display: flex;
+    height: 64px;
 }
 header nav {
     width: 100%;
@@ -35,55 +36,69 @@ header nav ul li:first-child {
     font-family: 'Monoton', cursive;
 }
 
-.container {
-    width: 90%;
-    display: inherit;
-    margin: 0 auto;
-    justify-content: inherit;
+footer {
+    height: 64px;
 }
-.main {
-    width: 100%;
-    display: flex;
-    height: 600px;
+main {
+    display: grid;
+    position: relative;
+    grid-template-rows: repeat(4, 124px);
+    grid-gap: 5px;
+    grid-template-columns: repeat(9, 1fr) repeat(8, 1fr);
 }
 .about {
-    width: 50%;
-    box-sizing: border-box;
     padding: 16px;
-    display: flex;
-    align-items: center;
+    display: grid;
     color: var(--pink);
+    grid-row: 1 / 5;
+    grid-column: 1 / 11;
+    position: absolute;
+    top: 0;
+    bottom: 0;
     background: var(--blueDark);
+    clip-path: polygon(0 0, 99% 0, 19.4% 100%, 0% 100%);
 }
-.about p {
+.about .about_content {
     text-align: center;
     line-height: 1.5em;
     font-size: 1.5em;
 }
 .projects {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 5px;
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    grid-template-columns: inherit;
+    grid-template-rows: inherit;
 }
+
 .projects .project {
-    height: 23%;
-    margin-left: 4px;
-    /* border: 1px solid var(--blue); */
+    display: grid;
+    background:var(--blue);
+}
+.projects .project:nth-of-type(1) {
+    grid-column: 9 / 18;
+    clip-path: polygon(21.5% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.projects .project:nth-of-type(2) {
+    grid-column: 7 / 18;
+    clip-path: polygon(17.5% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.projects .project:nth-of-type(3) {
+    grid-column: 5 / 18;
+    clip-path: polygon(14.8% 0, 100% 0, 100% 100%, 0% 100%);
+}
+.projects .project:nth-of-type(4) {
+    grid-column: 3 / 18;
+    clip-path: polygon(12.8% 0, 100% 0, 100% 100%, 0% 100%);
 }
 .projects .project .projectLink {
-    display: flex;
-/*     height: 100%; */
-} 
-.projects .project .projectLink a {
-    width: 100%;
-    color: var(--blueDark);
-    display: flex;
-    height: inherit;
-    align-items: center;
-    justify-content: center;
+    color: white;
+    text-align: center;
     text-decoration: none;
 }
+
+
 .links {
     display: flex;
     height: 48px;
@@ -91,25 +106,10 @@ header nav ul li:first-child {
     justify-content: space-around;
 }
 .links .link a{
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
     color: var(--blue)
 }
-/* Experimentando con clip-path */
-.project {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--blueDark);
-    -webkit-clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
-    clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
-}
-.projectLink {
-    height: 97%;
-    width: 98%;
-    position: relative;
-    left: 2px;
-    background: var(--blueLight);
-    -webkit-clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
-    clip-path: polygon(45% 0, 100% 0, 100% 100%, 0% 100%);
-}
+
+
