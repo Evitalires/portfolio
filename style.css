@@ -5,7 +5,7 @@
  */
 body {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--blueDark);
     background: var(--blueLight);
     font-family: 'Molengo', sans-serif;
@@ -14,75 +14,78 @@ body {
     --blueLight: #DAE6F5;
     --pink: #FCBCB8;
 
+    --gap: 5px;
+    --headerHeight: 72px;
+    --footerHeight: 54px;
+    --mainHeigh: calc(100vh - (var(--headerHeight) + var(--footerHeight)) );
+    --templateColumns: [start] .5fr [ini_about] .5fr [p_1] 1fr [p_2] 1fr [p_3] 1fr  [p_4] 1fr [project_nav] 1fr [rest_space] 2fr [end] .5fr; 
+    --templateRows: [header] var(--headerHeight) [main] var(--mainHeigh) [footer] var(--footerHeight);
+    display: grid;
+    grid-template: var(--templateRows) / 1fr;
+
 }
 header {
     display: grid;
-    margin-bottom: 5px;
-    grid-template: 72px / repeat(17, 1fr);
+    grid-row: header / 1 span;
+    margin-bottom: var(--gap);
 }
 header nav {
     display: inherit;
-    grid-column: 1 / -1;
-    grid-template: inherit;
 }
 header nav ul {
     margin: 0; 
     padding: 0;
     list-style: none;
     display: inherit;
-    justify-items: center;
-    align-items: center;
-    grid-column: 1 / -1;
-    grid-template: inherit;
+    grid-column-gap: var(--gap);
+    grid-template-columns: var(--templateColumns);
 } 
 header nav ul li {
-    position: relative;
-    align-self: stretch;
-    justify-self: stretch;
+    display: inherit;
+}
+header nav ul li span {
+    align-self: center;
 }
 header nav ul li:nth-of-type(1) {
     font-size: 2em;
-    justify-self: center;
-    align-self: center;
-    grid-column: 1 / 4;
+    grid-column: ini_about / span 2;
     font-family: 'Monoton', cursive;
 }
 header nav ul li:nth-of-type(2) {
-    grid-column: 7 / 10;
+    grid-column: p_4 / 1 span;
 }
 header nav ul li:nth-of-type(3) {
-    display: inherit;
     color: var(--blueLight);
-    grid-column: 11 / 18;
+    grid-column: project_nav / -1;
     background-color: var(--blueDark);
     clip-path: polygon(17% 0, 100% 0, 100% 100%, 0% 100%);
 }
-header nav ul li span {
-    left: 62px;
-    bottom: 25px;
-    position: absolute;
-    text-decoration: none;
+header nav ul li:nth-of-type(3) span {
+    position: relative;
+    justify-self: left;
+    left: 20%;
 }
+
 
 
 main {
     display: grid;
     position: relative;
-    grid-template-rows: repeat(4, 124px);
+    grid-row: main / footer;
     grid-gap: 5px;
-    grid-template-columns: repeat(17, 1fr);
+    grid-template-columns: var(--templateColumns);
 }
 .about {
     padding: 16px;
-    display: grid;
+    display: inherit;
     color: var(--pink);
-    grid-row: 1 / 5;
-    grid-column: 1 / 11;
+    grid-row: 1 / -1;
+    grid-column: start / project_nav;
     position: absolute;
     top: 0;
     bottom: 0;
     background: var(--blueDark);
-    clip-path: polygon(0 0, 99% 0, 19.4% 100%, 0% 100%);
+    clip-path: polygon(0 0, 99% 0, 20.2% 100%, 0% 100%);
 }
 .about .about_content {
     text-align: center;
@@ -90,33 +93,36 @@ main {
     font-size: 1.5em;
 }
 .projects {
-    display: grid;
+    display: inherit;
     grid-gap: 5px;
-    grid-row: 1 / -1;
     grid-column: 1 / -1;
     grid-template-columns: inherit;
-    grid-template-rows: inherit;
+    grid-template-rows: repeat(4, 1fr);
 }
 
 .projects .project {
-    display: grid;
+    display: inherit;
     border-top: 1px solid var(--blue);
     border-bottom: 1px solid var(--blue);
 }
 .projects .project:nth-of-type(1) {
-    grid-column: 9 / 18;
+    grid-row: 1 / 1 span;
+    grid-column: p_4 / -1;
     clip-path: polygon(21.5% 0, 100% 0, 100% 100%, 0% 100%);
 }
 .projects .project:nth-of-type(2) {
-    grid-column: 7 / 18;
+    grid-row: 2 / 1 span;
+    grid-column: p_3 / -1;
     clip-path: polygon(17.5% 0, 100% 0, 100% 100%, 0% 100%);
 }
 .projects .project:nth-of-type(3) {
-    grid-column: 5 / 18;
+    grid-row: 3 / 1 span;
+    grid-column: p_2 / -1;
     clip-path: polygon(14.8% 0, 100% 0, 100% 100%, 0% 100%);
 }
 .projects .project:nth-of-type(4) {
-    grid-column: 3 / 18;
+    grid-row: 4 / 1 span;
+    grid-column: p_1 / -1;
     clip-path: polygon(12.8% 0, 100% 0, 100% 100%, 0% 100%);
 }
 .projects .project .projectLink {
@@ -126,27 +132,27 @@ main {
 }
 
 footer {
-    display: grid;
+    display: inherit;
     margin-top: 5px;
-    grid-template: 54px / repeat(17, 1fr);
+    grid-row: footer / 1 span;
+    grid-template-columns: var(--templateColumns);
 }
-.links {
-    display: grid;
-    grid-column: 2 / -1;
-    grid-template: 54px / repeat(15, 1fr);
-    background: var(--blueDark);
-    clip-path: polygon(6% 0, 100% 0, 100% 100%, 0% 110%);
+footer .rightFooter {
+    display: inherit;
+    grid-template: inherit;
+    grid-column: ini_about / -1;
+    background: var(--blueDark); 
+    clip-path: polygon(6.5% 0, 100% 0, 100% 100%, 0% 137%);
 }
-.links .link{
-    display: grid;
-    align-items: center;
+footer .rightFooter .links {
+    display: inherit;
+    justify-content: space-around;
+    align-content: center;
+    grid-column: rest_space / 1 span;
+    grid-template-columns: repeat(4, 25px);
 }
-.links .link:nth-of-type(1) {
-    grid-column: 12 / 13;
-}
-.links .link:nth-of-type(2) {
-    grid-column: 14 / 15;
-}
+ 
 .links .link svg {
-    transform: scale(.6);
+    width: 100%;
+    height: 100%;
 }
