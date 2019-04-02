@@ -24,6 +24,10 @@ body {
     grid-template: var(--templateRows) / 1fr;
 
 }
+h1 {
+    margin: 0;
+    font-weight: normal;
+}
 header {
     display: grid;
     grid-row: header / 1 span;
@@ -47,9 +51,10 @@ header nav ul li span {
     align-self: center;
 }
 header nav ul li:nth-of-type(1) {
-    font-size: 2em;
+    font-size: 2.5em;
+    color: var(--blue);
     grid-column: ini_about / span 2;
-    font-family: 'Monoton', cursive;
+    font-family: 'Monoton', Arial;
 }
 header nav ul li:nth-of-type(2) {
     grid-column: p_4 / 1 span;
@@ -76,22 +81,60 @@ main {
     grid-template-columns: var(--templateColumns);
 }
 .about {
-    padding: 16px;
     display: inherit;
     color: var(--pink);
     grid-row: 1 / -1;
     grid-column: start / project_nav;
+    padding: 5% 40% 5% 5%;
     position: absolute;
     top: 0;
+    left: 0;
+    right: 0;
     bottom: 0;
     background: var(--blueDark);
     clip-path: polygon(0 0, 99% 0, 20.2% 100%, 0% 100%);
 }
 .about .about_content {
     text-align: center;
-    line-height: 1.5em;
-    font-size: 1.5em;
+    line-height: 2em;
+    font-size: 1em;
+    display: grid;
+    grid-template-rows: repeat(16, 25px);
+    grid-template-columns: 92px 28px 1fr;
 }
+.about .about_content .phrase {
+    display: flex;
+    font-family: 'Viga', serif;
+    justify-content: left;
+    align-content: start;
+}
+
+.about .about_content .row1 {
+    grid-row: 1 span;
+}
+.about .about_content .row2 {
+    grid-row: 2 span; 
+    font-size: 1.9em;
+    align-content: center;
+    font-family: 'Fredericka the Great', Arial;
+}
+.about .about_content .column1 {
+    grid-column: 1 span;
+}
+.about .about_content .column2 {
+    grid-column: 2 span;
+}
+.about .about_content .column3 {
+    grid-column: 3 span;
+}
+.about .about_content span {
+    color: var(--blueLight);
+}
+.about .about_content .phrase:nth-of-type(8)  {
+    color: var(--blueLight);
+    justify-content: center;
+}
+
 .projects {
     display: inherit;
     grid-gap: 5px;
@@ -146,10 +189,11 @@ footer .rightFooter {
 }
 footer .rightFooter .links {
     display: inherit;
-    justify-content: space-around;
+    justify-content: end;
+    gap: .5em;
     align-content: center;
     grid-column: rest_space / 1 span;
-    grid-template-columns: repeat(4, 25px);
+    grid-template-columns: repeat(2, 25px);
 }
  
 .links .link svg {
