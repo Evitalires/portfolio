@@ -171,7 +171,12 @@ main {
     width: 40%;
     border-bottom: 2px solid var(--blueLight);
 }
-
+.about .about_content .phrase:nth-of-type(15) {
+    padding-left: .5em;
+}
+.about .about_content .phrase:nth-of-type(16) {
+    padding-left: 1em;
+}
 
 .projects {
     display: inherit;
@@ -185,14 +190,6 @@ main {
     display: inherit;
     position: relative;
     background: var(--blueDark);
-}
-.projects .project a {
-    top: var(--borderThickness);
-    left: var(--borderThickness);
-    height: var(--sizeContainerClip);
-    width: var(--sizeContainerClip);
-    position: absolute;
-    background: var(--blueLight);
 }
 .projects .project:nth-of-type(1) {
     grid-row: 1 / 1 span;
@@ -230,13 +227,24 @@ main {
     clip-path: polygon(12.8% 0, 100% 0, 100% 100%, 0% 102%);
 }
 .projects .project .projectLink {
-    color: white;
-    text-align: center;
+    color: var(--blue);
+    font-size: 1.5em;
+    font-family: 'Fira Sans', sans-serif;
     text-decoration: none;
+    display: inherit;
+    align-content: center;
+    justify-content: center;
+    top: var(--borderThickness);
+    left: var(--borderThickness);
+    height: var(--sizeContainerClip);
+    width: var(--sizeContainerClip);
+    position: absolute;
+    background: var(--blueLight);
 }
 
 footer {
     display: inherit;
+    position: relative;
     margin-top: 5px;
     grid-row: footer / 1 span;
     grid-template-columns: var(--templateColumns);
@@ -257,7 +265,30 @@ footer .rightFooter .links {
     grid-template-columns: repeat(2, 25px);
 }
  
-.links .link svg {
+footer .rightFooter .links .link svg {
     width: 100%;
     height: 100%;
+}
+
+.leftFooter {
+    display: grid;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    grid-column: 1 / 3;
+    background: var(--blueDark);
+    clip-path: polygon(0 0, 98% 0, 60% 100%, 0 100%);
+}
+.leftFooter::after {
+    content: "";
+    color: var(--blueDark) ;
+    align-self: center;
+    font-size: .8em;
+    background: var(--blueLight);
+    clip-path: polygon(0 0, 98% 0, 61% 100%, 0 100%);
+    height: var(--sizeContainerClip);
+    width: var(--sizeContainerClip);
+    
 }
