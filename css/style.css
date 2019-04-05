@@ -247,8 +247,12 @@ main {
     left: var(--borderThickness);
     height: var(--sizeContainerClip);
     width: var(--sizeContainerClip);
-    position: absolute;
+    position: relative;
     background: var(--blueLight);
+}
+.projects .project .projectLink span {
+    position: sticky;
+    left: 80%;
 }
 
 footer {
