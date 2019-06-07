@@ -100,7 +100,7 @@ header {
     color: var(--blueLight);
     grid-column: project_nav / -1;
     background-color: var(--blueDark);
-    clip-path: polygon(10.6% 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
 #navbar ul li:nth-of-type(3) a {
     position: relative;
@@ -183,6 +183,9 @@ main {
     align-self: center;
     width: 40%;
     border-bottom: 2px solid var(--blueLight);
+}
+#welcome-section .about_content .phrase:nth-of-type(15) {
+    padding-left: .8em;
 }
 
 #welcome-section .about_content .phrase:nth-of-type(16) {
