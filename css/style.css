@@ -57,6 +57,9 @@ header {
     grid-column-gap: var(--gap);
     grid-template-columns: var(--templateColumns);
 }
+#navbar ul li:first-child {
+    font-weight: initial;
+}
 #navbar ul::before {
     content: "";
     grid-column: start / 8;
@@ -123,7 +126,7 @@ main {
     display: grid;
     grid-template-rows: 5% 1fr 5%;
     grid-template-columns: 5% 1fr 30%;
-    color: var(--pink);
+    color: var(--blueLight);
     grid-row: 1 / -1;
     grid-column: start / project_nav;
     /* padding: 7% 20% 7% 5%; */
@@ -280,6 +283,7 @@ main {
 #projects .project .projectLink {
     color: var(--blue);
     font-size: 1.5em;
+    font-weight: bold;
     font-family: 'Fira Sans', sans-serif;
     text-decoration: none;
     display: grid;
@@ -323,7 +327,9 @@ footer .rightFooter .links .link svg {
     width: 100%;
     height: 100%;
 }
-
+footer .rightFooter .links .link svg path {
+    fill: var(--blueLight);
+}
 .leftFooter {
     display: grid;
     position: absolute;
