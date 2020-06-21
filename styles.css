@@ -1,0 +1,41 @@
+body {
+  margin: 0px;
+  background-color: lightblue;
+}
+body section {
+  height: 50vh;
+}
+header {
+  height: 90vh;
+}
+h1 {
+  border: 1px solid red;
+}
+.break {
+  height: 900px;
+  border: 1px solid red;
+}
+
+.parallax {
+  box-shadow: 1px -12px 15px 0px;
+  /* Full height */
+  height: 10vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.one {
+  z-index: 1;
+  background-image: url("https://images.vexels.com/media/users/3/148173/isolated/preview/4e9ff4152e5b6c9e943a76570b4d1b07-abstract-rounded-geometric-background-by-vexels.png");
+}
+.two {
+  z-index: 2;
+  background-image: url("https://flevix.com/wp-content/uploads/2019/12/bubble-animated-background.svg");
+}
+.three {
+  z-index: 3;
+  background-image: url("https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/06/horizon-forbidden-west-dive-1964777.jpeg");
+}
