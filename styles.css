@@ -1,42 +1,126 @@
+:root {
+  font-size: 18px;
+  --width-break: 100vw;
+  --height-break: calc((var(--width-break) * 9) / 16);
+  --color-light: #f9ebeb;
+  --color-dark: #1b1f3b;
+  --color-main: #1f2a7a;
+  --color-lightAlt: #d7daf4;
+  --unactive: #1b1f3b;
+  --margin: 48px;
+  --font-call: "ABeeZee", sans-serif;
+  --font-text: "Montserrat", sans-serif;
+  --font-title: "Muli", sans-serif;
+  --font-headlines: "Righteous", cursive;
+  --font-append: "Roboto", sans-serif;
+  --columnsBody: 8;
+  --columnsBodyTemplate: repeat(var(--columnsBody), 1fr);
+  --shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+  --shadowHover: 0px 14px 14px rgba(0, 0, 0, 0.25);
+}
+* {
+  margin: 0;
+  color: var(--color-dark);
+}
+
+.button-action {
+  background-color: var(--color-main);
+  color: var(--color-light);
+}
 body {
   margin: 0px;
-  background-color: lightblue;
-}
-body section {
-  height: 50vh;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: var(--margin) repeat(10, 1fr) var(--margin);
+  background-color: var(--color-light);
 }
 header {
-  height: 90vh;
-  border: 1px solid red;
+  display: inherit;
+  grid-column: 3 / 8 span;
+  justify-items: stretch;
 }
-h1 {
-  border: 1px solid red;
+nav {
+  gap: 18px;
+  display: grid;
+  grid-template-columns: var(--columnsBodyTemplate);
 }
+nav ul {
+  gap: 18px;
+  padding: 0;
+  display: inherit;
+  list-style: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column: -4 / 3 span;
+}
+nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid transparent;
+}
+nav ul li a {
+  padding: 14% 0;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: var(--font-title);
+}
+nav ul li:hover {
+  transition: 0.2s;
+  border-bottom: 4px solid var(--color-dark);
+}
+main {
+  display: inherit;
+  grid-row: 3/ 4 span;
+  align-items: center;
+  grid-column: 3 / 4 span;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+}
+main h1 {
+  font-size: 3.8em;
+  font-family: var(--font-headlines);
+}
+main p {
+  font-family: var(--font-text);
+}
+main p span {
+  display: block;
+  margin: 0.5em 0;
+}
+main button {
+  height: 2em;
+  font-size: 2em;
+  grid-column: 3 span;
+  border-radius: 0.3em;
+  color: var(--color-light);
+  border: 2px solid var(--color-lightAlt);
+  background-color: var(--color-main);
+  box-shadow: var(--shadow);
+  outline: transparent;
+}
+main button:hover {
+  transition: 0.3s;
+  box-shadow: var(--shadowHover);
+}
+main h1,
+main p,
+main div {
+  grid-column: 4 span;
+}
+
 .break {
-  height: 900px;
+  position: relative;
+  grid-row: 7 / 5 span;
   border: 1px solid red;
+  grid-column: 1 / -1;
+  height: calc(var(--height-break) / 2);
+}
+.break:hover {
+  /* At the moment of Hover change the value of the box */
 }
 
-.parallax {
-  box-shadow: 1px -12px 15px 0px;
-  /* Full height */
-  height: 10vh;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.one {
-  z-index: 1;
-  background-image: url("https://images.vexels.com/media/users/3/148173/isolated/preview/4e9ff4152e5b6c9e943a76570b4d1b07-abstract-rounded-geometric-background-by-vexels.png");
-}
-.two {
-  z-index: 2;
-  background-image: url("https://flevix.com/wp-content/uploads/2019/12/bubble-animated-background.svg");
-}
-.three {
-  z-index: 3;
-  background-image: url("https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2020/06/horizon-forbidden-west-dive-1964777.jpeg");
+.break img {
+  z-index: -100;
+  width: var(--width-break);
+  top: -30vh;
+  position: absolute;
 }
