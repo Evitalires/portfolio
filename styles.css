@@ -1,5 +1,5 @@
+/* Setting class container*/
 :root {
-  font-size: 18px;
   --width-break: 100vw;
   --height-break: calc((var(--width-break) * 9) / 16);
   --color-light: #f9ebeb;
@@ -7,13 +7,15 @@
   --color-main: #1f2a7a;
   --color-lightAlt: #d7daf4;
   --unactive: #1b1f3b;
-  --margin: 48px;
+  --margin: 3em;
   --font-call: "ABeeZee", sans-serif;
   --font-text: "Montserrat", sans-serif;
   --font-title: "Muli", sans-serif;
   --font-headlines: "Righteous", cursive;
   --font-append: "Roboto", sans-serif;
-  --columnsBody: 8;
+  --widthCell: ;
+  --columns: 10;
+  --columnsBody: calc(var(--columns) - 2);
   --columnsBodyTemplate: repeat(var(--columnsBody), 1fr);
   --shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
   --shadowHover: 0px 14px 14px rgba(0, 0, 0, 0.25);
@@ -28,29 +30,29 @@
   color: var(--color-light);
 }
 body {
+  gap: 1em;
   margin: 0px;
   display: grid;
-  gap: 1em;
-  grid-template-columns: var(--margin) repeat(10, 1fr) var(--margin);
   background-color: var(--color-light);
+  grid-template-columns: var(--columnsBodyTemplate);
 }
 header {
   display: inherit;
-  grid-column: 3 / 8 span;
   justify-items: stretch;
+  grid-column: 1 / -1;
 }
 nav {
-  gap: 18px;
+  gap: 1em;
   display: grid;
   grid-template-columns: var(--columnsBodyTemplate);
 }
 nav ul {
-  gap: 18px;
+  gap: 1em;
   padding: 0;
   display: inherit;
   list-style: none;
   grid-template-columns: repeat(3, 1fr);
-  grid-column: -4 / 3 span;
+  grid-column: 3 span / -3;
 }
 nav ul li {
   display: flex;
@@ -70,12 +72,25 @@ nav ul li:hover {
 }
 main {
   display: inherit;
-  grid-row: 3/ 4 span;
-  align-items: center;
-  grid-column: 3 / 4 span;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-row: 2/ 5 span;
+  grid-column: 3 / 8 span;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: inherit;
 }
-main h1 {
+main .headline,
+main .photo {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: inherit;
+  gap: inherit;
+  justify-content: stretch;
+  grid-column: 4 span;
+  display: inherit;
+  justify-items: stretch;
+  grid-row: 2 / 4 span;
+}
+
+main section h1 {
   font-size: 3.8em;
   font-family: var(--font-headlines);
 }
@@ -107,6 +122,19 @@ main div {
   grid-column: 4 span;
 }
 
+.projects {
+  grid-template-columns: inherit;
+  display: inherit;
+  grid-column: 3 / 8 span;
+  grid-row: 5 span;
+}
+.projects .project {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(8, 1fr);
+  display: inherit;
+  gap: 1em;
+}
+
 .break {
   position: relative;
   grid-row: 7 / 5 span;
@@ -123,4 +151,45 @@ main div {
   width: var(--width-break);
   top: -30vh;
   position: absolute;
+}
+
+@media (max-width: 1523px) {
+  :root {
+    --columns: 8;
+  }
+  header {
+    background: red;
+  }
+  header nav {
+    grid-column: 3 span / -1;
+  }
+}
+@media (max-width: 1113px) {
+  :root {
+    --columns: 5;
+  }
+  header {
+    background: gray;
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    background: blueviolet;
+  }
+  header nav {
+    grid-column: 3 / -3;
+  }
+}
+
+@media (max-width: 740px) {
+  :root {
+    --columns: 3;
+  }
+  header {
+    background: yellow;
+  }
+  header nav ul {
+    grid-column: 1 / -1;
+  }
 }
