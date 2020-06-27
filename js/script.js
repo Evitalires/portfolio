@@ -6,6 +6,13 @@ let row = getComputedStyle(document.documentElement).getPropertyValue(
 ); */
 
 let values = {};
+let projects = document.getElementsByClassName("project").length;
+let elInterlude = document.getElementsByClassName("interlude").length;
+let rowsProject = projects * 5;
+document.body.style.setProperty(
+  "--rowsProject",
+  `${rowsProject + elInterlude}`
+);
 
 function changeSizeFont(val) {
   val.widthWindow = val.widthWindow / 92.83 - 1;
@@ -32,6 +39,7 @@ function setValues(val) {
   val.widthCell = val.widthWindow / val.columns;
   val.heightCell = (val.widthCell * 9) / 16;
   val.totalGutter = val.fontSize * (val.columns - 1);
+  val.rows = document.body.childElementCount;
 }
 
 function setGrid(val) {
@@ -40,15 +48,16 @@ function setGrid(val) {
 
   //widthCell
   document.body.style.setProperty("--widthCell", `${val.widthCell}px`);
+  document.body.style.setProperty("--heightCell", `${val.heightCell}px`);
 
   document.body.style.setProperty(
-    "--columnsBodyTemplate",
+    "--columnsBody",
     `${val.fontSize * 3}px repeat(${val.columns}, 1fr) ${val.fontSize * 3}px`
   );
 
   document.body.style.setProperty(
-    "grid-template-rows",
-    `90px repeat(63, ${val.heightCell}px)`
+    "--rowsBody",
+    `90px repeat(${val.rows * 6}, ${val.heightCell}px)`
   );
 }
 
