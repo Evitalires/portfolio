@@ -6,6 +6,7 @@ let row = getComputedStyle(document.documentElement).getPropertyValue(
 ); */
 
 let values = {};
+
 let projects = document.getElementsByClassName("project").length;
 let elInterlude = document.getElementsByClassName("interlude").length;
 let rowsProject = projects * 5;
@@ -13,6 +14,40 @@ document.body.style.setProperty(
   "--rowsProject",
   `${rowsProject + elInterlude}`
 );
+
+function settingCarousel() {
+  document.addEventListener("DOMContentLoaded", () => {
+    let elems = document.querySelectorAll(".carousel");
+    let instances = M.Carousel.init(elems, {
+      dist: -70,
+      fullWidth: !1,
+      shift: -100,
+      padding: 10,
+      numVisible: 7,
+      duration: 100,
+    });
+  });
+  settingSizeCarousel();
+}
+
+function settingSizeCarousel() {
+  let aboutMeFunctionsWidth = document.getElementsByClassName(
+    "aboutMeFunctions"
+  )[0].offsetWidth;
+  let aboutMeFunctionsHeight = document.getElementsByClassName(
+    "aboutMeFunctions"
+  )[0].offsetHeight;
+
+  //Because the element wil rotate 90deg i will change the value
+  document.body.style.setProperty(
+    "--carousel-height",
+    `${aboutMeFunctionsWidth}px`
+  );
+  document.body.style.setProperty(
+    "--carousel-width",
+    `${aboutMeFunctionsHeight}px`
+  );
+}
 
 function changeSizeFont(val) {
   val.widthWindow = val.widthWindow / 92.83 - 1;
@@ -62,7 +97,9 @@ function setGrid(val) {
 }
 
 setGrid(values);
+settingCarousel();
 
 window.addEventListener("resize", () => {
   setGrid(values);
+  settingSizeCarousel();
 });
