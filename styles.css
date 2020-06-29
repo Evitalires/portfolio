@@ -1,11 +1,12 @@
-/* Setting class container*/
 :root {
   --width-break: 100vw;
   --height-break: calc((var(--width-break) * 9) / 16);
   --color-light: #f9ebeb;
   --color-dark: #1b1f3b;
   --color-main: #1f2a7a;
+  --color-darkBg: #17263f;
   --color-lightAlt: #d7daf4;
+  --color-unactive: rgba(27, 31, 59, 0.5);
   --unactive: #1b1f3b;
   --margin: 3em;
   --font-call: "ABeeZee", sans-serif;
@@ -225,6 +226,7 @@ main div {
   width: 100%;
 }
 .projects.container .item-4 .aboutProjectDescription {
+  font-family: var(--font-text);
   grid-column: 3 span;
   font-size: 1.25em;
   grid-row: 4 span;
@@ -269,16 +271,13 @@ main div {
   grid-column: 3 span;
   position: relative;
 }
-.aboutMe .aboutMeFunctions .carousel-item {
-  /* border: 1px solid red; */
-}
 
-.carousel {
+.aboutMe .aboutMeFunctions .carousel {
   overflow: hidden;
   position: relative;
   width: var(--carousel-width);
   height: var(--carousel-height);
-  perspective: 500px;
+  perspective: 93px;
   transform-style: preserve-3d;
   transform-origin: 0% 50%;
   transform: rotate(90deg);
@@ -288,14 +287,24 @@ main div {
 }
 .carousel-item {
   visibility: hidden;
+  opacity: 1 !important;
   background: var(--color-light);
   width: var(--carousel-item-width);
   height: var(--carousel-item-height);
   position: absolute;
-  top: 0;
+  top: -3%;
   left: 0;
   width: 36.25% !important;
-  height: 70% !important;
+  height: 80% !important;
+}
+.carousel-item.active p {
+  color: var(--color-dark);
+}
+.carousel-item.card {
+  box-shadow: 8px 0px 8px 2px rgba(27, 31, 59, 0.2);
+}
+.carousel-item.card:hover {
+  box-shadow: 12px 0px 8px 4px rgba(27, 31, 59, 0.2);
 }
 .carousel-item p {
   transform: rotate(-90deg);
@@ -303,15 +312,121 @@ main div {
   height: 40%;
   position: absolute;
   top: 30%;
-  left: -1%;
+  left: 0;
   text-align: center;
   font-size: 1.5em;
+  transition: 0.25s;
   font-family: var(--font-title);
+  color: var(--color-unactive);
+  display: grid;
+  align-content: center;
+  cursor: default;
+}
+.container.contact {
+  grid-row: 6 span;
+  grid-template-rows: repeat(6, 1fr);
+}
+.contact form {
+  grid-template-rows: repeat(6, 1fr);
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+.contact form h3 {
+  font-size: 2em;
+  align-self: center;
+  text-align: center;
+  font-family: var(--font-title);
+  grid-column: 2 / 6 span;
+}
+.contact form div {
+  height: 60%;
+  align-self: center;
+}
+.contact form .name {
+  border-right: 4px solid var(--color-dark);
+  grid-column: 2 / 3 span;
+}
+.contact form .email {
+  border-left: 4px solid var(--color-dark);
+  grid-column: 3 span;
+  display: grid;
+  justify-items: end;
+}
+.contact form .email input {
+  justify-self: right;
+}
+.contact form input {
+  height: 50%;
+  width: 80%;
+}
+.contact form input,
+.contact form textarea {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  font-family: var(--font-text);
+  background-color: var(--color-light);
+  border: 2px solid var(--color-dark);
+}
+
+.contact form .description {
+  grid-column: 2 / 6 span;
+  grid-row: 3 span;
+}
+.contact form .btn-call {
+  height: 80%;
+  padding: 0% 10%;
+  grid-column: -5 / 3 span;
+}
+
+footer.container {
+  grid-column: 1 / -1;
+  /* grid-template-rows: inherit; */
+  grid-row: 5 span;
+  gap: inherit;
+  position: relative;
+  grid-template-columns: inherit;
+  grid-template-rows: repeat(5, var(--heightCell));
+  background-color: var(--color-darkBg);
+}
+footer.container::before {
+  content: " ";
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  position: absolute;
+  top: -85%;
+  background-color: var(--color-darkBg);
+}
+footer.container article {
+  grid-column: 4 / 3 span;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+footer.container article a,
+footer.container article p {
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family: var(--font-title);
+  color: var(--color-light);
+}
+footer.container .twitter {
+  grid-row: 2 / 1 span;
+}
+footer.container .github {
+  grid-row: 3 / 1 span;
+}
+footer.container .linkedin {
+  grid-row: 4 / 1 span;
+}
+footer.container .trademark {
+  grid-row: 2 / 1 span;
+  grid-column: 7 / 3 span;
 }
 .break {
   position: relative;
   grid-row: 7 span;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   grid-column: 1 / -1;
   /* height: calc(var(--height-break) / 2); */
 }
@@ -320,8 +435,9 @@ main div {
 }
 
 .break img {
-  z-index: -100;
+  z-index: -5;
   width: var(--width-break);
+  right: 0;
   top: -40vh;
   position: absolute;
 }
@@ -330,19 +446,96 @@ main div {
   :root {
     --columns: 8;
   }
-  header {
-    background: red;
+  .container {
+    grid-column: 2 / 8 span;
+  }
+  body {
+    background: lightcoral;
   }
   header nav {
     grid-column: 3 span / -1;
+  }
+  .projects.container {
+    grid-column: 2 / 8 span;
+  }
+  .aboutMe .carousel {
+    top: -54%;
+    left: 40%;
+  }
+  .break img {
+    top: -20vh;
+  }
+  footer.container article {
+    grid-column: 3 / 3 span;
+  }
+  footer.container .trademark {
+    grid-column: 6 / 3 span;
   }
 }
 @media (max-width: 1113px) {
   :root {
     --columns: 5;
   }
-  header {
+  body {
     background: gray;
+  }
+  header nav ul {
+    grid-column: 2 / 3 span;
+  }
+  .container {
+    grid-column: 2 / 5 span;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .item-4 {
+    grid-column: 5 span;
+    grid-template-columns: inherit;
+  }
+  main section.photo {
+    display: none;
+  }
+  main .headline h1,
+  main .headline p {
+    text-align: center;
+    grid-column: 5 span;
+  }
+  main .headline button {
+    grid-column: 2 / 3 span;
+  }
+  .projects.container {
+    grid-column: 2 / 5 span;
+  }
+  .projects .project.container {
+    grid-row: 1 / -1;
+    grid-row: 10 span;
+  }
+  .project.container .item-4 {
+    grid-column: 1 / -1;
+    grid-row: 1 / 5 span;
+  }
+  .project.container .item-4 video {
+    grid-column: 5 span;
+    grid-row: 5 span;
+  }
+  .project.container .aboutProject {
+    grid-column: 1 / -1;
+    grid-row: 6 / 5 span;
+  }
+  .projects.container .project.container .aboutProjectDescription {
+    grid-row: 4 span;
+    grid-column: 4 span;
+    width: 70%;
+    justify-self: center;
+  }
+  .projects.container .project.container .projectActions {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .projects.container .project.container .projectActions .icon {
+    grid-column: 2 span;
+  }
+  .projects.container .project.container .projectActions .btn-call {
+    grid-column: 3 / 2 span;
+    width: 80%;
   }
 }
 

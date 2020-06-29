@@ -8,23 +8,16 @@ let row = getComputedStyle(document.documentElement).getPropertyValue(
 let values = {};
 
 let projects = document.getElementsByClassName("project").length;
-let elInterlude = document.getElementsByClassName("interlude").length;
-let rowsProject = projects * 5;
-document.body.style.setProperty(
-  "--rowsProject",
-  `${rowsProject + elInterlude}`
-);
 
 function settingCarousel() {
   document.addEventListener("DOMContentLoaded", () => {
     let elems = document.querySelectorAll(".carousel");
     let instances = M.Carousel.init(elems, {
-      dist: -70,
+      dist: -35,
       fullWidth: !1,
-      shift: -100,
+      shift: -20,
       padding: 10,
-      numVisible: 7,
-      duration: 100,
+      duration: 25,
     });
   });
   settingSizeCarousel();
@@ -74,7 +67,53 @@ function setValues(val) {
   val.widthCell = val.widthWindow / val.columns;
   val.heightCell = (val.widthCell * 9) / 16;
   val.totalGutter = val.fontSize * (val.columns - 1);
-  val.rows = document.body.childElementCount;
+  setRows(val);
+}
+
+function setRows(val) {
+  //Calculating the total of rows necesary for the page
+  val.rowsElements = {
+    count: document.body.childElementCount,
+    header: 1,
+    project: 1,
+    script: document.getElementsByTagName("script").length,
+    break: document.getElementsByClassName("break").length,
+  };
+
+  val.rowsElements.total =
+    val.rowsElements.count -
+    val.rowsElements.header -
+    val.rowsElements.break -
+    val.rowsElements.script -
+    val.rowsElements.project;
+
+  val.rowsForSection = 5;
+  val.rowsTotal = {
+    header: 1,
+    partial: val.rowsElements.total * val.rowsForSection,
+    breaks: document.getElementsByClassName("break").length * 7,
+    projects: document.getElementsByClassName("project").length * 6,
+  };
+
+  if (window.innerWidth <= 1113) {
+    let contact = 5;
+    val.rowsTotal = {
+      header: 1 + contact,
+      partial: val.rowsElements.total * val.rowsForSection,
+      breaks: document.getElementsByClassName("break").length * 7,
+      projects: document.getElementsByClassName("project").length * 6 * 2,
+    };
+  }
+
+  val.rows =
+    val.rowsTotal.header +
+    val.rowsTotal.partial +
+    val.rowsTotal.breaks +
+    val.rowsTotal.projects;
+
+  let elInterlude = document.getElementsByClassName("interlude").length;
+
+  document.body.style.setProperty("--rowsProject", `${val.rowsTotal.projects}`);
 }
 
 function setGrid(val) {
@@ -92,7 +131,7 @@ function setGrid(val) {
 
   document.body.style.setProperty(
     "--rowsBody",
-    `90px repeat(${val.rows * 6}, ${val.heightCell}px)`
+    `90px repeat(${val.rows}, ${val.heightCell}px)`
   );
 }
 
