@@ -428,7 +428,6 @@ footer.container .trademark {
   grid-row: 7 span;
   /* border: 1px solid red; */
   grid-column: 1 / -1;
-  /* height: calc(var(--height-break) / 2); */
 }
 .break:hover {
   /* At the moment of Hover change the value of the box */
@@ -504,21 +503,27 @@ footer.container .trademark {
   .projects.container {
     grid-column: 2 / 5 span;
   }
-  .projects .project.container {
+  .projects.container .project.container {
     grid-row: 1 / -1;
     grid-row: 10 span;
+    grid-template-rows: repeat(calc(var(--rowsProject) -1), 1fr);
   }
+
   .project.container .item-4 {
     grid-column: 1 / -1;
     grid-row: 1 / 5 span;
   }
+  .project.container .item-4.video {
+    height: 90%;
+  }
   .project.container .item-4 video {
+    height: 90%;
     grid-column: 5 span;
     grid-row: 5 span;
   }
   .project.container .aboutProject {
     grid-column: 1 / -1;
-    grid-row: 6 / 5 span;
+    grid-row: 6 / 2 span;
   }
   .projects.container .project.container .aboutProjectDescription {
     grid-row: 4 span;
@@ -537,10 +542,72 @@ footer.container .trademark {
     grid-column: 3 / 2 span;
     width: 80%;
   }
+  .projects.container .project.reverse.container .projectActions .icon {
+    grid-column: -1 / -3;
+  }
+  .projects.container .project.reverse.container .projectActions .btn-call {
+    grid-column: 2 / 2 span;
+  }
+
+  .aboutMe.container {
+    grid-row: 10 span;
+    grid-template-rows: repeat(10, 1fr);
+  }
+  .aboutMe.container .aboutMeDescription {
+    grid-row: 1 / 5 span;
+  }
+  .aboutMe.container .aboutMeFunctions {
+    grid-row: 6 / 5 span;
+    grid-column: 2 / 3 span;
+  }
+  .aboutMe.container .aboutMeFunctions div {
+    width: var(--carousel-width);
+  }
+  .contact form h3 {
+    grid-column: 1 / 5 span;
+  }
+  .contact form .name {
+    grid-column: 1 / 2 span;
+  }
+  .contact form .email {
+    grid-column: -3 / -1;
+  }
+  .contact form .description {
+    grid-column: 1 / 5 span;
+  }
+  .break {
+    border: 1px solid red;
+    grid-row: 4 span;
+  }
+  .break.four img {
+    top: 8vh;
+    z-index: 1;
+  }
+  footer.container {
+  }
+  footer.container:before {
+    display: none;
+  }
+  footer.container article {
+    grid-column: 1 / 3 span;
+  }
+  footer.container .twitter {
+    grid-row: 3 / 1 span;
+  }
+  footer.container .github {
+    grid-row: 4 / 1 span;
+  }
+  footer.container .linkedin {
+    grid-row: 5 / 1 span;
+  }
+  footer.container .trademark {
+    grid-row: 3 / 1 span;
+    grid-column: 5 / 3 span;
+  }
 }
 
 @media (max-width: 900px) {
-  header {
+  body {
     background: blueviolet;
   }
   header nav {
@@ -552,10 +619,137 @@ footer.container .trademark {
   :root {
     --columns: 3;
   }
-  header {
+  body {
     background: yellow;
   }
   header nav ul {
     grid-column: 1 / -1;
+  }
+  .container {
+    grid-column: 2 / 3 span;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .headline,
+  main .headline h1,
+  main .headline p,
+  main .headline button {
+    grid-column: 3 span;
+  }
+
+  .projects.container {
+    grid-column: 2 / 3 span;
+    border: 1px solid white;
+  }
+  .projects.container .project.container {
+    grid-row: 1 / -1;
+    grid-row: 10 span;
+    grid-template-rows: repeat(calc(var(--rowsProject) -1), 1fr);
+  }
+
+  .project.container .item-4 {
+    grid-column: 1 / -1;
+    grid-row: 1 / 4 span;
+  }
+  .project.container .item-4.video {
+    grid-template-rows: 1fr;
+    position: relative;
+  }
+  .project.container .item-4.video {
+    grid-template-rows: 1fr;
+    position: relative;
+  }
+  .project.container .item-4 video {
+    height: 90%;
+    position: absolute;
+    grid-column: 3 span;
+    grid-row: 4 span;
+    background-color: blue;
+  }
+  .project.container .aboutProject {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-row: 5 / 2 span;
+  }
+  .projects.container .project.container .aboutProjectDescription {
+    width: 85%;
+    height: 80%;
+    grid-column: 2 span;
+    align-self: center;
+  }
+  .projects.container .project.container .projectActions {
+    align-self: baseline;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .projects.container .project.container .projectActions .icon {
+    grid-column: 1 span;
+  }
+  .projects.container .project.container .projectActions .btn-call {
+    grid-column: 2 / 2 span;
+    width: 60%;
+  }
+  .projects.container .project.container.reverse .projectActions .icon {
+    grid-column: -2 / 2 span;
+  }
+  .projects.container .project.container.reverse .projectActions .btn-call {
+    grid-column: 1 / 2 span;
+  }
+
+  .item-5 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 3 span;
+  }
+  .aboutMeDescription p {
+    grid-column: 3 span;
+  }
+  .aboutMe.container .aboutMeFunctions {
+    grid-column: 1 / 3 span;
+  }
+
+  .contact form h3 {
+    grid-column: 1 / 3 span;
+  }
+  .contact.contact form div {
+    border: none;
+    display: grid;
+    grid-column: 1 / 3 span;
+    justify-items: center;
+  }
+  .contact.contact form input {
+    width: calc(100% - 2em);
+  }
+  .contact form div .name {
+    border-right: none;
+    grid-column: 1 / 3 span;
+  }
+  .contact form div .email {
+    grid-column: 1 / 3 span;
+    border: none;
+  }
+  .contact form .description {
+    grid-column: 1 /3 span;
+  }
+  .contact form .btn-call {
+    grid-column: 1 /3 span;
+    padding: 5% 10%;
+    display: grid;
+    align-content: center;
+  }
+  .break {
+    border: 1px solid red;
+    grid-row: 2 span;
+  }
+
+  footer.container {
+    grid-template-columns: var(--margin) repeat(3, 1fr) var(--margin);
+    grid-column: 1 / -1;
+  }
+  footer.container .article {
+    grid-column: 3 / 1 span;
+  }
+  footer.container .trademark {
+    grid-column: -3 / 1 span;
+  }
+  .break.four img {
+    top: 1vh;
   }
 }

@@ -27,11 +27,12 @@ function settingSizeCarousel() {
   let aboutMeFunctionsWidth = document.getElementsByClassName(
     "aboutMeFunctions"
   )[0].offsetWidth;
+
   let aboutMeFunctionsHeight = document.getElementsByClassName(
     "aboutMeFunctions"
   )[0].offsetHeight;
 
-  //Because the element wil rotate 90deg i will change the value
+  //Because the element wil rotate 90deg I will change the value
   document.body.style.setProperty(
     "--carousel-height",
     `${aboutMeFunctionsWidth}px`
@@ -100,9 +101,15 @@ function setRows(val) {
     val.rowsTotal = {
       header: 1 + contact,
       partial: val.rowsElements.total * val.rowsForSection,
-      breaks: document.getElementsByClassName("break").length * 7,
+      breaks: document.getElementsByClassName("break").length * 4,
       projects: document.getElementsByClassName("project").length * 6 * 2,
     };
+  }
+  if (window.innerWidth <= 740) {
+    console.log(document.getElementsByClassName("break").length);
+    val.rowsTotal.breaks = document.getElementsByClassName("break").length * 3;
+    val.rowsTotal.projects =
+      document.getElementsByClassName("project").length * 5 * 2;
   }
 
   val.rows =
@@ -112,6 +119,7 @@ function setRows(val) {
     val.rowsTotal.projects;
 
   let elInterlude = document.getElementsByClassName("interlude").length;
+  console.log(val);
 
   document.body.style.setProperty("--rowsProject", `${val.rowsTotal.projects}`);
 }
