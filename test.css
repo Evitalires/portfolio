@@ -1,0 +1,28 @@
+:root {
+  --columns: 10;
+}
+body {
+   grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+}
+@media (max-width: 1523px) {
+  :root {
+    --columns: 8;
+  }
+}
+@media (max-width: 1113px) {
+  :root {
+    --columns: 5;
+  }
+}
+
+@media (max-width: 900px) {
+}
+@media (max-width: 740px) {
+  :root {
+    --columns: 3;
+  }
+}
