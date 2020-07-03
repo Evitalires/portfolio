@@ -1,16 +1,11 @@
-/* let columns = getComputedStyle(document.documentElement).getPropertyValue(
-  "--columnsBody"
-);
-let row = getComputedStyle(document.documentElement).getPropertyValue(
-  "--rowBody"
-); */
-
 let values = {};
 
 let projects = document.getElementsByClassName("project").length;
 
 function settingCarousel() {
-  document.addEventListener("DOMContentLoaded", () => {
+  console.log("update");
+
+  document.addEventListener("DOMContentLoaded", function () {
     let elems = document.querySelectorAll(".carousel");
     let instances = M.Carousel.init(elems, {
       dist: -35,
@@ -20,16 +15,17 @@ function settingCarousel() {
       duration: 25,
     });
   });
+
   settingSizeCarousel();
 }
 
 function settingSizeCarousel() {
   let aboutMeFunctionsWidth = document.getElementsByClassName(
-    "aboutMeFunctions"
+    "containerCarousel"
   )[0].offsetWidth;
 
   let aboutMeFunctionsHeight = document.getElementsByClassName(
-    "aboutMeFunctions"
+    "containerCarousel"
   )[0].offsetHeight;
 
   //Because the element wil rotate 90deg I will change the value
@@ -43,7 +39,19 @@ function settingSizeCarousel() {
   );
 }
 
-function changeSizeFont(val) {
+function resetCarousel() {
+  M.Carousel.init(document.querySelectorAll(".carousel"), {
+    dist: -35,
+    fullWidth: !1,
+    shift: -20,
+    padding: 10,
+    duration: 25,
+  });
+
+  settingSizeCarousel();
+}
+
+/* function changeSizeFont(val) {
   val.widthWindow = val.widthWindow / 92.83 - 1;
   if (val.columns == 10) {
     val.widthWindow = val.widthWindow > 18 ? val.widthWindow : 18;
@@ -143,10 +151,10 @@ function setGrid(val) {
   );
 }
 
-setGrid(values);
+setGrid(values); */
 settingCarousel();
 
 window.addEventListener("resize", () => {
-  setGrid(values);
-  settingSizeCarousel();
+  /* setGrid(values); */
+  resetCarousel();
 });

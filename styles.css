@@ -39,6 +39,73 @@
   color: var(--color-dark);
 }
 
+.icon {
+  background: var(--color-main);
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  display: block;
+}
+.btn {
+  border: none;
+  width: 100%;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  font-size: 1.5em;
+  transition: 0.5s;
+  border-radius: 2.7em;
+  outline: transparent;
+  font-family: var(--font-title);
+  background-color: var(--color-light);
+}
+.btn:hover {
+  box-shadow: var(--shadowHover);
+}
+.btn-call {
+  height: 70px;
+  font-size: 2em;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 0.3em;
+  padding: 0.5em 2em;
+  text-align: center;
+  align-self: center;
+  outline: transparent;
+  color: var(--color-light);
+  height: var(--heightCell);
+  font-family: var(--font-call);
+  border: 2px solid var(--color-lightAlt);
+  background-color: var(--color-main);
+  box-shadow: var(--shadow);
+}
+.btn-call:hover {
+  transition: 0.3s;
+  box-shadow: var(--shadowHover);
+}
+
+.card {
+  padding: 2em;
+  transition: 0.5s;
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  box-shadow: var(--shadowHover);
+}
+
+.break {
+  border: 1px solid green;
+  position: relative;
+  height: calc(var(--heightCell) * 7);
+}
+
+.break img {
+  width: 105vw;
+  z-index: -5 /* -5 */;
+  right: calc(var(--marginBody) * (-2));
+  bottom: -100px;
+  position: absolute;
+}
+
 body {
   gap: 1em;
   margin: 0px;
@@ -147,12 +214,14 @@ main {
 .projects {
   background-color: greenyellow;
 }
-
+.projects .project.reverse {
+  direction: rtl;
+}
 .projects .project .video {
   height: 600px;
 }
 .projects .project .video video {
-  background: red;
+  background: magenta;
   height: 75%;
   width: 100%;
 }
@@ -180,6 +249,7 @@ main {
 }
 
 .projects .project .aboutProject .projectActions {
+  grid-template-columns: inherit;
   grid-column: 4 span;
   grid-row: 1 span;
   gap: inherit;
@@ -195,76 +265,108 @@ main {
   grid-column: 1 / 1 span;
 }
 .projects .project .aboutProject .projectActions .btn-call {
-  grid-column: 2 / 3 span;
+  white-space: nowrap;
+  grid-column: 2 / 2 span;
   height: 50px;
   display: grid;
   align-content: center;
 }
-.icon {
-  background: var(--color-main);
-  border-radius: 50%;
-  height: 5em;
-  width: 5em;
-  display: block;
-}
-.btn {
-  border: none;
-  width: 100%;
-  margin: 0.5em 0;
-  padding: 0.5em;
-  font-size: 1.5em;
-  transition: 0.5s;
-  border-radius: 2.7em;
-  outline: transparent;
-  font-family: var(--font-title);
-  background-color: var(--color-light);
-}
-.btn:hover {
-  box-shadow: var(--shadowHover);
-}
-.btn-call {
-  height: 70px;
-  font-size: 2em;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 0.3em;
-  padding: 0.5em 2em;
-  text-align: center;
-  align-self: center;
-  outline: transparent;
-  color: var(--color-light);
-  height: var(--heightCell);
-  font-family: var(--font-call);
-  border: 2px solid var(--color-lightAlt);
-  background-color: var(--color-main);
-  box-shadow: var(--shadow);
-}
-.btn-call:hover {
-  transition: 0.3s;
-  box-shadow: var(--shadowHover);
-}
-
-.card {
-  padding: 2em;
-  transition: 0.5s;
-  box-shadow: var(--shadow);
-}
-.card:hover {
-  box-shadow: var(--shadowHover);
-}
-
-.break {
+.aboutMe {
+  background: azure;
   border: 1px solid green;
+}
+.aboutMe .aboutMeDescription {
+  height: 600px;
+  padding: 5em;
+  grid-column: 5 span;
+  border: 1px solid red;
+  text-align: center;
+  display: grid;
+  align-content: center;
+}
+.aboutMe .aboutMeDescription p {
+  font-size: 2em;
+  line-height: 1.7em;
+  /* padding: 3em; */
+}
+.aboutMe .aboutMeFunctions {
+  display: grid;
+  align-items: center;
+  justify-items: center;
   position: relative;
-  height: calc(var(--heightCell) * 7);
+  grid-column: 3 span;
+  border: 1px solid red;
+  height: calc(600px + (5em * 2));
 }
 
-.break img {
-  width: 105vw;
-  z-index: -5 /* -5 */;
-  right: calc(var(--marginBody) * (-2));
-  top: -30vh;
+.aboutMe .aboutMeFunctions .containerCarousel {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  background-color: lightseagreen;
+  border: 1px solid lightseagreen;
+}
+/* .aboutMe .aboutMeFunctions .containerCarousel .child {
+  width: 400px;
+  height: 300px;
   position: absolute;
+  left: 50%;
+  margin-left: -30%;
+  background-color: linen;
+  transform: rotate(90deg);
+} */
+.aboutMe .aboutMeFunctions .containerCarousel .carousel {
+  overflow: hidden;
+  position: relative;
+  width: var(--carousel-width) /* 100% */;
+  height: var(--carousel-height) /* 90% */;
+  perspective: 93px;
+  transform-style: preserve-3d;
+  /* transform-origin: 50% 50%; */
+  transform: rotate(90deg);
+  position: absolute;
+  left: 50%;
+  margin-left: calc(var(--carousel-width) / -2) /* -50% */;
+  top: 50%;
+  margin-top: calc(var(--carousel-height) / -2) /* -45% */;
+  border: 1px solid blue;
+}
+.carousel-item {
+  visibility: hidden;
+  opacity: 1 !important;
+  background: var(--color-light);
+  width: var(--carousel-item-width);
+  height: var(--carousel-item-height);
+  position: absolute;
+  top: -3%;
+  left: 0;
+  width: 36.25% !important;
+  height: 80% !important;
+}
+.carousel-item.active p {
+  color: var(--color-dark);
+}
+.carousel-item.card {
+  box-shadow: 8px 0px 8px 2px rgba(27, 31, 59, 0.2);
+}
+.carousel-item.card:hover {
+  box-shadow: 12px 0px 8px 4px rgba(27, 31, 59, 0.2);
+}
+.carousel-item p {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  text-align: center;
+  font-size: 1.5em;
+  transition: 0.25s;
+  font-family: var(--font-title);
+  color: var(--color-unactive);
+  display: grid;
+  align-content: center;
+  cursor: default;
 }
 footer {
   grid-area: footer;
@@ -286,11 +388,18 @@ footer {
   .hero article.headline button {
     margin-left: 1em;
   }
+  .projects .project .aboutProject .projectActions .btn-call {
+    padding: 0.5em 1em;
+  }
+  .aboutMe .aboutMeDescription,
+  .aboutMe .aboutMeFunctions {
+    grid-column: 1 / -1;
+  }
   .break img {
     top: -20vh;
   }
 }
-@media (max-width: 1113px) {
+@media (max-width: 1300px) {
   :root {
     --columns: 5;
   }
@@ -449,56 +558,7 @@ footer {
   position: relative;
 }
 
-.aboutMe .aboutMeFunctions .carousel {
-  overflow: hidden;
-  position: relative;
-  width: var(--carousel-width);
-  height: var(--carousel-height);
-  perspective: 93px;
-  transform-style: preserve-3d;
-  transform-origin: 0% 50%;
-  transform: rotate(90deg);
-  position: absolute;
-  top: -41%;
-  left: 50%;
-}
-.carousel-item {
-  visibility: hidden;
-  opacity: 1 !important;
-  background: var(--color-light);
-  width: var(--carousel-item-width);
-  height: var(--carousel-item-height);
-  position: absolute;
-  top: -3%;
-  left: 0;
-  width: 36.25% !important;
-  height: 80% !important;
-}
-.carousel-item.active p {
-  color: var(--color-dark);
-}
-.carousel-item.card {
-  box-shadow: 8px 0px 8px 2px rgba(27, 31, 59, 0.2);
-}
-.carousel-item.card:hover {
-  box-shadow: 12px 0px 8px 4px rgba(27, 31, 59, 0.2);
-}
-.carousel-item p {
-  transform: rotate(-90deg);
-  width: 100%;
-  height: 40%;
-  position: absolute;
-  top: 30%;
-  left: 0;
-  text-align: center;
-  font-size: 1.5em;
-  transition: 0.25s;
-  font-family: var(--font-title);
-  color: var(--color-unactive);
-  display: grid;
-  align-content: center;
-  cursor: default;
-}
+
 .container.contact {
   grid-row: 6 span;
   grid-template-rows: repeat(6, 1fr);
