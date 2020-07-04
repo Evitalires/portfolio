@@ -462,7 +462,7 @@ footer .container .trademark {
   grid-column: 5 / 3 span;
 }
 
-@media (max-width: 1523px) {
+@media only screen and (max-width: 1523px) {
   :root {
   }
   body {
@@ -490,12 +490,25 @@ footer .container .trademark {
     font-size: 1.9em;
     margin: 0;
   }
+  .projects .project .aboutProject .aboutProjectOptions .btn {
+    font-size: 1em;
+  }
+  .projects .project .aboutProject .aboutProjectDescription {
+    padding: 1em;
+  }
+  .projects .project .aboutProject .aboutProjectDescription p {
+    font-size: 1.4em;
+  }
+
   .projects .project .aboutProject .projectActions .btn-call {
-    padding: 0.5em 1em;
+    padding: 0.5em;
   }
   .aboutMe .aboutMeDescription,
   .aboutMe .aboutMeFunctions {
     grid-column: 1 / -1;
+  }
+  .aboutMe .aboutMeFunctions .containerCarousel {
+    width: 80%;
   }
   .break {
     height: calc(var(--heightCell) * 6);
@@ -504,9 +517,12 @@ footer .container .trademark {
     top: -20vh;
   }
 }
-@media (max-width: 1300px) {
+@media only screen and (max-width: 1300px) {
   :root {
     --columns: 5;
+  }
+  .btn-call {
+    height: 90px;
   }
   body {
     background: blueviolet;
@@ -526,9 +542,28 @@ footer .container .trademark {
   .hero article.headline h1 {
     font-size: 4em;
   }
+  .hero article.headline p {
+    font-size: 1.8em;
+  }
   .hero article.headline p span {
     margin: 1em 0.5em;
     text-align: center;
+  }
+  .projects .project .aboutProject .aboutProjectDescription p {
+    font-size: 1.7em;
+  }
+  .projects .project .aboutProject .aboutProjectOptions {
+    align-content: space-between;
+  }
+  .projects .project .aboutProject .aboutProjectOptions .btn {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+  }
+
+  .aboutMe .aboutMeDescription p {
+    line-height: 1.6em;
+    font-size: 1.6em;
   }
 
   .contact form {
@@ -541,6 +576,9 @@ footer .container .trademark {
   .contact form div input {
     width: calc(100% - 2em);
   }
+  .contact form h3 {
+    font-size: 2em;
+  }
   .contact form h3,
   .contact form .name,
   .contact form .email,
@@ -550,9 +588,16 @@ footer .container .trademark {
   .contact form .btn-call {
     grid-column: 2 / 3 span;
   }
+  .contact form .btn-call {
+    height: 90px;
+  }
 
   footer .container {
     grid-template-rows: repeat(3, 150px);
+  }
+  footer .container article p,
+  footer .container article a {
+    font-size: 1.6em;
   }
   footer .container article {
     grid-column: 2 / 2 span;
@@ -568,12 +613,30 @@ footer .container .trademark {
     top: -20vh;
   }
 }
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   :root {
     --columns: 3;
+    --marginBody: 4%;
   }
   body {
     background: aqua;
+  }
+  .projects .project .video {
+    height: 500px;
+  }
+  .projects .project .aboutProject .aboutProjectOptions .btn {
+    font-size: 1.2em;
+  }
+  .projects .project .aboutProject .aboutProjectDescription p {
+    font-size: 1.5em;
+  }
+
+  .aboutMe .aboutMeDescription {
+    padding: 2em;
+  }
+
+  .aboutMe .aboutMeDescription p {
+    font-size: 1.4em;
   }
   .contact form h3 {
     font-size: 2.5em;
@@ -598,21 +661,95 @@ footer .container .trademark {
     top: -15vh;
   }
 }
-@media (max-width: 740px) {
+@media only screen and (max-width: 740px) {
+  :root {
+    font-size: 16px;
+    --marginBody: 1%;
+    --heightCell: 70px;
+  }
   body {
     background: olive;
+  }
+  nav ul {
+    gap: 0.5em;
+  }
+  nav ul li {
+    width: 100%;
+  }
+  .hero article.headline .btn-call {
+    width: 100%;
   }
   .hero article.headline h1 {
     font-size: 3.8em;
   }
-  .break img {
-    top: -10vh;
+  .projects .project .aboutProject {
+    height: 800px;
   }
+  .projects .project .video {
+    height: 380px;
+  }
+  .projects .project .aboutProject {
+    gap: 1em;
+    grid-template-rows: repeat(6, 120px);
+  }
+  .projects .project .aboutProject .aboutProjectOptions {
+    grid-column: 1 / 4 span;
+    grid-row: 2 span;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects .project .aboutProject .aboutProjectOptions .btn:last-child {
+    grid-column: 2 span;
+    justify-self: center;
+    display: grid;
+    width: 187px;
+    align-content: center;
+  }
+  .projects .project .aboutProject .projectActions .btn-call {
+    grid-column: 2 / 3 span;
+  }
+
+  .projects .project .aboutProject .aboutProjectDescription {
+    grid-column: 4 span;
+    grid-row: 3 span;
+  }
+  .projects .project .aboutProject .aboutProjectDescription p {
+    text-align: center;
+    font-size: 1.7em;
+  }
+
   .aboutMe .aboutMeDescription p {
     font-size: 1.6em;
   }
+  .aboutMe .aboutMeDescription p {
+    font-size: 1.4em;
+  }
+  .aboutMe .aboutMeFunctions .containerCarousel {
+    width: 100%;
+  }
+  .carousel-item {
+    top: 0;
+    left: 0;
+    width: 30.25% !important;
+    height: 70% !important;
+  }
+  .carousel-item p {
+    font-size: 1.3em;
+  }
 
+  .contact form .btn-call {
+    width: 100%;
+  }
+  .contact form .name,
+  .contact form .email {
+    border-left: none;
+    border-right: none;
+  }
   .break {
     height: calc(var(--heightCell) * 3);
+  }
+  .break img {
+    top: -10vh;
   }
 }
