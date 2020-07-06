@@ -13,7 +13,7 @@
   --font-call: "ABeeZee", sans-serif;
   --font-text: "Montserrat", sans-serif;
   --font-title: "Muli", sans-serif;
-  --font-headlines: "Righteous", cursive;
+  --font-headlines: "Righteous", sans-serif;
   --font-append: "Roboto", sans-serif;
   --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --shadowHover: 0px 14px 14px rgba(0, 0, 0, 0.25);
@@ -49,13 +49,13 @@
   box-shadow: var(--shadowHover);
 }
 .btn-call {
-  height: 70px;
+  height: 120px;
   font-size: 2em;
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
   border-radius: 0.3em;
-  padding: 0.5em 1em;
+  padding: 0;
   text-align: center;
   align-self: center;
   outline: transparent;
@@ -90,7 +90,7 @@
 }
 
 .break {
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   position: relative;
   margin-top: 5em;
   /* background-color: red; */
@@ -98,13 +98,39 @@
 }
 
 .break img {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   top: -60vh;
   z-index: -5 /* -5 */;
   width: 105vw;
   left: calc(var(--marginBody) * (-2));
   position: absolute;
-  height: 150% /* 125% > 150% */;
+  height: 170%;
+  /*height: 150%  125% > 150% */
+  /* animation-name: deep;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; */
+}
+@keyframes deep {
+  0% {
+    height: 1262px;
+    /* height: 150%;
+    transform: translateY(10px) scaleY(1);
+    top: -60vh;
+     */
+  }
+  30% {
+    /* height: 170%; */
+  }
+  70% {
+    /* height: 180%; */
+  }
+  100% {
+    height: 1600px;
+    /* height: 200%;
+    top: -70vh;
+    transform: translateY(50px) scaleY(1.25); */
+  }
 }
 
 body {
@@ -113,6 +139,7 @@ body {
   display: grid;
   height: 100%;
   overflow-x: hidden;
+  box-sizing: border-box;
   background-color: var(--color-light);
   grid-template-columns: var(--marginBody) auto var(--marginBody);
   grid-template-rows: 100px auto 600px;
@@ -120,7 +147,7 @@ body {
     "header header header"
     ". main ."
     "footer footer footer";
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 p {
   font-size: 1.8em;
@@ -130,7 +157,7 @@ header {
   gap: 1em;
   display: grid;
   grid-area: header;
-  background: blue;
+  /* background: blue; */
   grid-template-columns: var(--bodyColumns);
   position: fixed;
   left: 0;
@@ -138,10 +165,12 @@ header {
   right: 0;
   z-index: 5;
   height: 100px;
+  background: var(--color-light);
+  box-shadow: var(--shadow);
 }
 
 nav {
-  background: orange;
+  /* background: orange; */
   display: grid;
   grid-column: 2 / var(--columns) span;
 }
@@ -149,7 +178,7 @@ nav {
 nav ul {
   padding: 0;
   list-style: none;
-  background-color: green;
+  /* background-color: green; */
   grid-column: 6 / 3 span;
   gap: 1em;
   display: inherit;
@@ -159,8 +188,9 @@ nav ul {
 
 nav ul li {
   width: 80%;
-  background: red;
+  /* background: red; */
   display: grid;
+  transition: 0.5s;
   justify-self: center;
   align-items: center;
   justify-content: center;
@@ -172,24 +202,28 @@ nav ul li a {
   text-decoration: none;
   font-family: var(--font-title);
 }
-
-nav ul li:hover {
-  transition: 0.2s;
+nav ul li.clicked {
   border-bottom: 4px solid var(--color-dark);
+}
+nav ul li.clicked:hover {
+  border-bottom: 4px solid var(--color-dark);
+}
+nav ul li:hover {
+  border-bottom: 4px solid var(--color-unactive);
 }
 main {
   grid-area: main;
 }
 
 .hero {
-  background: lightcyan;
+  /* background: lightcyan; */
   display: grid;
   grid-template-rows: repeat(auto, var(--heightCell));
 }
 .hero article {
   display: grid;
   justify-items: center;
-  border: 1px solid red;
+  /*  border: 1px solid red; */
   grid-column: 4 span;
 }
 .hero article.headline h1 {
@@ -212,7 +246,7 @@ main {
 }
 
 .projects {
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
 }
 .projects .project.reverse {
   direction: rtl;
@@ -221,7 +255,8 @@ main {
   height: 600px;
 }
 .projects .project .video video {
-  background: magenta;
+  /* background: magenta; */
+  border: 1px solid var(--color-unactive);
   height: 75%;
   width: 100%;
 }
@@ -238,8 +273,21 @@ main {
   grid-column: 1 /1 span;
   grid-row: 1 / 3 span;
 }
-.projects .project .aboutProject .aboutProjectOptions .btn {
+.projects .project .aboutProject .aboutProjectOptions .btn.picker {
   height: 65px;
+  transition: 0.5s;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: var(--color-unactive);
+}
+.projects .project .aboutProject .aboutProjectOptions .btn.picker:hover {
+  /* color: var(--color-dark); */
+  color: rgba(27, 31, 59, 0.7);
+}
+.projects .project .aboutProject .aboutProjectOptions .btn.picker.active {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  border: var(--color-dark) 2px solid;
 }
 
 .projects .project .aboutProject .aboutProjectDescription {
@@ -272,19 +320,18 @@ main {
 .projects .project .aboutProject .projectActions .btn-call {
   white-space: nowrap;
   grid-column: 2 / 2 span;
-  height: 50px;
   display: grid;
   align-content: center;
 }
 .aboutMe {
-  background: azure;
-  border: 1px solid green;
+  /* background: azure;
+  border: 1px solid green; */
 }
 .aboutMe .aboutMeDescription {
   height: 600px;
   padding: 4em;
   grid-column: 5 span;
-  border: 1px solid red;
+  /*  border: 1px solid red; */
   text-align: center;
   display: grid;
   align-content: center;
@@ -299,7 +346,7 @@ main {
   justify-items: center;
   position: relative;
   grid-column: 3 span;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: calc(600px + (5em * 2));
 }
 
@@ -307,8 +354,8 @@ main {
   width: 100%;
   height: 90%;
   position: relative;
-  background-color: lightseagreen;
-  border: 1px solid lightseagreen;
+  /* background-color: lightseagreen;
+  border: 1px solid lightseagreen; */
 }
 
 .aboutMe .aboutMeFunctions .containerCarousel .carousel {
@@ -325,7 +372,7 @@ main {
   margin-left: calc(var(--carousel-width) / -2) /* -50% */;
   top: 50%;
   margin-top: calc(var(--carousel-height) / -2) /* -45% */;
-  border: 1px solid blue;
+  /*  border: 1px solid blue; */
 }
 .carousel-item {
   visibility: hidden;
@@ -366,9 +413,10 @@ main {
 }
 
 .contact {
-  background-color: mediumseagreen;
-  border: 1px solid white;
+  /* background-color: mediumseagreen;
+  border: 1px solid white; */
   grid-column: 1 /-1;
+  margin-bottom: 480px;
 }
 .contact form {
   gap: 2em;
@@ -382,6 +430,7 @@ main {
 }
 .contact form div input {
   height: 50%;
+  width: 80%;
 }
 .contact form input,
 .contact form textarea {
@@ -410,14 +459,12 @@ main {
   border-left: 4px solid var(--color-dark);
 }
 .contact form .email {
-  justify-self: right;
 }
 .contact form .description {
   grid-row: 3 span;
   grid-column: 2 / 6 span;
 }
 .contact form .btn-call {
-  height: 80%;
   width: 450px;
   padding: 0% 10%;
   justify-self: center;
@@ -425,6 +472,7 @@ main {
 }
 
 footer {
+  z-index: 0;
   display: grid;
   grid-area: footer;
   height: fit-content;
@@ -438,14 +486,15 @@ footer .break.footer {
   grid-column: 1 / -1;
 }
 footer .break.footer img {
+  border: 1px solid red;
   z-index: 1;
   top: unset;
-  bottom: -20vh;
+  bottom: -10vh;
   left: 0;
   height: 1300px;
 }
 footer .container {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   gap: 1em;
   grid-column: 2 / -2;
   align-items: center;
@@ -490,7 +539,7 @@ footer .container .line {
 footer .container .toHero {
   grid-row: 4 / 1 span;
   grid-column: 6 / 3 span;
-  z-index: 5;
+  z-index: 2;
   position: fixed;
   bottom: 5%;
   right: 25%;
@@ -503,9 +552,14 @@ footer .container .toHero .icon {
 
 @media only screen and (max-width: 1523px) {
   :root {
+    --heightCell: 100px;
   }
-  body {
+  /*
     background: lightcoral;
+  */
+  .icon {
+    height: 100px;
+    width: 100px;
   }
   .hero article.headline {
     justify-items: center;
@@ -526,6 +580,7 @@ footer .container .toHero .icon {
   }
   .hero article.headline .btn-call {
     width: 450px;
+    max-width: 450px;
     font-size: 1.9em;
     margin: 0;
   }
@@ -538,10 +593,6 @@ footer .container .toHero .icon {
   .projects .project .aboutProject .aboutProjectDescription p {
     font-size: 1.4em;
   }
-
-  .projects .project .aboutProject .projectActions .btn-call {
-    padding: 0.5em;
-  }
   .aboutMe .aboutMeDescription,
   .aboutMe .aboutMeFunctions {
     grid-column: 1 / -1;
@@ -551,6 +602,7 @@ footer .container .toHero .icon {
   }
   footer .break.footer img {
     top: unset;
+    width: 100vw;
     height: 1000px;
     bottom: -5vw;
   }
@@ -558,8 +610,8 @@ footer .container .toHero .icon {
     height: calc(var(--heightCell) * 6);
   }
   .break img {
-    top: -50vh;
-    height: 150%;
+    top: -40vh;
+    height: 170%;
   }
 }
 @media only screen and (max-width: 1300px) {
@@ -570,7 +622,7 @@ footer .container .toHero .icon {
     height: 90px;
   }
   body {
-    background: blueviolet;
+    /* background: blueviolet; */
   }
   nav ul {
     grid-column: 1 / 3 span;
@@ -660,9 +712,13 @@ footer .container .toHero .icon {
   .break {
     height: calc(var(--heightCell) * 5);
   }
+  .break img {
+    top: -65vh;
+    height: 1000px;
+  }
   footer .break.footer img {
     height: 900px;
-    bottom: -2vw;
+    bottom: -6vw;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -671,7 +727,6 @@ footer .container .toHero .icon {
     --marginBody: 4%;
   }
   body {
-    background: aqua;
     grid-template-rows: 90px auto 600px;
   }
   header {
@@ -693,6 +748,10 @@ footer .container .toHero .icon {
 
   .aboutMe .aboutMeDescription p {
     font-size: 1.4em;
+  }
+
+  .contact {
+    margin-bottom: 150px;
   }
   .contact form h3 {
     font-size: 2.5em;
@@ -724,21 +783,25 @@ footer .container .toHero .icon {
     grid-column: 2 / 2 span;
   }
   footer .break.footer img {
-    height: 600px;
-    bottom: 7vw;
+    height: 800px;
+    bottom: -2vw;
   }
   .break {
     height: calc(var(--heightCell) * 4);
+  }
+  .break img {
+    top: -60vh;
+    height: 850px;
   }
 }
 @media only screen and (max-width: 740px) {
   :root {
     font-size: 16px;
-    --marginBody: 1%;
+    --marginBody: 12px;
     --heightCell: 70px;
   }
   body {
-    background: olive;
+    gap: 0px;
   }
   nav ul {
     gap: 0.5em;
@@ -818,6 +881,9 @@ footer .container .toHero .icon {
   .carousel-item p {
     font-size: 1.3em;
   }
+  .contact {
+    margin-bottom: 0;
+  }
   .contact form {
     grid-template-rows: repeat(7, 60px);
   }
@@ -828,13 +894,16 @@ footer .container .toHero .icon {
     height: calc(var(--heightCell) * 3);
   }
   .break img {
-    height: 500px;
-    top: -40vh;
-    left: -10%;
+    height: 600px;
+    top: -50vh;
+    left: -6%;
+  }
+  footer .container {
+    grid-template-rows: repeat(4, 90px);
   }
   footer .break.footer img {
-    height: 400px;
-    bottom: 16vw;
+    height: 500px;
+    bottom: 10vw;
   }
 }
 @media only screen and (max-width: 370px) {
@@ -843,7 +912,7 @@ footer .container .toHero .icon {
     --heightCell: 50px;
   }
   body {
-    background-color: maroon;
+    /* background-color: maroon; */
     grid-template-rows: 60px auto 600px;
   }
   header {
@@ -881,11 +950,20 @@ footer .container .toHero .icon {
     height: 170px;
     grid-template-rows: repeat(3, 45px);
   }
-  .projects .project .aboutProject .aboutProjectOptions .btn {
+  .projects .project .aboutProject .aboutProjectOptions .btn.picker {
     height: 50px;
   }
   .projects .project .aboutProject .projectActions .btn-call {
-    height: 30px;
+    height: 60px;
+  }
+
+  .aboutMe .aboutMeFunctions .containerCarousel .carousel {
+    left: 80%;
+    width: 500px;
+  }
+
+  .contact {
+    margin-bottom: 120px;
   }
   .contact form {
     padding: 1em;
@@ -911,6 +989,7 @@ footer .container .toHero .icon {
     margin-top: 0;
   }
   footer .break.footer img {
-    bottom: -16vw;
+    height: 400px;
+    bottom: -25vw;
   }
 }
