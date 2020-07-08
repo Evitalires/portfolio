@@ -27,7 +27,13 @@
   margin: 0;
   color: var(--color-dark);
 }
-
+svg {
+  width: 80%;
+  height: 80%;
+}
+svg path {
+  fill: var(--color-light);
+}
 .icon {
   background: var(--color-main);
   border-radius: 50%;
@@ -314,7 +320,9 @@ main {
 .projects .project .aboutProject .projectActions .icon {
   justify-self: end;
   align-self: center;
-  display: inline-flex;
+  display: grid;
+  align-items: center;
+  justify-items: center;
   grid-column: 1 / 1 span;
 }
 .projects .project .aboutProject .projectActions .btn-call {
@@ -543,11 +551,18 @@ footer .container .toHero {
   position: fixed;
   bottom: 5%;
   right: 25%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
 }
 footer .container .toHero .icon {
-  display: inherit;
-  align-content: center;
-  justify-content: center;
+  display: grid;
+  align-items: baseline;
+  justify-items: center;
+}
+footer .container .toHero .icon svg {
+  width: 80%;
+  height: 85%;
 }
 
 @media only screen and (max-width: 1523px) {

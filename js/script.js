@@ -151,7 +151,6 @@ function settingSizeCarousel() {
     "--carousel-width",
     `${aboutMeFunctionsHeight}px`
   );
-  resetCarousel();
 }
 
 function resetCarousel() {
