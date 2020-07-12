@@ -3,49 +3,81 @@ let data = {
     (project = [
       {
         title: "Purpose",
-        description: "Hola, purpose 0",
+        description:
+          "Trought the course of React.js, create an application that teaches me why the patterns from React.js has become so popular in web development.",
       },
       {
         title: "Objective",
-        description: "Hola, Objective 0",
+        description:
+          "Understand the main concepts:\n Rendering Elements.\n Components and Props \n State and Lifecycle\n Handling Events \nConditional Rendering \nLists and Keys \nComposition vs Inheritance",
       },
       {
         title: "Approach",
-        description: "Hola, Approach 0",
+        description:
+          "Trought the curse of React.js from Platzi, I get close to react.js as a learner. My focus was entirely center to follow the instructions from the professor having as result the project PlatziVideo which is web application center in play videos.",
       },
       {
         title: "Time",
-        description: "Hola, Time 0",
+        description: "16 hours",
       },
       {
         title: "My Role",
-        description: "Hola, MyRole 0",
+        description:
+          "As a student, my role was focusing on initially following the lessons and overcome the challenges. Then, after the course ended my role change from student to the main feature contributor in the project.",
       },
     ]),
     (project = [
       {
         title: "Purpose",
-        description: "Hola, purpose 1",
+        description:
+          "Build a web page that serves as an example of how could look the webpage for",
       },
       {
         title: "Objective",
-        description: "Hola, Objective 1",
+        description:
+          "Applied my knowledge in HTML, CSS, JAVASCRIPT having in mind a mobile-first implementation.",
       },
       {
         title: "Approach",
-        description: "Hola, Approach 1",
+        description:
+          "Ask the client what´re their necessities related for the web page\n From the project of web development from Platzi, I quickly built the prototype for the web page in CEUA S.A.S.\n I used my knowledge in GIT and GITHUB to deploy the web page.",
       },
       {
         title: "Time",
-        description: "Hola, Time 1",
+        description: "16 hours",
       },
       {
         title: "My Role",
-        description: "Hola, MyRole 1",
+        description: "Main frontEnd Developer",
+      },
+    ]),
+    (project = [
+      {
+        title: "Purpose",
+        description: "Build my first web page",
+      },
+      {
+        title: "Objective",
+        description:
+          "Applied my knowledge in HTML, CSS, JAVASCRIPT for a web page designed desktop-first, and then make the web page responsive.",
+      },
+      {
+        title: "Approach",
+        description:
+          "Follow the instructions from the course of web development at Platzi, overcome the challenges, and deploy the project.",
+      },
+      {
+        title: "Time",
+        description: "14 hours",
+      },
+      {
+        title: "My Role",
+        description: "Student",
       },
     ]),
   ],
 };
+var rellax = new Rellax(".relax");
 
 let test = 0;
 
@@ -177,6 +209,74 @@ function lineInHeader() {
   }
 }
 
+function ScrollingNav() {
+  //Main method for scroll
+  const easeInCubic = function (t) {
+    return t * t * t;
+  };
+
+  const scrollToElem = (
+    startTime,
+    currentTime,
+    duration,
+    scrollEndElemTop,
+    startScrollOffset
+  ) => {
+    const runtime = currentTime - startTime;
+    let progress = runtime / duration;
+
+    progress = Math.min(progress, 1);
+
+    const ease = easeInCubic(progress);
+
+    window.scroll(0, startScrollOffset + scrollEndElemTop * ease);
+    if (runtime < duration) {
+      requestAnimationFrame((timestamp) => {
+        const currentTime = timestamp || new Date().getTime();
+        scrollToElem(
+          startTime,
+          currentTime,
+          duration,
+          scrollEndElemTop,
+          startScrollOffset
+        );
+      });
+    }
+  };
+
+  //select all element with class 'Scroll'
+  const scrollElements = document.querySelectorAll(".scroll");
+
+  //Adding event to each element
+  scrollElements.forEach((elem) => {
+    elem.addEventListener("click", (elem) => {
+      elem.preventDefault();
+      //1 getting the element id to scroll
+      const scrollElemId = elem.target.href.split("#")[1];
+      //2 Finding the node from the document
+      const scrollEndElem = document.getElementById(scrollElemId);
+      //3 animating the node
+      const anim = requestAnimationFrame((timestamp) => {
+        const stamp = timestamp || new Date().getTime();
+        const duration = 600;
+        const start = stamp;
+
+        const startScrollOffset = window.pageYOffset;
+
+        const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
+
+        scrollToElem(
+          start,
+          stamp,
+          duration,
+          scrollEndElemTop,
+          startScrollOffset
+        );
+      });
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   settingCarousel();
   listenerForProject(projects);
@@ -187,3 +287,8 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("resize", () => {
   resetCarousel();
 });
+
+window.onload = () => {
+  ScrollingNav();
+  resetCarousel();
+};

@@ -31,9 +31,6 @@ svg {
   width: 80%;
   height: 80%;
 }
-svg path {
-  fill: var(--color-light);
-}
 .icon {
   background: var(--color-main);
   border-radius: 50%;
@@ -104,38 +101,26 @@ svg path {
 }
 
 .break img {
-  /* border: 1px solid red; */
   top: -60vh;
   z-index: -5 /* -5 */;
   width: 105vw;
   left: calc(var(--marginBody) * (-2));
   position: absolute;
   height: 170%;
-  /*height: 150%  125% > 150% */
-  /* animation-name: deep;
-  animation-duration: 16s;
+}
+.break img.relax {
+  animation-name: deep;
+  animation-duration: 24s;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-direction: alternate; */
+  animation-direction: alternate;
 }
 @keyframes deep {
   0% {
-    height: 1262px;
-    /* height: 150%;
-    transform: translateY(10px) scaleY(1);
-    top: -60vh;
-     */
-  }
-  30% {
-    /* height: 170%; */
-  }
-  70% {
-    /* height: 180%; */
+    height: 170%;
   }
   100% {
-    height: 1600px;
-    /* height: 200%;
-    top: -70vh;
-    transform: translateY(50px) scaleY(1.25); */
+    height: 200%;
   }
 }
 
@@ -250,9 +235,8 @@ main {
   width: 580px;
   margin: 0;
 }
-
-.projects {
-  /* background-color: greenyellow; */
+.projects .project {
+  border-top: 1px solid var(--color-dark);
 }
 .projects .project.reverse {
   direction: rtl;
@@ -262,9 +246,14 @@ main {
 }
 .projects .project .video video {
   /* background: magenta; */
-  border: 1px solid var(--color-unactive);
-  height: 75%;
+  /* height: 75%; */
+  height: 100%;
   width: 100%;
+  object-fit: fill;
+  box-shadow: var(--shadow);
+}
+.projects .project .video video:hover {
+  box-shadow: var(--shadowHover);
 }
 .projects .project .aboutProject {
   gap: 1em;
@@ -301,7 +290,14 @@ main {
   grid-row: 3 span;
 }
 .projects .project .aboutProject .aboutProjectDescription p {
-  font-size: 1.6em;
+  font-size: 1.5em;
+  height: 100%;
+  display: grid;
+  align-items: center;
+}
+.projects .project.reverse .aboutProject .aboutProjectDescription p {
+  direction: ltr;
+  text-align: right;
 }
 .projects .project .aboutProject .projectActions {
   grid-column: 4 span;
@@ -331,11 +327,15 @@ main {
   display: grid;
   align-content: center;
 }
+.projects .project .aboutProject .projectActions svg path {
+  fill: var(--color-light);
+}
 .aboutMe {
   /* background: azure;
   border: 1px solid green; */
 }
 .aboutMe .aboutMeDescription {
+  background-image: url(assets/vetas/bk.png);
   height: 600px;
   padding: 4em;
   grid-column: 5 span;
@@ -494,7 +494,6 @@ footer .break.footer {
   grid-column: 1 / -1;
 }
 footer .break.footer img {
-  border: 1px solid red;
   z-index: 1;
   top: unset;
   bottom: -10vh;
@@ -506,7 +505,8 @@ footer .container {
   gap: 1em;
   grid-column: 2 / -2;
   align-items: center;
-  grid-template-rows: repeat(3, 200px);
+  padding-bottom: 0;
+  grid-template-rows: repeat(4, 200px);
   grid-template-columns: var(--mainColumns);
 }
 footer .container article {
@@ -550,28 +550,40 @@ footer .container .toHero {
   z-index: 2;
   position: fixed;
   bottom: 5%;
-  right: 25%;
+  right: 30%;
   display: grid;
   align-items: center;
   justify-items: center;
 }
 footer .container .toHero .icon {
   display: grid;
-  align-items: baseline;
+  align-items: center;
   justify-items: center;
+  box-shadow: var(--shadow);
+  transition: 0.5s;
+  position: relative;
+  background: transparent;
+}
+footer .container .toHero .icon.behind {
+  position: absolute;
+  z-index: -1;
+  background: var(--color-main);
+}
+footer .container .toHero .icon:hover {
+  box-shadow: var(--shadowHover);
 }
 footer .container .toHero .icon svg {
-  width: 80%;
-  height: 85%;
+  width: 70%;
+  height: 80%;
 }
 
 @media only screen and (max-width: 1523px) {
   :root {
     --heightCell: 100px;
   }
-  /*
-    background: lightcoral;
-  */
+  body {
+    /* background: lightcoral; */
+  }
   .icon {
     height: 100px;
     width: 100px;
@@ -662,7 +674,7 @@ footer .container .toHero .icon svg {
     text-align: center;
   }
   .projects .project .aboutProject .aboutProjectDescription p {
-    font-size: 1.7em;
+    font-size: 1.5em;
   }
   .projects .project .aboutProject .aboutProjectOptions {
     align-content: space-between;
@@ -677,7 +689,9 @@ footer .container .toHero .icon svg {
     line-height: 1.6em;
     font-size: 1.6em;
   }
-
+  .contact {
+    margin-bottom: 140px;
+  }
   .contact form {
     padding: 2em;
     grid-template-rows: repeat(7, 100px);
@@ -722,13 +736,15 @@ footer .container .toHero .icon svg {
   }
   footer .container .toHero {
     grid-column: 2 span;
+    bottom: 1%;
+    right: 20%;
   }
 
   .break {
     height: calc(var(--heightCell) * 5);
   }
   .break img {
-    top: -65vh;
+    top: -30vh;
     height: 1000px;
   }
   footer .break.footer img {
@@ -742,10 +758,17 @@ footer .container .toHero .icon svg {
     --marginBody: 4%;
   }
   body {
+    /* background-color: lightblue; */
     grid-template-rows: 90px auto 600px;
   }
   header {
     height: 90px;
+  }
+  nav ul li a {
+    white-space: nowrap;
+  }
+  .hero {
+    padding: 10px 0;
   }
   .projects .project .video {
     height: 500px;
@@ -801,12 +824,23 @@ footer .container .toHero .icon svg {
     height: 800px;
     bottom: -2vw;
   }
+  footer .container .toHero {
+    right: 30%;
+  }
   .break {
-    height: calc(var(--heightCell) * 4);
+    height: calc(var(--heightCell) * 3);
   }
   .break img {
-    top: -60vh;
-    height: 850px;
+    top: -30vh;
+    height: 70vh;
+  }
+  @keyframes deep {
+    0% {
+      height: 70vh;
+    }
+    100% {
+      height: 80vh;
+    }
   }
 }
 @media only screen and (max-width: 740px) {
@@ -816,6 +850,7 @@ footer .container .toHero .icon svg {
     --heightCell: 70px;
   }
   body {
+    /* background-color: lightseagreen; */
     gap: 0px;
   }
   nav ul {
@@ -833,6 +868,9 @@ footer .container .toHero .icon svg {
   .hero article.headline h1 {
     font-size: 3.5em;
   }
+  .projects .project {
+    padding: 2em 0;
+  }
   .projects .project .aboutProject {
     height: 800px;
   }
@@ -841,6 +879,7 @@ footer .container .toHero .icon svg {
   }
   .projects .project .aboutProject {
     gap: 1em;
+    height: 650px;
     grid-template-rows: repeat(6, 90px);
   }
   .projects .project .aboutProject .aboutProjectOptions {
@@ -849,6 +888,10 @@ footer .container .toHero .icon svg {
     grid-row: 2 span;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .project .aboutProject .aboutProjectDescription p,
+  .projects .project.reverse .aboutProject .aboutProjectDescription p {
+    text-align: center;
   }
   .projects .project .aboutProject .aboutProjectOptions .btn {
     font-size: 1.4em;
@@ -906,11 +949,12 @@ footer .container .toHero .icon svg {
     width: 100%;
   }
   .break {
-    height: calc(var(--heightCell) * 3);
+    margin-top: 1em;
+    height: calc(var(--heightCell) * 1);
   }
   .break img {
     height: 600px;
-    top: -50vh;
+    top: -20vh;
     left: -6%;
   }
   footer .container {
@@ -918,7 +962,7 @@ footer .container .toHero .icon svg {
   }
   footer .break.footer img {
     height: 500px;
-    bottom: 10vw;
+    bottom: -3vw;
   }
 }
 @media only screen and (max-width: 370px) {
@@ -928,7 +972,7 @@ footer .container .toHero .icon svg {
   }
   body {
     /* background-color: maroon; */
-    grid-template-rows: 60px auto 600px;
+    grid-template-rows: 60px auto auto;
   }
   header {
     position: fixed;
@@ -990,6 +1034,7 @@ footer .container .toHero .icon svg {
   footer {
     margin-top: 100px;
     grid-template-rows: 50px auto;
+    padding-bottom: 1em;
   }
   footer .container {
     gap: 0.5em;
@@ -1005,6 +1050,19 @@ footer .container .toHero .icon svg {
   }
   footer .break.footer img {
     height: 400px;
-    bottom: -25vw;
+    bottom: -20vw;
+  }
+  .break img {
+    height: 400px;
+    width: 105vw;
+    top: -10vh;
+  }
+  @keyframes deep {
+    0% {
+      height: 400px;
+    }
+    100% {
+      height: 500px;
+    }
   }
 }
