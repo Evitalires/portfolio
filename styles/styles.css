@@ -34,9 +34,14 @@ svg {
 .icon {
   background: var(--color-main);
   border-radius: 50%;
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   display: block;
+  transition: 0.5s;
+  box-shadow: var(--shadow);
+}
+.icon:hover {
+  box-shadow: var(--shadowHover);
 }
 .btn {
   border: none;
@@ -52,7 +57,7 @@ svg {
   box-shadow: var(--shadowHover);
 }
 .btn-call {
-  height: 120px;
+  height: 100px;
   font-size: 2em;
   white-space: nowrap;
   cursor: pointer;
@@ -109,7 +114,7 @@ svg {
   height: 170%;
 }
 .break img.relax {
-  animation-name: deep;
+  animation-name: deeps;
   animation-duration: 24s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
@@ -218,11 +223,13 @@ main {
   grid-column: 4 span;
 }
 .hero article.headline h1 {
-  font-size: 4em;
+  font-size: 3.7em;
+  white-space: nowrap;
   font-family: var(--font-headlines);
 }
 .hero article.headline p {
   /* white-space: nowrap; */
+  font-size: 1.3em;
   margin: 2em 0;
   font-family: var(--font-text);
 }
@@ -232,12 +239,11 @@ main {
   margin: 0.5em;
 }
 .hero article.headline .btn-call {
-  width: 580px;
+  width: 480px;
   margin: 0;
+  font-size: 1.5em;
 }
-.projects .project {
-  border-top: 1px solid var(--color-dark);
-}
+
 .projects .project.reverse {
   direction: rtl;
 }
@@ -271,6 +277,8 @@ main {
 .projects .project .aboutProject .aboutProjectOptions .btn.picker {
   height: 65px;
   transition: 0.5s;
+  padding: 0;
+  font-size: 1.3em;
   background-color: transparent;
   border: 2px solid transparent;
   color: var(--color-unactive);
@@ -286,18 +294,24 @@ main {
 }
 
 .projects .project .aboutProject .aboutProjectDescription {
-  grid-column: 3 span;
-  grid-row: 3 span;
-}
-.projects .project .aboutProject .aboutProjectDescription p {
-  font-size: 1.5em;
-  height: 100%;
   display: grid;
   align-items: center;
+  grid-row: 3 span;
+  grid-column: 3 span;
+  background-image: url(../assets/bg/bk.svg);
+  background-color: var(--color-light);
+}
+.projects .project .aboutProject .aboutProjectDescription p {
+  font-size: 1.3em;
+  height: 100%;
+  padding: 0.5em;
+  display: grid;
+  align-items: center;
+  background-color: var(--color-light);
+  text-align: center;
 }
 .projects .project.reverse .aboutProject .aboutProjectDescription p {
   direction: ltr;
-  text-align: right;
 }
 .projects .project .aboutProject .projectActions {
   grid-column: 4 span;
@@ -322,6 +336,8 @@ main {
   grid-column: 1 / 1 span;
 }
 .projects .project .aboutProject .projectActions .btn-call {
+  height: 85px;
+  font-size: 1.5em;
   white-space: nowrap;
   grid-column: 2 / 2 span;
   display: grid;
@@ -335,9 +351,9 @@ main {
   border: 1px solid green; */
 }
 .aboutMe .aboutMeDescription {
-  background-image: url(assets/vetas/bk.png);
+  background-image: url(../assets/bg/bk.svg);
   height: 600px;
-  padding: 4em;
+  padding: 3em;
   grid-column: 5 span;
   /*  border: 1px solid red; */
   text-align: center;
@@ -345,8 +361,13 @@ main {
   align-content: center;
 }
 .aboutMe .aboutMeDescription p {
-  font-size: 1.9em;
+  font-size: 1.5em;
   line-height: 1.5em;
+  padding: 1em;
+  background-color: var(--color-light);
+}
+.aboutMe .aboutMeDescription p b {
+  color: var(--color-main);
 }
 .aboutMe .aboutMeFunctions {
   display: grid;
@@ -377,10 +398,9 @@ main {
   transform: rotate(90deg);
   position: absolute;
   left: 50%;
+  top: 44%;
   margin-left: calc(var(--carousel-width) / -2) /* -50% */;
-  top: 50%;
   margin-top: calc(var(--carousel-height) / -2) /* -45% */;
-  /*  border: 1px solid blue; */
 }
 .carousel-item {
   visibility: hidden;
@@ -393,9 +413,10 @@ main {
   left: 0;
   width: 36.25% !important;
   height: 80% !important;
+  background-image: url(../assets/bg/bkCarousel.svg);
 }
 .carousel-item.active p {
-  color: var(--color-dark);
+  color: var(--color-main);
 }
 .carousel-item.card {
   box-shadow: 8px 0px 8px 2px rgba(27, 31, 59, 0.2);
@@ -412,17 +433,18 @@ main {
   left: 0;
   text-align: center;
   font-size: 1.5em;
+  font-weight: bold;
   transition: 0.25s;
   font-family: var(--font-title);
-  color: var(--color-unactive);
+  color: var(--color-main);
   display: grid;
   align-content: center;
   cursor: default;
+  /* background-color: var(--color-light); */
+  background-color: var(--color-light);
 }
 
 .contact {
-  /* background-color: mediumseagreen;
-  border: 1px solid white; */
   grid-column: 1 /-1;
   margin-bottom: 480px;
 }
@@ -496,7 +518,7 @@ footer .break.footer {
 footer .break.footer img {
   z-index: 1;
   top: unset;
-  bottom: -10vh;
+  bottom: -18vh;
   left: 0;
   height: 1300px;
 }
@@ -883,11 +905,15 @@ footer .container .toHero .icon svg {
     grid-template-rows: repeat(6, 90px);
   }
   .projects .project .aboutProject .aboutProjectOptions {
-    grid-column: 1 / 4 span;
     gap: 1em;
     grid-row: 2 span;
+    grid-column: 1 / 4 span;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
+  }
+  .projects .project .aboutProject .aboutProjectOptions .btn.picker {
+    width: 140px;
+    height: 50px;
   }
   .projects .project .aboutProject .aboutProjectDescription p,
   .projects .project.reverse .aboutProject .aboutProjectDescription p {
@@ -904,6 +930,8 @@ footer .container .toHero .icon svg {
     align-content: center;
   }
   .projects .project .aboutProject .projectActions .btn-call {
+    height: 60px;
+    width: 220px;
     grid-column: 2 / 3 span;
   }
 
@@ -915,17 +943,15 @@ footer .container .toHero .icon svg {
   }
   .projects .project .aboutProject .aboutProjectDescription p {
     text-align: center;
-    font-size: 1.4em;
+    height: 90%;
+    font-size: 1.3em;
   }
   .icon {
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
   }
   .aboutMe .aboutMeDescription p {
-    font-size: 1.6em;
-  }
-  .aboutMe .aboutMeDescription p {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
   .aboutMe .aboutMeFunctions .containerCarousel {
     width: 100%;
@@ -950,7 +976,7 @@ footer .container .toHero .icon svg {
   }
   .break {
     margin-top: 1em;
-    height: calc(var(--heightCell) * 1);
+    height: calc(var(--heightCell) * 3);
   }
   .break img {
     height: 600px;
@@ -960,9 +986,12 @@ footer .container .toHero .icon svg {
   footer .container {
     grid-template-rows: repeat(4, 90px);
   }
+  footer .container .toHero {
+    right: 24%;
+  }
   footer .break.footer img {
     height: 500px;
-    bottom: -3vw;
+    bottom: -8vw;
   }
 }
 @media only screen and (max-width: 370px) {
