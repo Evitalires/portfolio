@@ -3,6 +3,30 @@ let data = {
     (project = [
       {
         title: "Purpose",
+        description: "create a simple social network for web developers.",
+      },
+      {
+        title: "Objective",
+        description:
+          " Each developer should see other developer's profiles and they can: \n Create a user. \n Log in ther user. \n See their profile. \n Add experience and educational credentials.",
+      },
+      {
+        title: "Approach",
+        description:
+          "Trought the curse of Sass.js from Traversy Media, I take their lesson and center my focus in create something different.",
+      },
+      {
+        title: "Time",
+        description: "6 hours",
+      },
+      {
+        title: "My Role",
+        description: "Main FrontedDeveloper",
+      },
+    ]),
+    (project = [
+      {
+        title: "Purpose",
         description:
           "Trought the course of React.js, create an application that teaches me why the patterns from React.js has become so popular in web development.",
       },

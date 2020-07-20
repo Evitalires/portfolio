@@ -256,10 +256,10 @@ main {
 .projects .project .video video {
   /* background: magenta; */
   /* height: 75%; */
-  height: 100%;
+  height: 75%;
   width: 100%;
   object-fit: fill;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadowHover);
 }
 .projects .project .video video:hover {
   box-shadow: var(--shadowHover);
@@ -397,7 +397,6 @@ main {
   height: var(--carousel-height) /* 90% */;
   perspective: 93px;
   transform-style: preserve-3d;
-  /* transform-origin: 50% 50%; */
   transform: rotate(90deg);
   position: absolute;
   left: 50%;
@@ -439,7 +438,7 @@ main {
   font-weight: bold;
   transition: 0.25s;
   font-family: var(--font-title);
-  color: var(--color-main);
+  color: lightgray;
   display: grid;
   align-content: center;
   cursor: default;
