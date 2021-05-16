@@ -17,7 +17,7 @@ let data = {
       },
       {
         title: "Time",
-        description: "7 hours",
+        description: "No time needed",
       },
       {
         title: "My Role",
