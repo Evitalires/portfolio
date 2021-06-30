@@ -1,114 +1,108 @@
-let data = {
+/* let data = {
   projects: [
     (project = [
       {
         title: "Purpose",
-        description: "create a simple social network for web developers.",
+        description: "create a simple social network for web developers."
       },
       {
         title: "Objective",
         description:
-          " Each developer should see other developer's profiles and they can: \n Create a user. \n Log in ther user. \n See their profile. \n Add experience and educational credentials.",
+          " Each developer should see other developer's profiles and they can: \n Create a user. \n Log in ther user. \n See their profile. \n Add experience and educational credentials."
       },
       {
         title: "Approach",
         description:
-          "Trought the curse of Sass.js from Traversy Media, I take their lesson and center my focus in create something different.",
+          "Trought the curse of Sass.js from Traversy Media, I take their lesson and center my focus in create something different."
       },
       {
         title: "Time",
-        description: "No time needed",
+        description: "No time needed"
       },
       {
         title: "My Role",
-        description: "Main FrontedDeveloper",
-      },
+        description: "Main FrontedDeveloper"
+      }
     ]),
     (project = [
       {
         title: "Purpose",
         description:
-          "Trought the course of React.js, create an application that teaches me why the patterns from React.js has become so popular in web development.",
+          "Trought the course of React.js, create an application that teaches me why the patterns from React.js has become so popular in web development."
       },
       {
         title: "Objective",
         description:
-          "Understand the main concepts:\n Rendering Elements.\n Components and Props \n State and Lifecycle\n Handling Events \nConditional Rendering \nLists and Keys \nComposition vs Inheritance",
+          "Understand the main concepts:\n Rendering Elements.\n Components and Props \n State and Lifecycle\n Handling Events \nConditional Rendering \nLists and Keys \nComposition vs Inheritance"
       },
       {
         title: "Approach",
         description:
-          "Trought the curse of React.js from Platzi, I get close to react.js as a learner. My focus was entirely center to follow the instructions from the professor having as result the project PlatziVideo which is web application center in play videos.",
+          "Trought the curse of React.js from Platzi, I get close to react.js as a learner. My focus was entirely center to follow the instructions from the professor having as result the project PlatziVideo which is web application center in play videos."
       },
       {
         title: "Time",
-        description: "16 hours",
+        description: "16 hours"
       },
       {
         title: "My Role",
         description:
-          "As a student, my role was focusing on initially following the lessons and overcome the challenges. Then, after the course ended my role change from student to the main feature contributor in the project.",
-      },
+          "As a student, my role was focusing on initially following the lessons and overcome the challenges. Then, after the course ended my role change from student to the main feature contributor in the project."
+      }
     ]),
     (project = [
       {
         title: "Purpose",
         description:
-          "Build a web page that serves as an example of how could look the webpage for",
+          "Build a web page that serves as an example of how could look the webpage for"
       },
       {
         title: "Objective",
         description:
-          "Applied my knowledge in HTML, CSS, JAVASCRIPT having in mind a mobile-first implementation.",
+          "Applied my knowledge in HTML, CSS, JAVASCRIPT having in mind a mobile-first implementation."
       },
       {
         title: "Approach",
         description:
-          "Ask the client what´re their necessities related for the web page\n From the project of web development from Platzi, I quickly built the prototype for the web page in CEUA S.A.S.\n I used my knowledge in GIT and GITHUB to deploy the web page.",
+          "Ask the client what´re their necessities related for the web page\n From the project of web development from Platzi, I quickly built the prototype for the web page in CEUA S.A.S.\n I used my knowledge in GIT and GITHUB to deploy the web page."
       },
       {
         title: "Time",
-        description: "16 hours",
+        description: "16 hours"
       },
       {
         title: "My Role",
-        description: "Main frontEnd Developer",
-      },
+        description: "Main frontEnd Developer"
+      }
     ]),
     (project = [
       {
         title: "Purpose",
-        description: "Build my first web page",
+        description: "Build my first web page"
       },
       {
         title: "Objective",
         description:
-          "Applied my knowledge in HTML, CSS, JAVASCRIPT for a web page designed desktop-first, and then make the web page responsive.",
+          "Applied my knowledge in HTML, CSS, JAVASCRIPT for a web page designed desktop-first, and then make the web page responsive."
       },
       {
         title: "Approach",
         description:
-          "Follow the instructions from the course of web development at Platzi, overcome the challenges, and deploy the project.",
+          "Follow the instructions from the course of web development at Platzi, overcome the challenges, and deploy the project."
       },
       {
         title: "Time",
-        description: "14 hours",
+        description: "14 hours"
       },
       {
         title: "My Role",
-        description: "Student",
-      },
-    ]),
-  ],
+        description: "Student"
+      }
+    ])
+  ]
 };
-var rellax = new Rellax(".relax");
 
-let test = 0;
-
-let parentProject = {
-  element: 0,
-  index: 0,
-};
+//unused
 
 let projects = document.getElementsByClassName("project");
 
@@ -119,7 +113,7 @@ function listenerForProject(projects) {
     project.addEventListener("mouseenter", () => {
       parentProject = {
         element: project,
-        index: index,
+        index: index
       };
     });
   }
@@ -140,7 +134,7 @@ function listenersForPickers() {
 function removeClass(main, siblings, className) {
   for (let index = 0; index < siblings.length; index++) {
     let sibling = siblings[index];
-    if (sibling.innerText != main.innerText) {
+    if (sibling.innerText !== main.innerText) {
       sibling.className = className;
     }
   }
@@ -152,7 +146,7 @@ function givingData(project, picker) {
   let arrayProject = data.projects[parentProject.index];
 
   arrayProject.map((el, i) => {
-    if (picker.innerText == el.title) {
+    if (picker.innerText === el.title) {
       aboutProjectDescription.innerText = el.description;
     }
   });
@@ -182,7 +176,7 @@ function settingCarousel() {
       fullWidth: !1,
       shift: -20,
       padding: 10,
-      duration: 25,
+      duration: 25
     });
   });
 
@@ -215,7 +209,7 @@ function resetCarousel() {
     fullWidth: !1,
     shift: -20,
     padding: 10,
-    duration: 25,
+    duration: 25
   });
 
   settingSizeCarousel();
@@ -231,6 +225,26 @@ function lineInHeader() {
       removeClass(parent, parents, " ");
     });
   }
+}
+ */
+/*  */
+
+function setActiveLinkHover(elem) {
+  console.log(elem.id);
+  const sectionID = elem.id;
+  const scrollElements = document.querySelectorAll(".scroll");
+
+  scrollElements.forEach((el) => {
+    let elRef = el.href.split("#")[1];
+
+    if (el.classList.contains("active") && elRef === sectionID) {
+      return console.log("same id and element y no es necesario hacer cambios");
+    } else if (elRef === sectionID) {
+      scrollElements.forEach((el) => el.classList.remove("active"));
+      el.classList.add("active");
+      return;
+    }
+  });
 }
 
 function ScrollingNav() {
@@ -268,6 +282,37 @@ function ScrollingNav() {
     }
   };
 
+  const animatingNode = (elem) => {
+    //1 getting the element id to scroll
+    const scrollElemId = elem.target.href.split("#")[1];
+    //2 Finding the node from the document
+    const scrollEndElem = document.getElementById(scrollElemId);
+    //3 animating the node
+    const anim = requestAnimationFrame((timestamp) => {
+      const stamp = timestamp || new Date().getTime();
+      const duration = 600;
+      const start = stamp;
+
+      const startScrollOffset = window.pageYOffset;
+
+      const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
+
+      scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
+    });
+  };
+
+  const setActiveLink = (elem, elements) => {
+    let links = document.querySelectorAll(".active");
+
+    if (links.length > 0) {
+      links.forEach((el) => {
+        el.classList.remove("active");
+      });
+    }
+
+    elem.target.classList.add("active");
+  };
+
   //select all element with class 'Scroll'
   const scrollElements = document.querySelectorAll(".scroll");
 
@@ -275,44 +320,27 @@ function ScrollingNav() {
   scrollElements.forEach((elem) => {
     elem.addEventListener("click", (elem) => {
       elem.preventDefault();
-      //1 getting the element id to scroll
-      const scrollElemId = elem.target.href.split("#")[1];
-      //2 Finding the node from the document
-      const scrollEndElem = document.getElementById(scrollElemId);
-      //3 animating the node
-      const anim = requestAnimationFrame((timestamp) => {
-        const stamp = timestamp || new Date().getTime();
-        const duration = 600;
-        const start = stamp;
-
-        const startScrollOffset = window.pageYOffset;
-
-        const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
-
-        scrollToElem(
-          start,
-          stamp,
-          duration,
-          scrollEndElemTop,
-          startScrollOffset
-        );
-      });
+      animatingNode(elem);
+      setActiveLink(elem, scrollElements);
     });
   });
 }
 
+function downloadCV() {
+  const button = document.getElementsByClassName("cv-download")[0];
+  console.log(button);
+
+  button.addEventListener("click", (el) => {
+    el.preventDefault();
+    console.log("Donwloading cv...");
+  });
+}
+
+function setListeners() {
+  downloadCV();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  settingCarousel();
-  listenerForProject(projects);
-  listenersForPickers();
-  lineInHeader();
-});
-
-window.addEventListener("resize", () => {
-  resetCarousel();
-});
-
-window.onload = () => {
   ScrollingNav();
-  resetCarousel();
-};
+  setListeners();
+});

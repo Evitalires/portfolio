@@ -6,9 +6,10 @@
       name="viewport"
       content="user-scalable=no,initial-scale=1,maximum-scale=1"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <!--  <link rel="stylesheet" href="styles/styles.css" /> -->
+    <link rel="stylesheet" href="./styles/newstyles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat&family=Muli&family=Righteous&family=Roboto&display=swap"
+      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat&family=Mulish&family=Righteous&family=Roboto&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
@@ -19,7 +20,9 @@
       <nav>
         <ul>
           <li>
-            <a href="#projects" class="scroll linkPage">Projects</a>
+            <a href="#projects" onclick="linkClicked" class="scroll linkPage"
+              >Projects</a
+            >
           </li>
           <li>
             <a href="#aboutMe" class="scroll linkPage">About Me</a>
@@ -27,32 +30,37 @@
           <li>
             <a href="#contact" class="scroll linkPage">Contact</a>
           </li>
+          <li>
+            <button class="btn-icon cv-download">CV</button>
+          </li>
         </ul>
       </nav>
     </header>
     <main>
       <section class="container hero" id="hero">
-        <article class="headline item-4">
-          <h1>Hi! I´m <span>Jair Ramirez</span></h1>
-          <p>
+        <article class="item-4">
+          <h1 class="headline">Hi! I´m <span>Jair Ramirez</span></h1>
+          <p class="text">
             <span> A frontEnd developer and interface designer</span>
             <span>Who builds UX rich, accessible & performant websites</span>
           </p>
-          <a class="scroll btn-call" href="#contact">Let´s work together</a>
+          <a class="scroll btn-call" href="#contact">Let´s talk</a>
         </article>
         <article class="photo item-4"></article>
       </section>
 
-      <article class="break">
-        <img src="./assets/bg/vetaTopLeft.png" alt="topLeft" />
-        <img src="./assets/bg/vetaTopRight.png" alt="topRight" />
-        <img src="./assets/bg/vetaMedLeft.png" alt="medLeft" />
-        <img src="./assets/bg/vetaMedRight.png" alt="medRight" />
-        <img src="./assets/bg/vetaBotLeft.png" alt="botLeft" />
-        <img src="./assets/bg/vetaBotRight.png" alt="botRight" />
+      <article class="break-container">
+        <img class="break" />
       </article>
+      <section
+        class="container projects"
+        id="projects"
+        onmouseenter="setActiveLinkHover(this)"
+      >
+        <p>Proyectos</p>
+      </section>
 
-      <section class="projects" id="projects">
+      <!--  <section class="projects" id="projects">
         <article class="project container">
           <section class="video item-4">
             <video autoplay loop muted>
@@ -273,17 +281,17 @@
           </section>
         </article>
       </section>
-
-      <article class="break">
+ -->
+      <!-- <article class="break">
         <img src="./assets/bg/vetaTopLeft.png" alt="topLeft" />
         <img src="./assets/bg/vetaTopRight.png" alt="topRight" />
         <img src="./assets/bg/vetaMedLeft.png" alt="medLeft" />
         <img src="./assets/bg/vetaMedRight.png" alt="medRight" />
         <img src="./assets/bg/vetaBotLeft.png" alt="botLeft" />
         <img src="./assets/bg/vetaBotRight.png" alt="botRight" />
-      </article>
+      </article> -->
 
-      <section class="aboutMe container" id="aboutMe">
+      <!--  <section class="aboutMe container" id="aboutMe">
         <article class="aboutMeDescription card item-5">
           <p>
             ¡Hi! I´m <b>Jair Ramirez</b> and I´m a
@@ -339,18 +347,18 @@
             </div>
           </div>
         </article>
-      </section>
+      </section> -->
 
-      <article class="break">
+      <!-- <article class="break">
         <img src="./assets/bg/vetaTopLeft.png" alt="topLeft" />
         <img src="./assets/bg/vetaTopRight.png" alt="topRight" />
         <img src="./assets/bg/vetaMedLeft.png" alt="medLeft" />
         <img src="./assets/bg/vetaMedRight.png" alt="medRight" />
         <img src="./assets/bg/vetaBotLeft.png" alt="botLeft" />
         <img src="./assets/bg/vetaBotRight.png" alt="botRight" />
-      </article>
+      </article> -->
 
-      <section class="contact container" id="contact">
+      <!--  <section class="contact container" id="contact">
         <form
           class="container"
           action="https://formspree.io/mjvapkbk"
@@ -380,9 +388,9 @@
           ></textarea>
           <button class="btn-call" type="submit">Send</button>
         </form>
-      </section>
+      </section> -->
     </main>
-    <footer class="footer" id="footer">
+    <!--  <footer class="footer" id="footer">
       <article class="break footer">
         <img class="" src="./assets/bg/vetaTopLeft.png" alt="topLeft" />
         <img class="" src="./assets/bg/vetaTopRight.png" alt="topRight" />
@@ -434,9 +442,10 @@
                 stroke-width="4"
               />
             </svg>
+          </a>
         </article>
       </section>
-    </footer>
+    </footer> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/script.js"></script>

@@ -1,0 +1,193 @@
+:root {
+  font-size: 12px;
+  --font-call: "ABeeZee", sans-serif;
+  --font-text: "Montserrat", sans-serif;
+  --font-title: "Mulish", sans-serif;
+  --font-headlines: "Righteous", sans-serif;
+  --font-append: "Roboto", sans-serif;
+
+  --color-light: #f9ebeb;
+  --color-black: #1b1f3b;
+
+  --box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  background-color: var(--color-light);
+  color: var(--color-black);
+  /* overflow-x: hidden; */
+}
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+header {
+  height: 3.5em;
+}
+
+nav {
+  height: 3.5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-light);
+  box-shadow: var(--box-shadow);
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  align-content: center;
+  justify-content: space-around;
+}
+nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+nav ul li a,
+nav ul li button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+nav ul li a {
+  height: 100%;
+  padding: 0 1em;
+  font-family: var(--font-title);
+}
+nav ul li a:after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 1em;
+  height: 0.4em;
+  background: transparent;
+  border-radius: 0.5em;
+  transition: all 0.3s ease-out;
+}
+nav ul li a:hover:after {
+  background: var(--color-black);
+  width: 100%;
+}
+nav ul li a.active:after {
+  background: var(--color-black);
+  width: 100%;
+}
+nav ul li button.btn-icon:after {
+  background-image: url("../assets/icons/download-icon.svg");
+  background-size: contain;
+  color: red;
+}
+.btn,
+.btn-icon {
+  position: relative;
+  width: 6em;
+  font-size: 1em;
+  height: 2.3em;
+  text-align: left;
+  outline: transparent;
+  background-color: var(--color-light);
+  border-radius: 2em;
+  transition: all 0.3s ease-out;
+}
+.btn:hover,
+.btn-icon:hover {
+  box-shadow: var(--box-shadow);
+}
+.btn-icon {
+  padding-left: 1em;
+  justify-content: left;
+}
+.btn-icon::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  background-image: hidden;
+}
+
+.container {
+  margin: 3em 0;
+  padding: 1em 4em;
+}
+.headline {
+  text-align: center;
+  font-family: var(--font-headlines);
+  font-size: 4.5em;
+}
+.text {
+  font-family: var(--font-text);
+  color: var(--color-black);
+  font-size: 1.5em;
+}
+.break-container {
+  border: 1px solid red;
+  width: 100%;
+  height: calc(100vw / 1.7);
+}
+.break {
+  width: 100%;
+  height: 100%;
+  background: url("../assets/bg/vector.svg");
+  background-size: contain;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
+}
+
+.projects {
+  height: 500px;
+}
+
+@media only screen and (min-width: 500px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  :root {
+    font-size: 17px;
+  }
+  body {
+    background: lightcyan;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  :root {
+    font-size: 18px;
+  }
+  body {
+    background: orange;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    font-size: 20px;
+  }
+  body {
+    background: blue;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  :root {
+    font-size: 22px;
+  }
+  body {
+    background: red;
+  }
+}
