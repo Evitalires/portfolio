@@ -20,18 +20,21 @@
       <nav>
         <ul>
           <li>
-            <a href="#projects" onclick="linkClicked" class="scroll linkPage"
-              >Projects</a
+            <a href="#references" onclick="linkClicked" class="scroll linkPage"
+              >References</a
             >
           </li>
           <li>
-            <a href="#aboutMe" class="scroll linkPage">About Me</a>
+            <a href="#skills" class="scroll linkPage">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="scroll linkPage">Projects</a>
           </li>
           <li>
             <a href="#contact" class="scroll linkPage">Contact</a>
           </li>
           <li>
-            <button class="btn-icon cv-download">CV</button>
+            <button class="btnIcon cv-download">CV</button>
           </li>
         </ul>
       </nav>
@@ -44,20 +47,146 @@
             <span> A frontEnd developer and interface designer</span>
             <span>Who builds UX rich, accessible & performant websites</span>
           </p>
-          <a class="scroll btn-call" href="#contact">Let´s talk</a>
+          <a class="scroll btnCall" href="#contact">Let´s talk</a>
         </article>
         <article class="photo item-4"></article>
       </section>
 
-      <article class="break-container">
+      <section class="breakContainer">
         <img class="break" />
-      </article>
+      </section>
       <section
-        class="container projects"
-        id="projects"
+        class="container"
+        id="references"
         onmouseenter="setActiveLinkHover(this)"
       >
-        <p>Proyectos</p>
+        <header class="headerSection">
+          <span>References</span>
+          <h2>References</h2>
+        </header>
+        <article class="reference">
+          <div class="referenceContent">
+            <div class="containerReferenceImage">
+              <div class="referenceImageSupport"></div>
+              <div class="referenceImageSupport"></div>
+              <img
+                src="./assets/photos/nnProfile.png"
+                alt="referenceImage"
+                class="referenceImage"
+              />
+            </div>
+            <div class="referenceDescription">
+              <p class="">
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                illum provident esse in aliquid eligendi consequatur
+                voluptatibus fugit error quaerat? "
+              </p>
+            </div>
+
+            <div class="referenceSocialMedia">
+              <a class="twitter" href="http://" target="_blank"></a>
+              <a class="linkedin" href="http://" target="_blank"></a>
+            </div>
+          </div>
+          <div class="referenceName">Leonidas Esteban</div>
+        </article>
+        <article class="reference inverted">
+          <div class="referenceContent">
+            <div class="containerReferenceImage">
+              <div class="referenceImageSupport"></div>
+              <div class="referenceImageSupport"></div>
+              <img
+                src="./assets/photos/nnProfile.png"
+                alt="referenceImage"
+                class="referenceImage"
+              />
+            </div>
+            <div class="referenceDescription">
+              <p class="">
+                " Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+                illum provident esse in aliquid eligendi consequatur
+                voluptatibus fugit error quaerat? "
+              </p>
+            </div>
+
+            <div class="referenceSocialMedia">
+              <a class="twitter" href="http://" target="_blank"></a>
+              <a class="linkedin" href="http://" target="_blank"></a>
+            </div>
+          </div>
+          <div class="referenceName">Leonidas Esteban</div>
+        </article>
+      </section>
+
+      <section class="breakContainer">
+        <img class="break" />
+      </section>
+
+      <section
+        class="container"
+        id="skills"
+        onmouseenter="setActiveLinkHover(this)"
+      >
+        <header class="headerSection">
+          <span>Skills</span>
+          <h2>Skills</h2>
+        </header>
+
+        <article class="containerSkills">
+          <div class="skillsList">
+            <div class="column1">
+              <div class="skill">
+                <img src="" alt="GitHub" />
+                <h4>GitHub</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="Git" />
+                <h4>Git</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="SASS" />
+                <h4>SASS</h4>
+              </div>
+            </div>
+            <div class="column2">
+              <div class="skill">
+                <img src="" alt="HTML" />
+                <h4>HTML</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="CSS" />
+                <h4>CSS</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="JavaScript" />
+                <h4>JavaScript</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="React.js" />
+                <h4>React.js</h4>
+              </div>
+            </div>
+
+            <div class="column3">
+              <div class="skill">
+                <img src="" alt="Figma" />
+                <h4>Figma</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="Sketch" />
+                <h4>Sketch</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="WordPress" />
+                <h4>WordPress</h4>
+              </div>
+              <div class="skill">
+                <img src="" alt="Webflow" />
+                <h4>Webflow</h4>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
 
       <!--  <section class="projects" id="projects">
