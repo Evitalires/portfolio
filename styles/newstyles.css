@@ -91,6 +91,7 @@ nav ul li button.btnIcon:after {
   background-size: contain;
   color: red;
 }
+
 .twitter {
   background-size: contain;
   background-repeat: no-repeat;
@@ -103,6 +104,7 @@ nav ul li button.btnIcon:after {
   background-position: center;
   background-image: url("../assets/icons/linkedin.svg");
 }
+
 .btn,
 .btnIcon {
   position: relative;
@@ -114,6 +116,21 @@ nav ul li button.btnIcon:after {
   background-color: var(--color-light);
   border-radius: 2em;
   transition: all 0.3s ease-out;
+}
+.btnCall {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  font-family: var(--font-call);
+  font-weight: 400;
+  line-height: 32px;
+  word-wrap: break-word;
+  color: var(--color-light);
+  width: 30vw;
+  height: min-content;
+  padding: 0.7em;
+  border-radius: 2em;
+  background-color: var(--color-black);
 }
 .btn:hover,
 .btnIcon:hover {
@@ -134,13 +151,26 @@ nav ul li button.btnIcon:after {
 }
 
 .container {
-  margin: 3em 0;
-  padding: 1em 2em;
+  min-height: 70vh; /*  */
+  border: 1px solid salmon;
+  margin: 4vw;
+  padding: 2vw;
+}
+.container .heroContent {
+  display: grid;
+  justify-items: center;
+}
+.container .heroContent .text span {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.8em;
 }
 .headline {
   text-align: center;
   font-family: var(--font-headlines);
-  font-size: 4.5em;
+  font-size: 6em;
+  margin-bottom: 0.2em;
 }
 .text {
   font-family: var(--font-text);
@@ -165,7 +195,7 @@ nav ul li button.btnIcon:after {
   position: relative;
   letter-spacing: 0.15em;
   font-family: var(--font-headlines);
-  margin: 3em 0;
+  margin: 3em 0 5em 0;
 }
 .headerSection:after {
   content: "";
@@ -206,17 +236,18 @@ nav ul li button.btnIcon:after {
   color: var(--color-light);
 }
 #references .reference {
-  height: 14em;
-  margin: 2em 0;
+  height: 20em;
+  margin: 6em 5vw;
   border-radius: 1em;
   position: relative;
-  width: 100%;
+  width: calc(100%-3em);
   background: var(--color-black);
 }
 #references .reference .referenceContent {
   height: 100%;
   overflow: hidden;
   position: relative;
+  border-radius: 1em;
 }
 #references .reference .referenceImage {
   position: absolute;
@@ -290,9 +321,10 @@ nav ul li button.btnIcon:after {
   display: flex;
   align-content: center;
   margin: 0;
+  padding: 0.5vw;
   text-align: center;
   align-items: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
   line-height: 1.5em;
   color: var(--color-light);
   opacity: 0.5;
@@ -344,7 +376,7 @@ nav ul li button.btnIcon:after {
 
 @media only screen and (min-width: 500px) {
   :root {
-    font-size: 14px;
+    font-size: 9px;
   }
 }
 
