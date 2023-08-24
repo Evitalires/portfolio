@@ -240,7 +240,7 @@ nav ul li button.btnIcon:after {
   margin: 6em 5vw;
   border-radius: 1em;
   position: relative;
-  width: calc(100%-3em);
+  width: auto;
   background: var(--color-black);
 }
 #references .reference .referenceContent {
@@ -295,7 +295,7 @@ nav ul li button.btnIcon:after {
 }
 
 #references .reference .referenceName {
-  right: 1em;
+  right: 3em;
   width: 50%;
   bottom: -1em;
   padding: 0.5em;
@@ -309,7 +309,7 @@ nav ul li button.btnIcon:after {
 }
 #references .reference.inverted .referenceName {
   right: initial;
-  left: 1em;
+  left: 3em;
 }
 #references .reference .referenceDescription p {
   font-family: var(--font-call);
@@ -321,11 +321,11 @@ nav ul li button.btnIcon:after {
   display: flex;
   align-content: center;
   margin: 0;
-  padding: 0.5vw;
+  padding: 1vw;
   text-align: center;
   align-items: center;
   font-size: 1.3em;
-  line-height: 1.5em;
+  line-height: 1.8em;
   color: var(--color-light);
   opacity: 0.5;
   transition: all 0.3s ease-in-out;
@@ -372,6 +372,48 @@ nav ul li button.btnIcon:after {
 #skills .headerSection span,
 #skills .headerSection h2 {
   color: var(--color-light);
+}
+
+#skills .skills {
+  padding: 2em 5em;
+}
+
+#skills .skillsList {
+  width: auto;
+
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+#skills .skillsList .column {
+  width: 30%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  padding: 1em 0.5em;
+  gap: 2em;
+  height: 100%;
+}
+#skills .skillsList .column .skill {
+  border: 1px solid var(--color-light-blue);
+  border-radius: 0.5em;
+  width: 6em;
+  height: auto;
+  min-height: 7em;
+  display: grid;
+  padding: 2em;
+  gap: 0.5em;
+  justify-items: center;
+}
+#skills .skillsList .column .skill img {
+  width: 80%;
+}
+
+#skills .skillsList .column .skill h4 {
+  color: var(--color-light-blue);
+  font-family: var(--font-title);
+  margin: 0;
 }
 
 @media only screen and (min-width: 500px) {
