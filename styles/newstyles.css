@@ -417,7 +417,6 @@ nav ul li button.btnIcon:after {
 
 #projects {
   background-color: var(--color-light-blue);
-  border: 5px solid green;
   padding: 5em;
 }
 #projects .project {
