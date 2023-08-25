@@ -7,7 +7,7 @@
   --font-append: "Roboto", sans-serif;
 
   --color-light: #f9ebeb;
-  --color-black: #1b1f3b;
+  --color-black: #17263f;
   --color-light-blue: #d3d6ef;
   --color-blue: #3d4ec2;
 
@@ -153,8 +153,7 @@ nav ul li button.btnIcon:after {
 .container {
   min-height: 70vh; /*  */
   border: 1px solid salmon;
-  margin: 4vw;
-  padding: 2vw;
+  padding: 6vw;
 }
 .container .heroContent {
   display: grid;
@@ -414,6 +413,120 @@ nav ul li button.btnIcon:after {
   color: var(--color-light-blue);
   font-family: var(--font-title);
   margin: 0;
+}
+
+#projects {
+  background-color: var(--color-light-blue);
+  border: 5px solid green;
+  padding: 5em;
+}
+#projects .project {
+  margin-bottom: 3em;
+  height: auto;
+  padding: 3em;
+  position: relative;
+}
+
+#projects .project:last-of-type {
+  margin-bottom: 6em;
+}
+#projects .project .video {
+  display: flex;
+  justify-content: center;
+}
+
+#projects .project .video video {
+  border-radius: 1em;
+  width: 95%;
+}
+
+#projects .project .videoDescription {
+  font-family: var(--font-text);
+  font-weight: bold;
+  border-radius: 1em;
+  background-color: var(--color-light-blue);
+  width: 65%;
+  position: relative;
+  left: 16%;
+  bottom: 5em;
+  box-shadow: var(--box-shadow);
+}
+
+#projects .project .videoDescription p {
+  padding: 1em 3em 0em 3em;
+}
+
+#projects .project .videoDescription .videoLinksContainer {
+  background-image: url(../assets/bg/bk-description.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  height: 4em;
+  position: relative;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+#projects .project .videoDescription .videoLinksContainer .videoLinks {
+  /*   background-color: orange;
+ */
+  font-size: 1em;
+  position: absolute;
+  display: flex;
+  height: 3.5em;
+  width: 70%;
+  justify-content: flex-start;
+  padding-right: 2em;
+  gap: 1em;
+  top: 75%;
+  left: 10%;
+}
+#projects .project .videoDescription .videoLinksContainer .videoLinks button {
+  height: 100%;
+  font-size: 1em;
+  color: var(--color-light-blue);
+  border: 2px solid var(--color-light-blue);
+  background-color: var(--color-black);
+}
+
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinks
+  .btnGitHub {
+  padding: 0.2em 0;
+  width: 3.5em; /* 3.5 */
+  border-radius: 50%;
+}
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinks
+  .btnGitHub
+  a {
+  display: block;
+  content: "";
+  margin: 0 auto;
+  width: 95%;
+  height: 95%;
+  background-image: url(../assets/icons/skillsIcons/github-icon.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*  */
+}
+#projects .project .videoDescription .videoLinksContainer .videoLinks .btnSite {
+  padding: 0 2em;
+  width: 70%;
+  border-radius: 2em;
+}
+
+@media only screen and (min-width: 300px) {
+  :root {
+    font-size: 7px;
+  }
 }
 
 @media only screen and (min-width: 500px) {

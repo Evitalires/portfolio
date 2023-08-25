@@ -249,13 +249,10 @@
         onmouseenter="setActiveLinkHover(this)"
       >
         <article class="project">
-          <section class="video item-4">
+          <section class="video">
             <video muted>
               <!-- autoplay loop -->
-              <source
-                src="./assets/media/socialNetwork.webm"
-                type="video/webm"
-              />
+              <source src="/assets/media/platziVideo.webm" type="video/webm" />
             </video>
           </section>
           <section class="videoDescription">
@@ -265,9 +262,15 @@
               Officia velit quae illo, consectetur accusantium veritatis
               recusandae placeat debitis eveniet vero aperiam fugiat.
             </p>
-            <div class="videoLinks">
-              <button><a href="">GitHub</a></button>
-              <button><a href=""></a>See Site</button>
+            <div class="videoLinksContainer">
+              <div class="videoLinks">
+                <button class="btnGitHub">
+                  <a href="" target="_blank"></a>
+                </button>
+                <button class="btnSite">
+                  <a href="" target="_blank"></a>See Site
+                </button>
+              </div>
             </div>
           </section>
         </article>
