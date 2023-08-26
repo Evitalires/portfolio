@@ -1,5 +1,5 @@
 :root {
-  font-size: 12px;
+  /* font-size: 12px; */
   --font-call: "ABeeZee", sans-serif;
   --font-text: "Montserrat", sans-serif;
   --font-title: "Mulish", sans-serif;
@@ -17,6 +17,7 @@
 body {
   margin: 0;
   width: 100%;
+  height: 100vh;
   background-color: var(--color-light);
   color: var(--color-black);
   /* overflow-x: hidden; */
@@ -126,6 +127,7 @@ nav ul li button.btnIcon:after {
   line-height: 32px;
   word-wrap: break-word;
   color: var(--color-light);
+  min-width: 10em;
   width: 30vw;
   height: min-content;
   padding: 0.7em;
@@ -294,7 +296,7 @@ nav ul li button.btnIcon:after {
 }
 
 #references .reference .referenceName {
-  right: 3em;
+  right: 3vw; /* 3em */
   width: 50%;
   bottom: -1em;
   padding: 0.5em;
@@ -308,12 +310,15 @@ nav ul li button.btnIcon:after {
 }
 #references .reference.inverted .referenceName {
   right: initial;
-  left: 3em;
+  left: 3vw; /* 3em */
 }
 #references .reference .referenceDescription p {
   font-family: var(--font-call);
   position: absolute;
-  right: 7em;
+  font-size: min(3vw, 1.3em);
+  /*   font-size: 1.3em;
+right: 7em; */
+  right: 26vw;
   left: 1.5em;
   top: 1em;
   bottom: 2em;
@@ -323,7 +328,6 @@ nav ul li button.btnIcon:after {
   padding: 1vw;
   text-align: center;
   align-items: center;
-  font-size: 1.3em;
   line-height: 1.8em;
   color: var(--color-light);
   opacity: 0.5;
@@ -374,34 +378,37 @@ nav ul li button.btnIcon:after {
 }
 
 #skills .skills {
-  padding: 2em 5em;
+  padding: 2em 5vw;
+  /*  padding: 2em 5em; */
 }
 
 #skills .skillsList {
   width: auto;
-
-  padding: 2em;
+  /* padding: 2em; */
+  padding: 3vw;
   display: flex;
   align-items: center;
-  gap: 2em;
+  gap: 3vw; /* 2em */
+  border: 1px solid red;
 }
 #skills .skillsList .column {
   width: 30%;
   display: grid;
   justify-items: center;
   align-items: center;
-  padding: 1em 0.5em;
-  gap: 2em;
+  /* padding: 1em 0.5em; */
+  gap: 4vw;
   height: 100%;
 }
 #skills .skillsList .column .skill {
   border: 1px solid var(--color-light-blue);
   border-radius: 0.5em;
-  width: 6em;
-  height: auto;
-  min-height: 7em;
+  min-width: fit-content;
+  width: 70%; /* 10vw 6em */
+  height: 90%;
+  min-height: auto;
   display: grid;
-  padding: 2em;
+  padding: 2vw;
   gap: 0.5em;
   justify-items: center;
 }
@@ -417,7 +424,7 @@ nav ul li button.btnIcon:after {
 
 #projects {
   background-color: var(--color-light-blue);
-  padding: 5em;
+  /*   padding: 5em;*/
 }
 #projects .projectsMore {
   display: flex;
@@ -434,7 +441,7 @@ nav ul li button.btnIcon:after {
 #projects .project {
   margin-bottom: 3em;
   height: auto;
-  padding: 3em;
+  padding: 3vw;
   position: relative;
 }
 
@@ -456,15 +463,21 @@ nav ul li button.btnIcon:after {
   font-weight: bold;
   border-radius: 1em;
   background-color: var(--color-light-blue);
-  width: 65%;
   position: relative;
-  left: 16%;
+  /* width: 65%;
   bottom: 5em;
+  left: 16%; */
+  width: 62vw;
+  left: 12%;
+  bottom: 5vw;
   box-shadow: var(--box-shadow);
 }
 
 #projects .project .videoDescription p {
-  padding: 1em 3em 0em 3em;
+  margin: 0;
+  padding: 1vw 3vw 0vw 3vw;
+
+  /*   padding: 1em 3em 0em 3em;*/
 }
 
 #projects .project .videoDescription .videoLinksContainer {
@@ -472,7 +485,7 @@ nav ul li button.btnIcon:after {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  height: 4em;
+  height: 4vw; /* 4em */
   position: relative;
   padding: 1em;
   border-radius: 1em;
@@ -622,10 +635,7 @@ nav ul li button.btnIcon:after {
 
 @media only screen and (min-width: 300px) {
   :root {
-    font-size: 7px;
-  }
-  body {
-    background: purple;
+    font-size: 14px;
   }
 }
 
