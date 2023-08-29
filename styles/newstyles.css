@@ -66,19 +66,18 @@ nav ul li {
   align-items: center;
   height: 100%;
 }
-nav ul li a,
-nav ul li button {
+nav ul li .linkPage {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
 }
-nav ul li a {
+nav ul li .linkPage {
   height: 100%;
   padding: 0 min(1vw, 1em);
   font-family: var(--font-title);
 }
-nav ul li a:after {
+nav ul li .linkPage:after {
   display: block;
   position: absolute;
   bottom: 0;
@@ -89,7 +88,7 @@ nav ul li a:after {
   border-radius: 0.5em;
   transition: all 0.3s ease-out;
 }
-nav ul li a:hover:after {
+nav ul li .linkPage:hover:after {
   background: var(--color-black);
   width: 100%;
 }
@@ -97,10 +96,27 @@ nav ul li a.active:after {
   background: var(--color-black);
   width: 100%;
 }
-nav ul li button.btnIcon:after {
+nav ul li a.btnIcon {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-title);
+  font-weight: bold;
+}
+nav ul li a.btnIcon:after {
   background-image: url("../assets/icons/download-icon.svg");
   background-size: contain;
-  color: red;
+  content: "";
+  color: transparent;
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 0em;
+  bottom: 0.5em;
+  width: 3em;
+  height: 1.5em;
+}
+nav ul li a.btnIcon:after:hover {
+  background-image: url("../assets/icons/download-icon.svg");
 }
 
 .twitter {
@@ -145,23 +161,14 @@ nav ul li button.btnIcon:after {
 }
 
 .btnIcon {
+  display: block;
   border: 2px solid var(--color-black);
   padding-left: 1em;
   justify-content: left;
 }
-.btnIcon::after {
-  content: "";
-  display: block;
-  position: absolute;
-  right: 1em;
-  width: 1em;
-  height: 1em;
-  background-image: hidden;
-}
 
 .container {
   min-height: 70vh; /*  */
-
   padding: 6vw;
   padding-bottom: 20vw;
 }

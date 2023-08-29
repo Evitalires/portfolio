@@ -326,7 +326,7 @@ function ScrollingNav() {
   });
 }
 
-function downloadCV() {
+/* function downloadCV() {
   const button = document.getElementsByClassName("cv-download")[0];
   console.log(button);
 
@@ -338,7 +338,7 @@ function downloadCV() {
 
 function setListeners() {
   downloadCV();
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
   ScrollingNav();
