@@ -38,7 +38,7 @@
             <a href="#contact" class="scroll linkPage">Contact</a>
           </li>
           <li>
-            <button class="btnIcon cv-download">CV</button>
+            <button class="btnIcon cv-download shadow">CV</button>
           </li>
         </ul>
       </nav>
@@ -51,7 +51,9 @@
             <span> A frontEnd developer and interface designer</span>
             <span>Who builds UX rich, accessible & performant websites</span>
           </p>
-          <a class="scroll btnCall" href="#contact">Let´s work together</a>
+          <a class="scroll btnCall shadow" href="#contact"
+            >Let´s work together</a
+          >
         </article>
         <article class="photo item-4"></article>
       </section>
@@ -68,7 +70,7 @@
           <span>References</span>
           <h2>References</h2>
         </header>
-        <article class="reference">
+        <article class="reference shadow">
           <div class="referenceContent">
             <div class="containerReferenceImage">
               <div class="referenceImageSupport"></div>
@@ -92,9 +94,9 @@
               <a class="linkedin" href="http://" target="_blank"></a>
             </div>
           </div>
-          <div class="referenceName">Fernando Poveda</div>
+          <div class="referenceName shadow">Fernando Poveda</div>
         </article>
-        <article class="reference inverted">
+        <article class="reference inverted shadow">
           <div class="referenceContent">
             <div class="containerReferenceImage">
               <div class="referenceImageSupport"></div>
@@ -120,7 +122,7 @@
           </div>
           <div class="referenceName">Leonidas Montes</div>
         </article>
-        <article class="reference">
+        <article class="reference shadow">
           <div class="referenceContent">
             <div class="containerReferenceImage">
               <div class="referenceImageSupport"></div>
@@ -161,25 +163,25 @@
         <article class="skills">
           <div class="skillsList">
             <div class="column 1">
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/html-icon.svg"
                   alt="HTML"
                 />
                 <h4>HTML</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img src="./assets/icons/skillsIcons/css3-icon.svg" alt="CSS" />
                 <h4>CSS</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/javascript.svg"
                   alt="JavaScript"
                 />
                 <h4>JavaScript</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/react-icon.svg"
                   alt="React.js"
@@ -188,7 +190,7 @@
               </div>
             </div>
             <div class="column 2">
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/github-icon.svg"
                   alt="GitHub"
@@ -196,11 +198,11 @@
                 />
                 <h4>GitHub</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img src="./assets/icons/skillsIcons/git.svg" alt="Git" />
                 <h4>Git</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/sass-icon.svg"
                   alt="SASS"
@@ -210,28 +212,28 @@
             </div>
 
             <div class="column 3">
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/figma-icon.svg"
                   alt="Figma"
                 />
                 <h4>Figma</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/sketch-icon.svg"
                   alt="Sketch"
                 />
                 <h4>Sketch</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/wordpress.svg"
                   alt="WordPress"
                 />
                 <h4>WordPress</h4>
               </div>
-              <div class="skill">
+              <div class="skill shadow">
                 <img
                   src="./assets/icons/skillsIcons/angular.svg"
                   alt="angular"
@@ -254,12 +256,12 @@
         </header>
         <article class="project">
           <section class="video">
-            <video muted>
+            <video muted class="shadow">
               <!-- autoplay loop -->
               <source src="./assets/media/platziVideo.webm" type="video/webm" />
             </video>
           </section>
-          <section class="videoDescription">
+          <section class="videoDescription shadow">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
               veritatis commodi magnam laboriosam quo. Accusamus, assumenda.
@@ -268,10 +270,10 @@
             </p>
             <div class="videoLinksContainer">
               <div class="videoLinks">
-                <button class="btnGitHub">
+                <button class="btnGitHub shadow">
                   <a href="" target="_blank"></a>
                 </button>
-                <button class="btnSite">
+                <button class="btnSite shadow">
                   <a href="" target="_blank"></a>See Site
                 </button>
               </div>
@@ -324,31 +326,44 @@
           </article>
           <form action="" method="post">
             <label for="name">
-              <input type="text" name="name" id="formName" placeholder="Name" />
+              <input
+                class="shadow"
+                type="text"
+                name="name"
+                id="formName"
+                placeholder="Name"
+                required
+              />
             </label>
             <label for="subject"
               ><input
+                class="shadow"
                 type="text"
                 name="subject"
                 id="formSubject"
                 placeholder="Subject"
+                required
             /></label>
             <label for="email"
               ><input
+                class="shadow"
                 type="email"
                 name="email"
                 id="formEmail"
                 placeholder="Email"
+                required
               />
             </label>
             <textarea
+              class="shadow"
               name="description"
               id=""
               cols="30"
               rows="10"
               placeholder="Tell me"
+              required
             ></textarea>
-            <button type="submit" class="submit">SEND!</button>
+            <button type="submit" class="submit shadow">SEND!</button>
           </form>
         </article>
       </section>
