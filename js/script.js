@@ -1,234 +1,4 @@
-/* let data = {
-  projects: [
-    (project = [
-      {
-        title: "Purpose",
-        description: "create a simple social network for web developers."
-      },
-      {
-        title: "Objective",
-        description:
-          " Each developer should see other developer's profiles and they can: \n Create a user. \n Log in ther user. \n See their profile. \n Add experience and educational credentials."
-      },
-      {
-        title: "Approach",
-        description:
-          "Trought the curse of Sass.js from Traversy Media, I take their lesson and center my focus in create something different."
-      },
-      {
-        title: "Time",
-        description: "No time needed"
-      },
-      {
-        title: "My Role",
-        description: "Main FrontedDeveloper"
-      }
-    ]),
-    (project = [
-      {
-        title: "Purpose",
-        description:
-          "Trought the course of React.js, create an application that teaches me why the patterns from React.js has become so popular in web development."
-      },
-      {
-        title: "Objective",
-        description:
-          "Understand the main concepts:\n Rendering Elements.\n Components and Props \n State and Lifecycle\n Handling Events \nConditional Rendering \nLists and Keys \nComposition vs Inheritance"
-      },
-      {
-        title: "Approach",
-        description:
-          "Trought the curse of React.js from Platzi, I get close to react.js as a learner. My focus was entirely center to follow the instructions from the professor having as result the project PlatziVideo which is web application center in play videos."
-      },
-      {
-        title: "Time",
-        description: "16 hours"
-      },
-      {
-        title: "My Role",
-        description:
-          "As a student, my role was focusing on initially following the lessons and overcome the challenges. Then, after the course ended my role change from student to the main feature contributor in the project."
-      }
-    ]),
-    (project = [
-      {
-        title: "Purpose",
-        description:
-          "Build a web page that serves as an example of how could look the webpage for"
-      },
-      {
-        title: "Objective",
-        description:
-          "Applied my knowledge in HTML, CSS, JAVASCRIPT having in mind a mobile-first implementation."
-      },
-      {
-        title: "Approach",
-        description:
-          "Ask the client what´re their necessities related for the web page\n From the project of web development from Platzi, I quickly built the prototype for the web page in CEUA S.A.S.\n I used my knowledge in GIT and GITHUB to deploy the web page."
-      },
-      {
-        title: "Time",
-        description: "16 hours"
-      },
-      {
-        title: "My Role",
-        description: "Main frontEnd Developer"
-      }
-    ]),
-    (project = [
-      {
-        title: "Purpose",
-        description: "Build my first web page"
-      },
-      {
-        title: "Objective",
-        description:
-          "Applied my knowledge in HTML, CSS, JAVASCRIPT for a web page designed desktop-first, and then make the web page responsive."
-      },
-      {
-        title: "Approach",
-        description:
-          "Follow the instructions from the course of web development at Platzi, overcome the challenges, and deploy the project."
-      },
-      {
-        title: "Time",
-        description: "14 hours"
-      },
-      {
-        title: "My Role",
-        description: "Student"
-      }
-    ])
-  ]
-};
-
-//unused
-
-let projects = document.getElementsByClassName("project");
-
-function listenerForProject(projects) {
-  for (let index = 0; index < projects.length; index++) {
-    let project = projects[index];
-
-    project.addEventListener("mouseenter", () => {
-      parentProject = {
-        element: project,
-        index: index
-      };
-    });
-  }
-}
-
-function listenersForPickers() {
-  let pickers = document.getElementsByClassName("btn picker");
-  for (let index = 0; index < pickers.length; index++) {
-    let picker = pickers[index];
-    picker.addEventListener("click", () => {
-      givingData(parentProject, picker);
-      picker.className = "btn picker active";
-      removeClass(picker, pickers, "btn picker");
-    });
-  }
-}
-
-function removeClass(main, siblings, className) {
-  for (let index = 0; index < siblings.length; index++) {
-    let sibling = siblings[index];
-    if (sibling.innerText !== main.innerText) {
-      sibling.className = className;
-    }
-  }
-}
-
-function givingData(project, picker) {
-  let aboutProjectDescription =
-    project.element.children[1].children[1].firstElementChild;
-  let arrayProject = data.projects[parentProject.index];
-
-  arrayProject.map((el, i) => {
-    if (picker.innerText === el.title) {
-      aboutProjectDescription.innerText = el.description;
-    }
-  });
-}
-
-function initialDataProjects(projects) {
-  let dataProjects = data.projects;
-  for (let index = 0; index < projects.length; index++) {
-    let project = projects[index];
-    let picker = project.children[1].firstElementChild.firstElementChild;
-    let aboutProjectDescription =
-      project.children[1].children[1].firstElementChild;
-
-    picker.className = "btn picker active";
-    aboutProjectDescription.innerText = dataProjects[index][index].description;
-  }
-}
-initialDataProjects(projects);
-
-function settingCarousel() {
-  console.log("actualizado");
-
-  document.addEventListener("DOMContentLoaded", function () {
-    let elems = document.querySelectorAll(".carousel");
-    let instances = M.Carousel.init(elems, {
-      dist: -35,
-      fullWidth: !1,
-      shift: -20,
-      padding: 10,
-      duration: 25
-    });
-  });
-
-  settingSizeCarousel();
-}
-
-function settingSizeCarousel() {
-  let aboutMeFunctionsWidth = document.getElementsByClassName(
-    "containerCarousel"
-  )[0].offsetWidth;
-
-  let aboutMeFunctionsHeight = document.getElementsByClassName(
-    "containerCarousel"
-  )[0].offsetHeight;
-
-  //Because the element wil rotate 90deg I will change the value
-  document.body.style.setProperty(
-    "--carousel-height",
-    `${aboutMeFunctionsWidth}px`
-  );
-  document.body.style.setProperty(
-    "--carousel-width",
-    `${aboutMeFunctionsHeight}px`
-  );
-}
-
-function resetCarousel() {
-  M.Carousel.init(document.querySelectorAll(".carousel"), {
-    dist: -35,
-    fullWidth: !1,
-    shift: -20,
-    padding: 10,
-    duration: 25
-  });
-
-  settingSizeCarousel();
-}
-function lineInHeader() {
-  let links = document.getElementsByClassName("linkPage");
-  let parents = document.getElementsByTagName("li");
-  for (let index = 0; index < links.length; index++) {
-    let link = links[index];
-    link.addEventListener("click", () => {
-      let parent = link.parentElement;
-      parent.className = "clicked";
-      removeClass(parent, parents, " ");
-    });
-  }
-}
- */
-/*  */
-
+/* 
 function setActiveLinkHover(elem) {
   console.log(elem.id);
   const sectionID = elem.id;
@@ -326,21 +96,146 @@ function ScrollingNav() {
   });
 }
 
-/* function downloadCV() {
-  const button = document.getElementsByClassName("cv-download")[0];
-  console.log(button);
-
-  button.addEventListener("click", (el) => {
-    el.preventDefault();
-    console.log("Donwloading cv...");
-  });
-}
-
-function setListeners() {
-  downloadCV();
-} */
-
 document.addEventListener("DOMContentLoaded", () => {
   ScrollingNav();
   setListeners();
+});
+ */
+const dataProjects = [
+  {
+    name: "name",
+    video: {
+      src: "urlvideo",
+      description: "description",
+      links: {
+        gitHub: "linkGit",
+        site: "rulsite",
+      },
+    },
+  },
+  {
+    name: "name.2",
+    video: {
+      src: "urlvideo",
+      description: "description",
+      links: {
+        gitHub: "linkGit",
+        site: "rulsite",
+      },
+    },
+  },
+  {
+    name: "name.3",
+    video: {
+      src: "urlvideo",
+      description: "description",
+      links: {
+        gitHub: "linkGit",
+        site: "rulsite",
+      },
+    },
+  },
+];
+let newDataProjects = dataProjects.slice();
+
+function newProject(project, lastElement) {
+  console.log(project);
+  // Create the main article element
+  let article = document.createElement("article");
+  article.className = "project";
+
+  // Create the video section
+  let videoSection = document.createElement("section");
+  videoSection.className = "video";
+
+  let video = document.createElement("video");
+  video.className = "shadow";
+  video.setAttribute("muted", "");
+
+  let videoSource = document.createElement("source");
+  videoSource.src = "./assets/media/platziVideo.webm";
+  videoSource.type = "video/webm";
+
+  video.appendChild(videoSource);
+  videoSection.appendChild(video);
+
+  // Create the video description section
+  let descriptionSection = document.createElement("section");
+  descriptionSection.className = "videoDescription shadow";
+
+  let description = document.createElement("p");
+  description.textContent =
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime veritatis commodi magnam laboriosam quo. Accusamus, assumenda. Officia velit quae illo, consectetur accusantium veritatis recusandae placeat debitis eveniet vero aperiam fugiat.";
+
+  let linksContainer = document.createElement("div");
+  linksContainer.className = "videoLinksContainer";
+
+  let links = document.createElement("div");
+  links.className = "videoLinks";
+
+  let githubButton = document.createElement("button");
+  githubButton.className = "btnGitHub shadow";
+  let githubLink = document.createElement("a");
+  githubLink.href = "#"; // Add GitHub link URL here
+  githubLink.target = "_blank";
+  githubButton.appendChild(githubLink);
+
+  let siteButton = document.createElement("button");
+  siteButton.className = "btnSite shadow";
+  let siteLink = document.createElement("a");
+  siteLink.href = "#"; // Add site link URL here
+  siteLink.target = "_blank";
+  siteLink.textContent = project.name;
+  siteButton.appendChild(siteLink);
+
+  links.appendChild(githubButton);
+  links.appendChild(siteButton);
+  linksContainer.appendChild(links);
+  descriptionSection.appendChild(description);
+  descriptionSection.appendChild(linksContainer);
+
+  // Append sections to the main article
+  article.appendChild(videoSection);
+  article.appendChild(descriptionSection);
+
+  newDataProjects.shift();
+
+  if (newDataProjects[0] === undefined) {
+    lastElement.textContent = "See less";
+  }
+
+  return article;
+}
+
+function newSibbling(e) {
+  let projects = document.getElementById("projects");
+  let allProjects = projects.getElementsByTagName("article");
+  console.log(allProjects.length);
+  console.log(newDataProjects[0] === undefined);
+
+  var lastElement = projects.lastElementChild;
+
+  if (allProjects.length === 2 && lastElement.textContent == "See less") {
+    lastElement.textContent = " See More";
+    newDataProjects = dataProjects.slice();
+    return;
+  } else if (newDataProjects[0] === undefined) {
+    if (allProjects.length >= 1) {
+      var penulProject = allProjects[allProjects.length - 1];
+      penulProject.parentNode.removeChild(penulProject);
+      console.log("Penultimo elemento eliminado.");
+    }
+    console.log("Remover elementos");
+  } else if (lastElement) {
+    projects.insertBefore(
+      newProject(newDataProjects[0], lastElement),
+      lastElement
+    );
+    return;
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("projectsMore")
+    .addEventListener("click", newSibbling);
 });

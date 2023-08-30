@@ -38,8 +38,14 @@
             <a href="#contact" class="scroll linkPage">Contact</a>
           </li>
           <li>
-            <a class="btnIcon cv-download shadow" href="./assets/cv.pdf">CV</a>
+            <a
+              class="btnIcon cv-download shadow"
+              href="./assets/cv.pdf"
+              download
+              >CV</a
+            >
           </li>
+          <li><a href="#hero"></a></li>
         </ul>
       </nav>
     </header>
@@ -61,11 +67,7 @@
       <!--  <section class="breakContainer">
         <img class="break" />
       </section> -->
-      <section
-        class="container"
-        id="references"
-        onmouseenter="setActiveLinkHover(this)"
-      >
+      <section class="container" id="references">
         <header class="headerSection">
           <span>References</span>
           <h2>References</h2>
@@ -150,11 +152,7 @@
         </article>
       </section>
 
-      <section
-        class="container"
-        id="skills"
-        onmouseenter="setActiveLinkHover(this)"
-      >
+      <section class="container" id="skills">
         <header class="headerSection">
           <span>Skills</span>
           <h2>Skills</h2>
@@ -245,11 +243,7 @@
         </article>
       </section>
 
-      <section
-        class="container"
-        id="projects"
-        onmouseenter="setActiveLinkHover(this)"
-      >
+      <section class="container" id="projects">
         <header class="headerSection">
           <span>Projects</span>
           <h2>Projects</h2>
@@ -280,18 +274,40 @@
             </div>
           </section>
         </article>
+        <article class="project">
+          <section class="video">
+            <video muted class="shadow">
+              <!-- autoplay loop -->
+              <source src="./assets/media/platziVideo.webm" type="video/webm" />
+            </video>
+          </section>
+          <section class="videoDescription shadow">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
+              veritatis commodi magnam laboriosam quo. Accusamus, assumenda.
+              Officia velit quae illo, consectetur accusantium veritatis
+              recusandae placeat debitis eveniet vero aperiam fugiat.
+            </p>
+            <div class="videoLinksContainer">
+              <div class="videoLinks">
+                <button class="btnGitHub shadow">
+                  <a href="" target="_blank"></a>
+                </button>
+                <button class="btnSite shadow">
+                  <a href="" target="_blank"></a>See Site
+                </button>
+              </div>
+            </div>
+          </section>
+        </article>
 
-        <div class="projectsMore">
-          <a href="">See more</a>
+        <div class="projectsMore" id="projectsMore">
+          See more
           <i> -> </i>
         </div>
       </section>
 
-      <section
-        class="container"
-        id="contact"
-        onmouseenter="setActiveLinkHover(this)"
-      >
+      <section class="container" id="contact">
         <header class="headerSection">
           <span>Contact Me</span>
           <h2>Contact Me</h2>
