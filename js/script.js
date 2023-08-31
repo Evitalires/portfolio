@@ -139,7 +139,6 @@ const dataProjects = [
 let newDataProjects = dataProjects.slice();
 
 function newProject(project, lastElement) {
-  console.log(project);
   // Create the main article element
   let article = document.createElement("article");
   article.className = "project";
@@ -199,7 +198,6 @@ function newProject(project, lastElement) {
   article.appendChild(descriptionSection);
 
   newDataProjects.shift();
-
   if (newDataProjects[0] === undefined) {
     lastElement.textContent = "See less";
   }
@@ -211,21 +209,21 @@ function newSibbling(e) {
   let projects = document.getElementById("projects");
   let allProjects = projects.getElementsByTagName("article");
   console.log(allProjects.length);
-  console.log(newDataProjects[0] === undefined);
+  console.log(newDataProjects[0], newDataProjects[0] === undefined);
 
   var lastElement = projects.lastElementChild;
 
-  if (allProjects.length === 2 && lastElement.textContent == "See less") {
-    lastElement.textContent = " See More";
-    newDataProjects = dataProjects.slice();
-    return;
-  } else if (newDataProjects[0] === undefined) {
-    if (allProjects.length >= 1) {
-      var penulProject = allProjects[allProjects.length - 1];
-      penulProject.parentNode.removeChild(penulProject);
-      console.log("Penultimo elemento eliminado.");
-    }
+  if (allProjects.length >= 1 && newDataProjects[0] === undefined) {
     console.log("Remover elementos");
+    var penulProject = allProjects[allProjects.length - 1];
+    penulProject.parentNode.removeChild(penulProject);
+    console.log("Penultimo elemento eliminado.");
+
+    if (allProjects.length === 2) {
+      console.log("entre quedando tres");
+      lastElement.textContent = " See More";
+      newDataProjects = dataProjects.slice();
+    }
   } else if (lastElement) {
     projects.insertBefore(
       newProject(newDataProjects[0], lastElement),
