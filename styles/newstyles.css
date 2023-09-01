@@ -517,6 +517,7 @@ right: 7em; */
 }
 #skills .skillsList .column .skill img {
   width: 80%;
+  height: 8em;
 }
 
 #skills .skillsList .column .skill h4 {
