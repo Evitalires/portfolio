@@ -455,7 +455,7 @@ right: 7em; */
     top: -100%;
   }
   100% {
-    top: 10%;
+    top: -3%;
   }
 }
 
@@ -502,18 +502,18 @@ right: 7em; */
 }
 
 #skills .skillsList .column .skill {
-  border: 2px solid var(--color-light-blue);
-  border-radius: 0.5em;
-  min-width: fit-content;
-  height: min(30vw, 12em) /* 90% */;
-  min-height: auto;
-  display: grid;
-  padding: 2vw;
-  gap: 0.5em;
-  font-size: 0.8em;
-  justify-items: center;
-  margin: 2em 1em;
-  font-family: cursive;
+ border: 2px solid var(--color-light-blue);
+    border-radius: 0.5em;
+    min-width: fit-content;
+    height: min(30vw, 12em) /* 90% */;
+    min-height: auto;
+    display: grid;
+    padding: 5vw 2vw;
+    gap: 0.5em;
+    font-size: 0.8em;
+    justify-items: center;
+    margin: 1em 0em;
+    font-family: cursive;
 }
 #skills .skillsList .column .skill img {
   width: 80%;
