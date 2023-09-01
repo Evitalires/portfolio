@@ -463,7 +463,7 @@ right: 7em; */
   display: flex;
   padding: 2em 5vw;
   overflow: hidden;
-  height: 100vh;
+  height: min(50em, 130vw);
   gap: 1em;
   -webkit-mask-image: linear-gradient(
     to bottom,
