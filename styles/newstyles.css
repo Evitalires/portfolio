@@ -502,18 +502,18 @@ right: 7em; */
 }
 
 #skills .skillsList .column .skill {
- border: 2px solid var(--color-light-blue);
-    border-radius: 0.5em;
-    min-width: fit-content;
-    height: min(30vw, 12em) /* 90% */;
-    min-height: auto;
-    display: grid;
-    padding: 5vw 2vw;
-    gap: 0.5em;
-    font-size: 0.8em;
-    justify-items: center;
-    margin: 1em 0em;
-    font-family: cursive;
+  border: 2px solid var(--color-light-blue);
+  border-radius: 0.5em;
+  min-width: fit-content;
+  height: min(30vw, 12em) /* 90% */;
+  min-height: auto;
+  display: grid;
+  padding: 5vw 2vw;
+  gap: 0.5em;
+  font-size: 0.8em;
+  justify-items: center;
+  margin: 1em 0em;
+  font-family: cursive;
 }
 #skills .skillsList .column .skill img {
   width: 80%;
@@ -607,14 +607,71 @@ right: 7em; */
 }
 
 #projects .project .videoDescription .videoLinksContainer {
-  background-image: url(../assets/bg/bk-description.svg);
+  /* background-image: url(../assets/bg/bk-description.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
-  height: 4vw; /* 4em */
+  background-position: bottom; */
+  height: 8vw; /* 4em */
   position: relative;
-  padding: 1em;
   border-radius: 1em;
+}
+
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinksBackground {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1em;
+  position: relative;
+}
+
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinksBackground
+  svg {
+  top: 0.5em;
+  width: 380%;
+  height: 100%;
+  position: absolute;
+  animation: move-forever 5s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinksBackground
+  svg:last-of-type {
+  top: 0.7em;
+  animation: move-forever-reverse 10s linear infinite;
+}
+#projects
+  .project
+  .videoDescription
+  .videoLinksContainer
+  .videoLinksBackground
+  svg:last-of-type
+  path {
+  fill: var(--color-black);
+}
+@keyframes move-forever-reverse {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 #projects .project .videoDescription .videoLinksContainer .videoLinks {
