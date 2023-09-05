@@ -103,9 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 const dataProjects = [
   {
-    name: "name",
+    name: "invie",
     video: {
-      src: "urlvideo",
+      src: "./assets/media/invie.webm",
       description: "description",
       links: {
         gitHub: "linkGit",
@@ -114,24 +114,24 @@ const dataProjects = [
     },
   },
   {
-    name: "name.2",
+    name: "Basic",
     video: {
-      src: "urlvideo",
+      src: "https://evitalires.github.io/basic/",
       description: "description",
       links: {
-        gitHub: "linkGit",
-        site: "rulsite",
+        gitHub: "https://github.com/Evitalires/basic",
+        site: "https://evitalires.github.io/basic/",
       },
     },
   },
   {
-    name: "name.3",
+    name: "Basic",
     video: {
-      src: "urlvideo",
+      src: "https://evitalires.github.io/basic/",
       description: "description",
       links: {
-        gitHub: "linkGit",
-        site: "rulsite",
+        gitHub: "https://github.com/Evitalires/basic",
+        site: "https://evitalires.github.io/basic/",
       },
     },
   },
@@ -179,7 +179,8 @@ function newProject(project, lastElement) {
   video.setAttribute("muted", "");
 
   let videoSource = document.createElement("source");
-  videoSource.src = "./assets/media/platziVideo.webm";
+
+  videoSource.src = newDataProjects[0].video.src;
   videoSource.type = "video/webm";
 
   video.appendChild(videoSource);
@@ -217,7 +218,7 @@ function newProject(project, lastElement) {
   let siteLink = document.createElement("a");
   siteLink.href = "#"; // Add site link URL here
   siteLink.target = "_blank";
-  siteLink.textContent = project.name;
+  siteLink.textContent = "See Site";
   siteButton.appendChild(siteLink);
 
   links.appendChild(githubButton);
