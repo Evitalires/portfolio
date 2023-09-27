@@ -202,7 +202,7 @@ nav ul li a.btnIcon:after:hover {
   position: relative;
   min-height: 70vh; /*  */
   padding: 6vw;
-  padding-bottom: 20vw;
+  padding-bottom: 24vw;
 }
 .container .heroContent {
   display: grid;
