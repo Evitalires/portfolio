@@ -1,142 +1,81 @@
-/* 
-function setActiveLinkHover(elem) {
-  console.log(elem.id);
-  const sectionID = elem.id;
-  const scrollElements = document.querySelectorAll(".scroll");
+// --- Unified Script for Section Navigation & Interactions ---
 
-  scrollElements.forEach((el) => {
-    let elRef = el.href.split("#")[1];
+/**
+ * Premium Smooth Scroll with Easing
+ */
+function handleNavLinks() {
+  const scrollLinks = document.querySelectorAll(".scroll");
+  scrollLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
+      const target = document.getElementById(targetId);
 
-    if (el.classList.contains("active") && elRef === sectionID) {
-      return console.log("same id and element y no es necesario hacer cambios");
-    } else if (elRef === sectionID) {
-      scrollElements.forEach((el) => el.classList.remove("active"));
-      el.classList.add("active");
-      return;
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+}
+
+
+/**
+ * Contact Form Validation
+ */
+function validateContactForm() {
+  const form = document.querySelector("#contact form");
+  if (!form) return;
+
+  const inputs = form.querySelectorAll("input, textarea");
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => {
+      if (input.checkValidity()) {
+        input.style.borderColor = "var(--color-blue)";
+        input.classList.remove("invalid");
+      } else {
+        input.style.borderColor = "red";
+        input.classList.add("invalid");
+      }
+    });
+
+    input.addEventListener("blur", () => {
+      if (!input.checkValidity()) {
+        input.style.borderColor = "red";
+      }
+    });
+  });
+
+  form.addEventListener("submit", (e) => {
+    let isValid = true;
+    inputs.forEach(input => {
+      if (!input.checkValidity()) {
+        isValid = false;
+        input.style.borderColor = "red";
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert("Please fill out all fields correctly.");
     }
   });
 }
 
-function ScrollingNav() {
-  //Main method for scroll
-  const easeInCubic = function (t) {
-    return t * t * t;
-  };
-
-  const scrollToElem = (
-    startTime,
-    currentTime,
-    duration,
-    scrollEndElemTop,
-    startScrollOffset
-  ) => {
-    const runtime = currentTime - startTime;
-    let progress = runtime / duration;
-
-    progress = Math.min(progress, 1);
-
-    const ease = easeInCubic(progress);
-
-    window.scroll(0, startScrollOffset + scrollEndElemTop * ease);
-    if (runtime < duration) {
-      requestAnimationFrame((timestamp) => {
-        const currentTime = timestamp || new Date().getTime();
-        scrollToElem(
-          startTime,
-          currentTime,
-          duration,
-          scrollEndElemTop,
-          startScrollOffset
-        );
-      });
-    }
-  };
-
-  const animatingNode = (elem) => {
-    //1 getting the element id to scroll
-    const scrollElemId = elem.target.href.split("#")[1];
-    //2 Finding the node from the document
-    const scrollEndElem = document.getElementById(scrollElemId);
-    //3 animating the node
-    const anim = requestAnimationFrame((timestamp) => {
-      const stamp = timestamp || new Date().getTime();
-      const duration = 600;
-      const start = stamp;
-
-      const startScrollOffset = window.pageYOffset;
-
-      const scrollEndElemTop = scrollEndElem.getBoundingClientRect().top;
-
-      scrollToElem(start, stamp, duration, scrollEndElemTop, startScrollOffset);
-    });
-  };
-
-  const setActiveLink = (elem, elements) => {
-    let links = document.querySelectorAll(".active");
-
-    if (links.length > 0) {
-      links.forEach((el) => {
-        el.classList.remove("active");
-      });
-    }
-
-    elem.target.classList.add("active");
-  };
-
-  //select all element with class 'Scroll'
-  const scrollElements = document.querySelectorAll(".scroll");
-
-  //Adding event to each element
-  scrollElements.forEach((elem) => {
-    elem.addEventListener("click", (elem) => {
-      elem.preventDefault();
-      animatingNode(elem);
-      setActiveLink(elem, scrollElements);
-    });
-  });
-}
+// Update newDataProjects handling
+let newDataProjects = typeof dataProjects !== 'undefined' ? dataProjects.slice() : [];
 
 document.addEventListener("DOMContentLoaded", () => {
-  ScrollingNav();
-  setListeners();
+  handleNavLinks();
+  validateContactForm();
+  initNavColorObserver();
+
+  // Set up "See More" listener
+  const projectsMore = document.getElementById("projectsMore");
+  if (projectsMore) {
+    projectsMore.addEventListener("click", newSibbling);
+  }
 });
- */
-const dataProjects = [
-  {
-    name: "invie",
-    video: {
-      src: "./assets/media/invie.webm",
-      description: "description",
-      links: {
-        gitHub: "linkGit",
-        site: "rulsite",
-      },
-    },
-  },
-  {
-    name: "Basic",
-    video: {
-      src: "https://evitalires.github.io/basic/",
-      description: "description",
-      links: {
-        gitHub: "https://github.com/Evitalires/basic",
-        site: "https://evitalires.github.io/basic/",
-      },
-    },
-  },
-  {
-    name: "Basic",
-    video: {
-      src: "https://evitalires.github.io/basic/",
-      description: "description",
-      links: {
-        gitHub: "https://github.com/Evitalires/basic",
-        site: "https://evitalires.github.io/basic/",
-      },
-    },
-  },
-];
-let newDataProjects = dataProjects.slice();
 
 function svgPathBackground(videoLinksBackground) {
   let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -267,8 +206,51 @@ function newSibbling(e) {
     return;
   }
 }
-document.addEventListener("DOMContentLoaded", () => {
-  document
-    .getElementById("projectsMore")
-    .addEventListener("click", newSibbling);
-});
+/**
+ * Dynamic Navigation Color Observer
+ */
+function initNavColorObserver() {
+  const nav = document.querySelector("nav");
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".linkPage");
+
+  const sectionStyles = {
+    hero: { bg: "var(--color-light)", color: "var(--color-black)", filter: "none" },
+    projects: { bg: "var(--color-light-blue)", color: "var(--color-black)", filter: "none" },
+    skills: { bg: "var(--color-black)", color: "var(--color-light)", filter: "brightness(0) invert(1)" },
+    references: { bg: "var(--color-blue)", color: "var(--color-white)", filter: "brightness(0) invert(1)" },
+    contact: { bg: "var(--color-black)", color: "var(--color-light)", filter: "brightness(0) invert(1)" }
+  };
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "-20% 0px -75% 0px", // Adjusted margins for better active state detection
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        const styles = sectionStyles[id];
+
+        // Update nav styles
+        if (styles) {
+          nav.style.setProperty("--nav-bg", styles.bg);
+          nav.style.setProperty("--nav-color", styles.color);
+          nav.style.setProperty("--nav-filter", styles.filter);
+        }
+
+        // Update active class on links
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach(section => observer.observe(section));
+}

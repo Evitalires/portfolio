@@ -1,919 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="user-scalable=no,initial-scale=1,maximum-scale=1"
-    />
-    <!--  <link rel="stylesheet" href="styles/styles.css" /> -->
-    <link rel="stylesheet" href="./styles/newstyles.css" />
 
-    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat:wght@100&family=Mulish:wght@300&family=Righteous&family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <title>Jair - PortFolio</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#references" onclick="linkClicked" class="scroll linkPage"
-              >References</a
-            >
-          </li>
-          <li>
-            <a href="#skills" class="scroll linkPage">Skills</a>
-          </li>
-          <li>
-            <a href="#projects" class="scroll linkPage">Projects</a>
-          </li>
-          <li>
-            <a href="#contact" class="scroll linkPage">Contact</a>
-          </li>
-          <li>
-            <a
-              class="btnIcon cv-download shadow"
-              href="./assets/cv.pdf"
-              download
-              >CV</a
-            >
-          </li>
-          <li><a href="#hero"></a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section class="container bottomClip hero" id="hero">
-        <article class="heroContent">
-          <h1 class="headline">Hi! I´m <span>Jair Ramirez</span></h1>
-          <p class="text">
-            <span> A frontEnd developer and interface designer</span>
-            <span>Who builds UX rich, accessible & performant websites</span>
-          </p>
-          <a class="scroll btnCall shadow" href="#contact"
-            >Let´s work together</a
-          >
-        </article>
-        <article class="photo item-4"></article>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=5, width=device-width" />
+  <meta name="description"
+    content="Jair Ramirez - Frontend Developer and Interface Designer. Building UX rich, accessible and performant websites." />
+  <link rel="stylesheet" href="./styles/newstyles.css" />
 
-      <section class="container" id="references">
-        <section class="breakContainer">
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#868DC7"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#1B203B" />
-              </g>
-            </svg>
-          </div>
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#868DC7"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#1B203B" />
-              </g>
-            </svg>
-          </div>
-        </section>
-        <header class="headerSection">
-          <span>References</span>
-          <h2>References</h2>
-        </header>
-        <article class="reference shadow">
-          <div class="referenceContent">
-            <div class="containerReferenceImage">
-              <div class="referenceImageSupport"></div>
-              <div class="referenceImageSupport"></div>
-              <img
-                src="./assets/photos/nnProfile.png"
-                alt="referenceImage"
-                class="referenceImage"
-              />
-            </div>
-            <div class="referenceDescription">
-              <p class="">
-                "Highly skilled frontend developer proficient in HTML, CSS,
-                JavaScript, and UI/UX design, with a strong portfolio of web
-                projects."
-              </p>
-            </div>
+  <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Montserrat:wght@100&family=Mulish:wght@300&family=Righteous&family=Roboto&display=swap"
+    rel="stylesheet" />
+  <script src="js/projects.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <title>Jair - PortFolio</title>
+</head>
 
-            <div class="referenceSocialMedia">
-              <a class="twitter" href="http://" target="_blank"></a>
-              <a class="linkedin" href="http://" target="_blank"></a>
-            </div>
-          </div>
-          <div class="referenceName shadow">Lorena Martin</div>
-        </article>
-        <article class="reference inverted shadow">
-          <div class="referenceContent">
-            <div class="containerReferenceImage">
-              <div class="referenceImageSupport"></div>
-              <div class="referenceImageSupport"></div>
-              <img
-                src="./assets/photos/fernandoMartin.jpg"
-                alt="referenceImage"
-                class="referenceImage"
-              />
-            </div>
-            <div class="referenceDescription">
-              <p class="">
-                "Experienced frontend developer with an exceptional eye for
-                design, specializing in creating visually appealing and
-                user-friendly web interfaces."
-              </p>
-            </div>
-
-            <div class="referenceSocialMedia">
-              <a class="twitter" href="http://" target="_blank"></a>
-              <a class="linkedin" href="http://" target="_blank"></a>
-            </div>
-          </div>
-          <div class="referenceName">Fernando Martin</div>
-        </article>
-        <article class="reference shadow">
-          <div class="referenceContent">
-            <div class="containerReferenceImage">
-              <div class="referenceImageSupport"></div>
-              <div class="referenceImageSupport"></div>
-              <img
-                src="./assets/photos/jorgeMendoza.jpg"
-                alt="referenceImage"
-                class="referenceImage"
-              />
-            </div>
-            <div class="referenceDescription">
-              <p class="">
-                "Frontend developer fueled by curiosity and a passion for
-                continuous learning, constantly seeking innovative solutions and
-                expanding expertise."
-              </p>
-            </div>
-
-            <div class="referenceSocialMedia">
-              <a class="twitter" href="http://" target="_blank"></a>
-              <a class="linkedin" href="http://" target="_blank"></a>
-            </div>
-          </div>
-          <div class="referenceName">Jorge Mendoza</div>
-        </article>
-      </section>
-
-      <section class="container" id="skills">
-        <section class="breakContainer">
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#1B203B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#868DC7" />
-              </g>
-            </svg>
-          </div>
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#1B203B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#868DC7" />
-              </g>
-            </svg>
-          </div>
-        </section>
-        <header class="headerSection">
-          <span>Skills</span>
-          <h2>Skills</h2>
-        </header>
-
-        <article class="skills">
-          <div class="skillsList">
-            <div class="column 1">
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/html-icon.svg"
-                    alt="HTML"
-                  />
-                  <h4>HTML</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/css3-icon.svg"
-                    alt="CSS"
-                  />
-                  <h4>CSS</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/javascript.svg"
-                    alt="JavaScript"
-                  />
-                  <h4>JavaScript</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/react-icon.svg"
-                    alt="React.js"
-                  />
-                  <h4>React.js</h4>
-                </div>
-              </span>
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/html-icon.svg"
-                    alt="HTML"
-                  />
-                  <h4>HTML</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/css3-icon.svg"
-                    alt="CSS"
-                  />
-                  <h4>CSS</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/javascript.svg"
-                    alt="JavaScript"
-                  />
-                  <h4>JavaScript</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/react-icon.svg"
-                    alt="React.js"
-                  />
-                  <h4>React.js</h4>
-                </div>
-              </span>
-            </div>
-          </div>
-          <div class="skillsList">
-            <div class="column reverse">
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/github-icon.svg"
-                    alt="GitHub"
-                    name="GitHub"
-                  />
-                  <h4>GitHub</h4>
-                </div>
-                <div class="skill shadow">
-                  <img src="./assets/icons/skillsIcons/git.svg" alt="Git" />
-                  <h4>Git</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/sass-icon.svg"
-                    alt="SASS"
-                  />
-                  <h4>SASS</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/github-icon.svg"
-                    alt="GitHub"
-                    name="GitHub"
-                  />
-                  <h4>GitHub</h4>
-                </div>
-              </span>
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/github-icon.svg"
-                    alt="GitHub"
-                    name="GitHub"
-                  />
-                  <h4>GitHub</h4>
-                </div>
-                <div class="skill shadow">
-                  <img src="./assets/icons/skillsIcons/git.svg" alt="Git" />
-                  <h4>Git</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/sass-icon.svg"
-                    alt="SASS"
-                  />
-                  <h4>SASS</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/github-icon.svg"
-                    alt="GitHub"
-                    name="GitHub"
-                  />
-                  <h4>GitHub</h4>
-                </div>
-              </span>
-            </div>
-          </div>
-          <div class="skillsList">
-            <div class="column 3">
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/figma-icon.svg"
-                    alt="Figma"
-                  />
-                  <h4>Figma</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/sketch-icon.svg"
-                    alt="Sketch"
-                  />
-                  <h4>Sketch</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/wordpress.svg"
-                    alt="WordPress"
-                  />
-                  <h4>WordPress</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/angular.svg"
-                    alt="angular"
-                  />
-                  <h4>Angular</h4>
-                </div>
-              </span>
-              <span>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/figma-icon.svg"
-                    alt="Figma"
-                  />
-                  <h4>Figma</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/sketch-icon.svg"
-                    alt="Sketch"
-                  />
-                  <h4>Sketch</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/wordpress.svg"
-                    alt="WordPress"
-                  />
-                  <h4>WordPress</h4>
-                </div>
-                <div class="skill shadow">
-                  <img
-                    src="./assets/icons/skillsIcons/angular.svg"
-                    alt="angular"
-                  />
-                  <h4>Angular</h4>
-                </div>
-              </span>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="container" id="projects">
-        <div class="breakContainer">
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#2F3A8B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#17263f" />
-              </g>
-            </svg>
-          </div>
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#2F3A8B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#17263f" />
-              </g>
-            </svg>
-          </div>
-        </div>
-        <header class="headerSection">
-          <span>Projects</span>
-          <h2>Projects</h2>
-        </header>
-
-        <article class="project">
-          <section class="video">
-            <video muted autoplay loop class="shadow">
-              <!-- -->
-              <source src="./assets/media/platziVideo.webm" type="video/webm" />
-            </video>
-          </section>
-          <section class="videoDescription shadow">
-            <p>
-              This project uses React.js, HTML, JS, and CSS to mirror a video
-              platform's frontend, providing a straightforward and user-friendly
-              video content experience.
-            </p>
-            <div class="videoLinksContainer">
-              <div class="videoLinksBackground">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="3802"
-                  height="100"
-                  viewBox="0 0 3802 100"
-                  fill="none"
-                >
-                  <path
-                    d="M0 28.8541C0 21.6839 5.15512 14.9512 13.9637 12.0775C151.765 -32.8783 327.806 79.789 535.351 81.1122C761.042 82.551 978.229 -63.8219 1079.51 33.3011C1082.81 36.4618 1084.47 40.4934 1084.47 44.4974V79.878C1084.47 90.7828 1072.62 99.6228 1057.99 99.6228H26.4763C11.8539 99.6228 0 90.7828 0 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M901.254 29.2312C901.254 22.0611 906.409 15.3284 915.218 12.4547C1053.02 -32.5012 1229.06 80.1662 1436.61 81.4893C1662.3 82.9282 1879.48 -63.4448 1980.77 33.6783C1984.07 36.839 1985.72 40.8705 1985.72 44.8745V80.2551C1985.72 91.1599 1973.87 100 1959.25 100H927.73C913.108 100 901.254 91.1599 901.254 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M1816.28 28.8541C1816.28 21.6839 1821.43 14.9512 1830.24 12.0775C1968.04 -32.8783 2144.08 79.789 2351.63 81.1122C2577.32 82.551 2794.51 -63.8219 2895.79 33.3011C2899.09 36.4618 2900.75 40.4934 2900.75 44.4974V79.878C2900.75 90.7828 2888.89 99.6228 2874.27 99.6228H1842.75C1828.13 99.6228 1816.28 90.7828 1816.28 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M2717.53 29.2312C2717.53 22.0611 2722.68 15.3284 2731.49 12.4547C2869.29 -32.5012 3045.34 80.1662 3252.88 81.4893C3478.57 82.9282 3695.76 -63.4448 3797.04 33.6783C3800.34 36.839 3802 40.8705 3802 44.8745V80.2551C3802 91.1599 3790.15 100 3775.52 100H2744.01C2729.38 100 2717.53 91.1599 2717.53 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="3802"
-                  height="100"
-                  viewBox="0 0 3802 100"
-                  fill="none"
-                >
-                  <path
-                    d="M0 28.8541C0 21.6839 5.15512 14.9512 13.9637 12.0775C151.765 -32.8783 327.806 79.789 535.351 81.1122C761.042 82.551 978.229 -63.8219 1079.51 33.3011C1082.81 36.4618 1084.47 40.4934 1084.47 44.4974V79.878C1084.47 90.7828 1072.62 99.6228 1057.99 99.6228H26.4763C11.8539 99.6228 0 90.7828 0 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M901.254 29.2312C901.254 22.0611 906.409 15.3284 915.218 12.4547C1053.02 -32.5012 1229.06 80.1662 1436.61 81.4893C1662.3 82.9282 1879.48 -63.4448 1980.77 33.6783C1984.07 36.839 1985.72 40.8705 1985.72 44.8745V80.2551C1985.72 91.1599 1973.87 100 1959.25 100H927.73C913.108 100 901.254 91.1599 901.254 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M1816.28 28.8541C1816.28 21.6839 1821.43 14.9512 1830.24 12.0775C1968.04 -32.8783 2144.08 79.789 2351.63 81.1122C2577.32 82.551 2794.51 -63.8219 2895.79 33.3011C2899.09 36.4618 2900.75 40.4934 2900.75 44.4974V79.878C2900.75 90.7828 2888.89 99.6228 2874.27 99.6228H1842.75C1828.13 99.6228 1816.28 90.7828 1816.28 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M2717.53 29.2312C2717.53 22.0611 2722.68 15.3284 2731.49 12.4547C2869.29 -32.5012 3045.34 80.1662 3252.88 81.4893C3478.57 82.9282 3695.76 -63.4448 3797.04 33.6783C3800.34 36.839 3802 40.8705 3802 44.8745V80.2551C3802 91.1599 3790.15 100 3775.52 100H2744.01C2729.38 100 2717.53 91.1599 2717.53 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                </svg>
-              </div>
-              <div class="videoLinks">
-                <button class="btnGitHub shadow">
-                  <a
-                    href="https://github.com/Evitalires/platzi-video"
-                    target="_blank"
-                  ></a>
-                </button>
-                <button class="btnSite shadow">
-                  <a
-                    href="https://evitalires.github.io/platzi-video/"
-                    target="_blank"
-                    >See Site</a
-                  >
-                </button>
-              </div>
-            </div>
-          </section>
-        </article>
-
-        <article class="project">
-          <section class="video">
-            <video muted autoplay loop class="shadow">
-              <!-- -->
-              <source
-                src="./assets/media/socialNetwork.webm"
-                type="video/webm"
-              />
-            </video>
-          </section>
-          <section class="videoDescription shadow">
-            <p>
-              This HTML and CSS project faithfully recreates the frontend of a
-              social network, offering a polished and responsive user interface
-              for seamless social interactions and content sharing."
-            </p>
-            <div class="videoLinksContainer">
-              <div class="videoLinksBackground">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="3802"
-                  height="100"
-                  viewBox="0 0 3802 100"
-                  fill="none"
-                >
-                  <path
-                    d="M0 28.8541C0 21.6839 5.15512 14.9512 13.9637 12.0775C151.765 -32.8783 327.806 79.789 535.351 81.1122C761.042 82.551 978.229 -63.8219 1079.51 33.3011C1082.81 36.4618 1084.47 40.4934 1084.47 44.4974V79.878C1084.47 90.7828 1072.62 99.6228 1057.99 99.6228H26.4763C11.8539 99.6228 0 90.7828 0 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M901.254 29.2312C901.254 22.0611 906.409 15.3284 915.218 12.4547C1053.02 -32.5012 1229.06 80.1662 1436.61 81.4893C1662.3 82.9282 1879.48 -63.4448 1980.77 33.6783C1984.07 36.839 1985.72 40.8705 1985.72 44.8745V80.2551C1985.72 91.1599 1973.87 100 1959.25 100H927.73C913.108 100 901.254 91.1599 901.254 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M1816.28 28.8541C1816.28 21.6839 1821.43 14.9512 1830.24 12.0775C1968.04 -32.8783 2144.08 79.789 2351.63 81.1122C2577.32 82.551 2794.51 -63.8219 2895.79 33.3011C2899.09 36.4618 2900.75 40.4934 2900.75 44.4974V79.878C2900.75 90.7828 2888.89 99.6228 2874.27 99.6228H1842.75C1828.13 99.6228 1816.28 90.7828 1816.28 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M2717.53 29.2312C2717.53 22.0611 2722.68 15.3284 2731.49 12.4547C2869.29 -32.5012 3045.34 80.1662 3252.88 81.4893C3478.57 82.9282 3695.76 -63.4448 3797.04 33.6783C3800.34 36.839 3802 40.8705 3802 44.8745V80.2551C3802 91.1599 3790.15 100 3775.52 100H2744.01C2729.38 100 2717.53 91.1599 2717.53 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                </svg>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="3802"
-                  height="100"
-                  viewBox="0 0 3802 100"
-                  fill="none"
-                >
-                  <path
-                    d="M0 28.8541C0 21.6839 5.15512 14.9512 13.9637 12.0775C151.765 -32.8783 327.806 79.789 535.351 81.1122C761.042 82.551 978.229 -63.8219 1079.51 33.3011C1082.81 36.4618 1084.47 40.4934 1084.47 44.4974V79.878C1084.47 90.7828 1072.62 99.6228 1057.99 99.6228H26.4763C11.8539 99.6228 0 90.7828 0 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M901.254 29.2312C901.254 22.0611 906.409 15.3284 915.218 12.4547C1053.02 -32.5012 1229.06 80.1662 1436.61 81.4893C1662.3 82.9282 1879.48 -63.4448 1980.77 33.6783C1984.07 36.839 1985.72 40.8705 1985.72 44.8745V80.2551C1985.72 91.1599 1973.87 100 1959.25 100H927.73C913.108 100 901.254 91.1599 901.254 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M1816.28 28.8541C1816.28 21.6839 1821.43 14.9512 1830.24 12.0775C1968.04 -32.8783 2144.08 79.789 2351.63 81.1122C2577.32 82.551 2794.51 -63.8219 2895.79 33.3011C2899.09 36.4618 2900.75 40.4934 2900.75 44.4974V79.878C2900.75 90.7828 2888.89 99.6228 2874.27 99.6228H1842.75C1828.13 99.6228 1816.28 90.7828 1816.28 79.878V28.8541Z"
-                    fill="#AEB1CB"
-                  />
-                  <path
-                    d="M2717.53 29.2312C2717.53 22.0611 2722.68 15.3284 2731.49 12.4547C2869.29 -32.5012 3045.34 80.1662 3252.88 81.4893C3478.57 82.9282 3695.76 -63.4448 3797.04 33.6783C3800.34 36.839 3802 40.8705 3802 44.8745V80.2551C3802 91.1599 3790.15 100 3775.52 100H2744.01C2729.38 100 2717.53 91.1599 2717.53 80.2551V29.2312Z"
-                    fill="#AEB1CB"
-                  />
-                </svg>
-              </div>
-              <div class="videoLinks">
-                <button class="btnGitHub shadow">
-                  <a
-                    href="https://github.com/Evitalires/social-network"
-                    target="_blank"
-                  ></a>
-                </button>
-                <button class="btnSite shadow">
-                  <a
-                    href="https://evitalires.github.io/social-network/"
-                    target="_blank"
-                    >See Site</a
-                  >
-                </button>
-              </div>
-            </div>
-          </section>
-        </article>
-
-        <div class="projectsMore" id="projectsMore">
-          See more
-          <i> -> </i>
-        </div>
-      </section>
-
-      <section class="container" id="contact">
-        <div class="breakContainer">
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#2F3A8B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8ebeb" />
-              </g>
-            </svg>
-          </div>
-          <div>
-            <svg
-              class="waves"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 24 150 28"
-              preserveAspectRatio="none"
-              shape-rendering="auto"
-            >
-              <defs>
-                <path
-                  id="gentle-wave"
-                  d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-                />
-              </defs>
-              <g class="parallax">
-                <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
-                <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
-                <use
-                  xlink:href="#gentle-wave"
-                  x="48"
-                  y="5"
-                  fill="#2F3A8B"
-                  opacity=".9"
-                />
-                <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8ebeb" />
-              </g>
-            </svg>
-          </div>
-        </div>
-        <header class="headerSection">
-          <span>Contact Me</span>
-          <h2>Contact Me</h2>
-        </header>
-
-        <article class="contactMeForm">
-          <article class="contactLinks">
-            <button>
-              <a
-                class="contactLinkGitHub"
-                href="https://github.com/Evitalires/portfolio"
-                target="_blank"
-                rel=""
-              ></a>
-            </button>
-            <button>
-              <a
-                class="contactLinkTwitter"
-                href="https://twitter.com/Evitalires"
-                target="_blank"
-                rel=""
-              ></a>
-            </button>
-            <button>
-              <a
-                class="contactLinkedin"
-                href="https://www.linkedin.com/in/jair-alexander-escobar-ramirez-186804188/"
-                target="_blank"
-                rel=""
-              ></a>
-            </button>
-            <button>
-              <a
-                class="contactWhatsapp"
-                href="https://wa.me/573112413653"
-                target="_blank"
-                rel=""
-              ></a>
-            </button>
-          </article>
-          <form action="https://formspree.io/f/mjvapkbk" method="post">
-            <label for="name">
-              <input
-                class="shadow"
-                type="text"
-                name="name"
-                id="formName"
-                placeholder="Name"
-                required
-              />
-            </label>
-            <label for="subject"
-              ><input
-                class="shadow"
-                type="text"
-                name="subject"
-                id="formSubject"
-                placeholder="Subject"
-                required
-            /></label>
-            <label for="email"
-              ><input
-                class="shadow"
-                type="email"
-                name="email"
-                id="formEmail"
-                placeholder="Email"
-                required
-              />
-            </label>
-            <textarea
-              class="shadow"
-              name="description"
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="Tell me"
-              required
-            ></textarea>
-            <button type="submit" class="submit shadow">SEND!</button>
-          </form>
-        </article>
-      </section>
-      <section id="pruebas"></section>
-    </main>
-    <!--  <footer class="footer" id="footer">
-      <article class="break footer">
-        <img class="" src="./assets/bg/vetaTopLeft.png" alt="topLeft" />
-        <img class="" src="./assets/bg/vetaTopRight.png" alt="topRight" />
-        <img class="" src="./assets/bg/vetaMedLeft.png" alt="medLeft" />
-        <img class="" src="./assets/bg/vetaMedRight.png" alt="medRight" />
-        <img class="" src="./assets/bg/vetaBotLeft.png" alt="botLeft" />
-        <img class="" src="./assets/bg/vetaBotRight.png" alt="botRight" />
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero" class="scroll "></a></li>
+        <li>
+          <a href="#projects" class="scroll linkPage">Projects</a>
+        </li>
+        <li>
+          <a href="#skills" class="scroll linkPage">Skills</a>
+        </li>
+        <li>
+          <a href="#references" class="scroll linkPage">References</a>
+        </li>
+        <li>
+          <a href="#contact" class="scroll linkPage">Contact</a>
+        </li>
+        <li>
+          <a id="cvBtn" class="btnIcon cv-download shadow" target="_blank" href="./assets/Jair_Escobar_fullStack_cv.pdf"
+            aria-label="View CV">CV</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="container" id="hero">
+      <article class="heroContent">
+        <h1 class="headline">Hi! I'm <span>Jair Ramirez</span></h1>
+        <p class="text">
+          <span>A frontend developer and interface designer</span>
+          <span>Who builds UX rich, accessible & performant websites</span>
+        </p>
+        <a class="scroll btnCall shadow" href="#contact">Let's work together</a>
       </article>
-      <section class="container">
-        <article class="twitter">
-          <a
-            href="https://twitter.com/Evitalires"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Twitter</a
-          >
-        </article>
-        <article class="github">
-          <a
-            href="https://github.com/Evitalires"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-        </article>
-        <article class="linkedin">
-          <a
-            href="https://www.linkedin.com/in/jair-alexander-escobar-ramirez-186804188/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Linkedin</a
-          >
-        </article>
-        <article class="line"></article>
-        <article class="trademark"><p>2020 . PT</p></article>
-        <article class="toHero">
-          <a class="scroll icon" href="#hero"> </a>
-          <a class="icon behind">
-            <svg
-              width="47"
-              height="37"
-              viewBox="0 0 47 37"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12.3924 37V4.1875M35.7468 4.1875V37M1 2C19.2278 6.375 28.3418 6.375 46 2M7.26582 12.2083L40.8734 12.2083"
-                stroke="#F9EBEB"
-                stroke-width="4"
-              />
-            </svg>
-          </a>
-        </article>
+      <article class="photo item-4"></article>
+    </section>
+
+    <section class="container" id="projects">
+      <div class="breakContainer">
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#2F3A8B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#17263f" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#2F3A8B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#17263f" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <header class="headerSection">
+        <span>Projects</span>
+        <h2>Projects</h2>
+      </header>
+
+      <article class="project">
+        <section class="video">
+          <video muted autoplay loop class="shadow">
+            <source src="./assets/media/platziVideo.webm" type="video/webm" />
+          </video>
+        </section>
+        <section class="videoDescription shadow">
+          <p>
+            This project uses React.js, HTML, JS, and CSS to mirror a video
+            platform's frontend, providing a straightforward and user-friendly
+            video content experience.
+          </p>
+          <div class="videoLinksContainer">
+            <div class="videoLinksBackground">
+              <!-- SVG waves for links will be refactored later -->
+            </div>
+            <div class="videoLinks">
+              <button class="btnGitHub shadow" aria-label="View on GitHub">
+                <a href="https://github.com/Evitalires/platzi-video" target="_blank"></a>
+              </button>
+              <button class="btnSite shadow">
+                <a href="https://evitalires.github.io/platzi-video/" target="_blank">See Site</a>
+              </button>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article class="project">
+        <section class="video">
+          <video muted autoplay loop class="shadow">
+            <source src="./assets/media/socialNetwork.webm" type="video/webm" />
+          </video>
+        </section>
+        <section class="videoDescription shadow">
+          <p>
+            This HTML and CSS project faithfully recreates the frontend of a
+            social network, offering a polished and responsive user interface
+            for seamless social interactions and content sharing."
+          </p>
+          <div class="videoLinksContainer">
+            <div class="videoLinksBackground">
+              <!-- Inline SVG waves cleaned up here -->
+            </div>
+            <div class="videoLinks">
+              <button class="btnGitHub shadow" aria-label="View on GitHub">
+                <a href="https://github.com/Evitalires/social-network" target="_blank"></a>
+              </button>
+              <button class="btnSite shadow">
+                <a href="https://evitalires.github.io/social-network/" target="_blank">See Site</a>
+              </button>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <div class="projectsMore" id="projectsMore">
+        See more
+        <i> -> </i>
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <section class="breakContainer">
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#1B203B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#868DC7" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#1B203B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#868DC7" />
+            </g>
+          </svg>
+        </div>
       </section>
-    </footer> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="js/script.js"></script>
-  </body>
+      <header class="headerSection">
+        <span>Skills</span>
+        <h2>Skills</h2>
+      </header>
+
+      <article class="skills">
+        <div class="skillsList">
+          <div class="column 1">
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/html-icon.svg" alt="HTML" />
+                <h4>HTML</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/css3-icon.svg" alt="CSS" />
+                <h4>CSS</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/javascript.svg" alt="JavaScript" />
+                <h4>JavaScript</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/react-icon.svg" alt="React.js" />
+                <h4>React.js</h4>
+              </div>
+            </span>
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/html-icon.svg" alt="HTML" />
+                <h4>HTML</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/css3-icon.svg" alt="CSS" />
+                <h4>CSS</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/javascript.svg" alt="JavaScript" />
+                <h4>JavaScript</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/react-icon.svg" alt="React.js" />
+                <h4>React.js</h4>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="skillsList">
+          <div class="column reverse">
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/github-icon.svg" alt="GitHub" name="GitHub" />
+                <h4>GitHub</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/git.svg" alt="Git" />
+                <h4>Git</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/sass-icon.svg" alt="SASS" />
+                <h4>SASS</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/github-icon.svg" alt="GitHub" name="GitHub" />
+                <h4>GitHub</h4>
+              </div>
+            </span>
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/github-icon.svg" alt="GitHub" name="GitHub" />
+                <h4>GitHub</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/git.svg" alt="Git" />
+                <h4>Git</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/sass-icon.svg" alt="SASS" />
+                <h4>SASS</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/github-icon.svg" alt="GitHub" name="GitHub" />
+                <h4>GitHub</h4>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="skillsList">
+          <div class="column 3">
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/figma-icon.svg" alt="Figma" />
+                <h4>Figma</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/sketch-icon.svg" alt="Sketch" />
+                <h4>Sketch</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/wordpress.svg" alt="WordPress" />
+                <h4>WordPress</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/angular.svg" alt="angular" />
+                <h4>Angular</h4>
+              </div>
+            </span>
+            <span>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/figma-icon.svg" alt="Figma" />
+                <h4>Figma</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/sketch-icon.svg" alt="Sketch" />
+                <h4>Sketch</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/wordpress.svg" alt="WordPress" />
+                <h4>WordPress</h4>
+              </div>
+              <div class="skill shadow">
+                <img src="./assets/icons/skillsIcons/angular.svg" alt="angular" />
+                <h4>Angular</h4>
+              </div>
+            </span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="container" id="references">
+      <section class="breakContainer">
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#868DC7" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#1B203B" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#3644A8" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#2F3A8B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#868DC7" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#1B203B" />
+            </g>
+          </svg>
+        </div>
+      </section>
+      <header class="headerSection">
+        <span>References</span>
+        <h2>References</h2>
+      </header>
+      <article class="reference shadow">
+        <div class="referenceContent">
+          <div class="containerReferenceImage">
+            <div class="referenceImageSupport"></div>
+            <div class="referenceImageSupport"></div>
+            <img src="./assets/photos/nnProfile.png" alt="Lorena Martin" class="referenceImage" />
+          </div>
+          <div class="referenceDescription">
+            <p>"Highly skilled frontend developer proficient in HTML, CSS, JavaScript, and UI/UX design, with a strong
+              portfolio of web projects."</p>
+          </div>
+          <div class="referenceSocialMedia">
+            <a class="twitter" href="http://" target="_blank" aria-label="Twitter"></a>
+            <a class="linkedin" href="http://" target="_blank" aria-label="Linkedin"></a>
+          </div>
+        </div>
+        <div class="referenceName shadow">Lorena Martin</div>
+      </article>
+
+      <article class="reference inverted shadow">
+        <div class="referenceContent">
+          <div class="containerReferenceImage">
+            <div class="referenceImageSupport"></div>
+            <div class="referenceImageSupport"></div>
+            <img src="./assets/photos/fernandoMartin.jpg" alt="Fernando Martin" class="referenceImage" />
+          </div>
+          <div class="referenceDescription">
+            <p>"Experienced frontend developer with an exceptional eye for design, specializing in creating visually
+              appealing and user-friendly web interfaces."</p>
+          </div>
+          <div class="referenceSocialMedia">
+            <a class="twitter" href="http://" target="_blank" aria-label="Twitter"></a>
+            <a class="linkedin" href="http://" target="_blank" aria-label="Linkedin"></a>
+          </div>
+        </div>
+        <div class="referenceName">Fernando Martin</div>
+      </article>
+
+      <article class="reference shadow">
+        <div class="referenceContent">
+          <div class="containerReferenceImage">
+            <div class="referenceImageSupport"></div>
+            <div class="referenceImageSupport"></div>
+            <img src="./assets/photos/jorgeMendoza.jpg" alt="Jorge Mendoza" class="referenceImage" />
+          </div>
+          <div class="referenceDescription">
+            <p>"Frontend developer fueled by curiosity and a passion for continuous learning, constantly seeking
+              innovative solutions and expanding expertise."</p>
+          </div>
+          <div class="referenceSocialMedia">
+            <a class="twitter" href="http://" target="_blank" aria-label="Twitter"></a>
+            <a class="linkedin" href="http://" target="_blank" aria-label="Linkedin"></a>
+          </div>
+        </div>
+        <div class="referenceName">Jorge Mendoza</div>
+      </article>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="breakContainer">
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#2F3A8B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8ebeb" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+              <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+              <use xlink:href="#gentle-wave" x="48" y="0" fill="#868DC7" />
+              <use xlink:href="#gentle-wave" x="48" y="3" fill="#1B203B" />
+              <use xlink:href="#gentle-wave" x="48" y="5" fill="#2F3A8B" opacity=".9" />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#f8ebeb" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <header class="headerSection">
+        <span>Contact Me</span>
+        <h2>Contact Me</h2>
+      </header>
+
+      <article class="contactMeForm">
+        <article class="contactLinks">
+          <button>
+            <a class="contactLinkGitHub" href="https://github.com/Evitalires/portfolio" target="_blank"
+              rel="noopener noreferrer" aria-label="GitHub"></a>
+          </button>
+          <button>
+            <a class="contactLinkTwitter" href="https://twitter.com/Evitalires" target="_blank"
+              rel="noopener noreferrer" aria-label="Twitter"></a>
+          </button>
+          <button>
+            <a class="contactLinkedin" href="https://www.linkedin.com/in/jair-alexander-escobar-ramirez-186804188/"
+              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a>
+          </button>
+          <button>
+            <a class="contactWhatsapp" href="https://wa.me/573112413653" target="_blank" rel="noopener noreferrer"
+              aria-label="WhatsApp"></a>
+          </button>
+        </article>
+        <form action="https://formspree.io/f/mjvapkbk" method="post">
+          <label for="name">
+            <input class="shadow" type="text" name="name" id="formName" placeholder="Name" required />
+          </label>
+          <label for="subject"><input class="shadow" type="text" name="subject" id="formSubject" placeholder="Subject"
+              required /></label>
+          <label for="email"><input class="shadow" type="email" name="email" id="formEmail" placeholder="Email"
+              required />
+          </label>
+          <textarea class="shadow" name="description" id="" cols="30" rows="10" placeholder="Tell me"
+            required></textarea>
+          <button type="submit" class="submit shadow">SEND!</button>
+        </form>
+      </article>
+    </section>
+    <section id="pruebas"></section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/script.js"></script>
+
+
+</body>
+
 </html>
