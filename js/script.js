@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   handleNavLinks();
   validateContactForm();
   initNavColorObserver();
+  renderInitialProjects();
 
   // Set up "See More" listener
   const projectsMore = document.getElementById("projectsMore");
@@ -76,6 +77,24 @@ document.addEventListener("DOMContentLoaded", () => {
     projectsMore.addEventListener("click", newSibbling);
   }
 });
+
+function renderInitialProjects() {
+  const projectsContainer = document.getElementById("projects");
+  const projectsMore = document.getElementById("projectsMore");
+
+  if (!projectsContainer || newDataProjects.length === 0) return;
+
+  // Render first two projects
+  const initialProjectsCount = Math.min(2, newDataProjects.length);
+  for (let i = 0; i < initialProjectsCount; i++) {
+    const project = newDataProjects.shift();
+    projectsContainer.insertBefore(newProject(project, projectsMore), projectsMore);
+  }
+
+  if (newDataProjects.length === 0 && projectsMore) {
+    projectsMore.style.display = 'none';
+  }
+}
 
 function svgPathBackground(videoLinksBackground) {
   let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -115,11 +134,14 @@ function newProject(project, lastElement) {
 
   let video = document.createElement("video");
   video.className = "shadow";
+  video.muted = true;
+  video.volume = 0;
   video.setAttribute("muted", "");
+  video.setAttribute("autoplay", "");
+  video.setAttribute("loop", "");
 
   let videoSource = document.createElement("source");
-
-  videoSource.src = newDataProjects[0].video.src;
+  videoSource.src = project.video.src;
   videoSource.type = "video/webm";
 
   video.appendChild(videoSource);
@@ -130,8 +152,7 @@ function newProject(project, lastElement) {
   descriptionSection.className = "videoDescription shadow";
 
   let description = document.createElement("p");
-  description.textContent =
-    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime veritatis commodi magnam laboriosam quo. Accusamus, assumenda. Officia velit quae illo, consectetur accusantium veritatis recusandae placeat debitis eveniet vero aperiam fugiat.";
+  description.textContent = project.video.description;
 
   let linksContainer = document.createElement("div");
   linksContainer.className = "videoLinksContainer";
@@ -147,15 +168,16 @@ function newProject(project, lastElement) {
 
   let githubButton = document.createElement("button");
   githubButton.className = "btnGitHub shadow";
+  githubButton.setAttribute("aria-label", "View on GitHub");
   let githubLink = document.createElement("a");
-  githubLink.href = "#"; // Add GitHub link URL here
+  githubLink.href = project.video.links.gitHub;
   githubLink.target = "_blank";
   githubButton.appendChild(githubLink);
 
   let siteButton = document.createElement("button");
   siteButton.className = "btnSite shadow";
   let siteLink = document.createElement("a");
-  siteLink.href = "#"; // Add site link URL here
+  siteLink.href = project.video.links.site;
   siteLink.target = "_blank";
   siteLink.textContent = "See Site";
   siteButton.appendChild(siteLink);
@@ -171,9 +193,8 @@ function newProject(project, lastElement) {
   article.appendChild(videoSection);
   article.appendChild(descriptionSection);
 
-  newDataProjects.shift();
-  if (newDataProjects[0] === undefined) {
-    lastElement.textContent = "See less";
+  if (newDataProjects.length === 0) {
+    if (lastElement) lastElement.innerHTML = 'See less <i> <- </i>';
   }
 
   return article;
@@ -182,28 +203,22 @@ function newProject(project, lastElement) {
 function newSibbling(e) {
   let projects = document.getElementById("projects");
   let allProjects = projects.getElementsByTagName("article");
-  console.log(allProjects.length);
-  console.log(newDataProjects[0], newDataProjects[0] === undefined);
+  var lastElement = document.getElementById("projectsMore");
 
-  var lastElement = projects.lastElementChild;
-
-  if (allProjects.length >= 1 && newDataProjects[0] === undefined) {
-    console.log("Remover elementos");
-    var penulProject = allProjects[allProjects.length - 1];
-    penulProject.parentNode.removeChild(penulProject);
-    console.log("Penultimo elemento eliminado.");
-
-    if (allProjects.length === 2) {
-      console.log("entre quedando tres");
-      lastElement.textContent = " See More";
-      newDataProjects = dataProjects.slice();
+  if (newDataProjects.length === 0) {
+    // Behavior: Reset projects to initial state
+    // Remove all but the first two
+    while (allProjects.length > 2) {
+      projects.removeChild(allProjects[allProjects.length - 1]);
     }
-  } else if (lastElement) {
-    projects.insertBefore(
-      newProject(newDataProjects[0], lastElement),
-      lastElement
-    );
-    return;
+    newDataProjects = dataProjects.slice(2); // Remaining ones
+    lastElement.innerHTML = 'See more <i> -> </i>';
+    // Scroll back to top of projects if needed, but simple reset for now
+    projects.scrollIntoView({ behavior: 'smooth' });
+  } else {
+    // Add one more project
+    const project = newDataProjects.shift();
+    projects.insertBefore(newProject(project, lastElement), lastElement);
   }
 }
 /**
