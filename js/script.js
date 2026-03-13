@@ -84,8 +84,8 @@ function renderInitialProjects() {
 
   if (!projectsContainer || newDataProjects.length === 0) return;
 
-  // Render first two projects
-  const initialProjectsCount = Math.min(2, newDataProjects.length);
+  // Render first three projects
+  const initialProjectsCount = Math.min(3, newDataProjects.length);
   for (let i = 0; i < initialProjectsCount; i++) {
     const project = newDataProjects.shift();
     projectsContainer.insertBefore(newProject(project, projectsMore), projectsMore);
@@ -207,11 +207,11 @@ function newSibbling(e) {
 
   if (newDataProjects.length === 0) {
     // Behavior: Reset projects to initial state
-    // Remove all but the first two
-    while (allProjects.length > 2) {
+    // Remove all but the first three
+    while (allProjects.length > 3) {
       projects.removeChild(allProjects[allProjects.length - 1]);
     }
-    newDataProjects = dataProjects.slice(2); // Remaining ones
+    newDataProjects = dataProjects.slice(3); // Remaining ones
     lastElement.innerHTML = 'See more <i> -> </i>';
     // Scroll back to top of projects if needed, but simple reset for now
     projects.scrollIntoView({ behavior: 'smooth' });
